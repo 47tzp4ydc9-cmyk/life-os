@@ -20,6 +20,7 @@ investment-os/
 ├── data/              # SQLite — script authored
 │   ├── portfolio.db   # positions, executions, snapshots
 │   └── raw/           # broker dumps (gitignored)
+├── strategies/        # investment doctrine — frameworks, rules, playbooks
 ├── scripts/           # broker sync, reconciliation, snapshots
 └── schemas/           # YAML frontmatter spec per doc type
 ```
@@ -39,6 +40,7 @@ Shared references live one level up: [`../_shared/accounts.md`](../_shared/accou
 | What did I (or the AI) predict about X?        | `narrative/predictions/`|
 | What have I learned about myself?              | `narrative/intelligence/` |
 | What should I do today?                        | `narrative/action-items.md` |
+| What framework decides if a new idea is worth a buy? | `strategies/five-filter.md` |
 
 ## Write flow
 
@@ -61,6 +63,11 @@ Before any write, read AGENTS.md and the matching schema in
 investment-os/schemas/. Use only person and account slugs from
 _shared/accounts.md — never invent variants.
 
+Before evaluating any new stock idea (buy, watchlist add, conviction
+change), apply the framework in investment-os/strategies/five-filter.md.
+Record scores per the rules in that file. Do not invent alternative
+frameworks — if the five filters feel wrong, raise it as a question.
+
 When I describe a trade, decision, or observation in chat, draft the
 corresponding narrative file using the naming convention in AGENTS.md,
 show it to me, and on my confirm commit it via the GitHub connector
@@ -69,9 +76,10 @@ with a one-line message like:
   thesis: <symbol> initial
   catalyst: <symbol> <event>
 
-Never write to investment-os/data/. Never modify investment-os/schemas/
-or _shared/ without me asking explicitly. Never delete narrative files —
-to retract, append a retracted_at field to the frontmatter.
+Never write to investment-os/data/. Never modify investment-os/schemas/,
+investment-os/strategies/, or _shared/ without me asking explicitly.
+Never delete narrative files — to retract, append a retracted_at field
+to the frontmatter.
 
 For quantitative questions (P&L, positions, fills) use IBKR + Wealthsimple
 data, not narrative files. For "why did I do X" or "what's my thesis"

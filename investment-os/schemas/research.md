@@ -53,7 +53,7 @@ related_catalysts: []    # slugs from narrative/catalysts/
 ## Rules
 
 - Append a new `### YYYY-MM-DD — <session label>` under `## Sessions` for each research session.
-- The Five-Filter check is **required** for any session that ends with a buy/wait/skip verdict.
+- The Five-Filter check is **required** for any session that ends with a buy/wait/skip verdict. Definitions of each filter, green/yellow/red criteria, and verdict thresholds are in [`../strategies/five-filter.md`](../strategies/five-filter.md) — read that file before scoring.
 - After each session, update `current_verdict` in the frontmatter to reflect the latest view. Session entries themselves are immutable history.
 - Only `## Summary` may be rewritten; session entries are not.
 - If the topic splits (e.g., a theme becomes too broad), create new files and cross-link rather than rewriting.

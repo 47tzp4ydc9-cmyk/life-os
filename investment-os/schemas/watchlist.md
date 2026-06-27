@@ -25,7 +25,7 @@ Column rules:
 - `Person`: slug from `_shared/accounts.md`
 - `Conviction`: 1–10
 - `Catalyst`: slug of a `narrative/catalysts/*.md` file (without extension), or free text if no formal catalyst yet
-- `Five-Filter`: shorthand `N/5` from the 5-filter check (see research schema), or `—` if not yet evaluated
+- `Five-Filter`: shorthand `N/5` (count of green filters) from the framework in [`../strategies/five-filter.md`](../strategies/five-filter.md), or `—` if not yet evaluated
 
 A second table tracks removed items:
 

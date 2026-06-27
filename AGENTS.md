@@ -30,6 +30,10 @@ Slugs are lowercase, hyphen-separated, ASCII only.
 
 Any `person:` or `account:` field MUST use a slug listed in [`_shared/accounts.md`](_shared/accounts.md). Do not invent variants (`ibkr`, `IBKR Margin`, `WS_TFSA` are all wrong). If you need a slug that doesn't exist, ask the human to add it first.
 
+## Investment doctrine
+
+Before evaluating any new stock idea (new buy, watchlist add, conviction change), apply the framework in [`investment-os/strategies/five-filter.md`](investment-os/strategies/five-filter.md). Record the scores per the rules in [`investment-os/schemas/research.md`](investment-os/schemas/research.md) and [`investment-os/schemas/watchlist.md`](investment-os/schemas/watchlist.md). Do not invent alternative frameworks — if you think the five filters are missing something, raise it as a question, do not silently substitute.
+
 ## Frontmatter rules
 
 - Every narrative file starts with `---` YAML frontmatter, then a blank line, then markdown body.
