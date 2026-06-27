@@ -16,12 +16,19 @@ You may create or edit files **only** inside `*/narrative/` folders. Every narra
 ## Filename conventions
 
 - Decisions: `narrative/decisions/YYYY-MM-DD-<symbol-or-slug>.md`
-- Research: `narrative/research/<slug>.md` (one file per topic, append-only sections)
 - Theses: `narrative/theses/<symbol-or-theme>.md` (one per active position/theme)
+- Research: `narrative/research/<slug>.md` (one file per topic, append-only sections)
 - Intelligence: `narrative/intelligence/YYYY-MM-<slug>.md`
-- Briefings: `narrative/briefings/YYYY-MM-DD-<morning|evening>.md`
+- Briefings: `narrative/briefings/YYYY-MM-DD-<morning|midday|evening>.md`
+- Catalysts: `narrative/catalysts/YYYY-MM-DD-<slug>.md`
+- Option positions: `narrative/options/<symbol>-<strike><p|c>-<original-expiry>.md` (filename stays the same after rolls)
+- Predictions: `narrative/predictions/YYYY-MM-DD-<slug>.md`
 
 Slugs are lowercase, hyphen-separated, ASCII only.
+
+## Person and account slugs
+
+Any `person:` or `account:` field MUST use a slug listed in [`_shared/accounts.md`](_shared/accounts.md). Do not invent variants (`ibkr`, `IBKR Margin`, `WS_TFSA` are all wrong). If you need a slug that doesn't exist, ask the human to add it first.
 
 ## Frontmatter rules
 
@@ -49,3 +56,4 @@ Slugs are lowercase, hyphen-separated, ASCII only.
 - Never delete narrative files. To retract, append a `retracted_at` field to frontmatter.
 - Never store live prices, P&L, Greeks, or buying power in markdown. These belong in `data/` (regeneratable) or nowhere.
 - Never include API keys, account numbers, or broker credentials anywhere in this repo.
+- Never invent person or account slugs — use only those defined in [`_shared/accounts.md`](_shared/accounts.md).

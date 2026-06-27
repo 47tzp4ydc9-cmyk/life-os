@@ -1,6 +1,8 @@
 # Schema: intelligence
 
-AI-generated observations about *your behavior and patterns*, not about the market. Generated on demand or on a monthly cadence — never continuously.
+AI-generated **observations** about your behavior and patterns, evidence-based and backward-looking. Not about the market. Generated on demand or on a monthly cadence — never continuously.
+
+For **forward-looking falsifiable claims** (yours or the AI's about a stock/market/strategy), use `prediction.md` instead.
 
 **Path:** `narrative/intelligence/YYYY-MM-<slug>.md`
 

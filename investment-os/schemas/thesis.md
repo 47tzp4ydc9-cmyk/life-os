@@ -11,6 +11,7 @@ One file per active position or active theme. Updated as the thesis evolves; old
 type: thesis
 created: 2026-06-27
 updated: 2026-06-27
+person: jatan            # slug from _shared/accounts.md; "shared" if held across people
 symbol: GLW              # ticker, OR null if this is a theme thesis
 theme: photonics         # null if symbol-specific only
 status: active           # active | paused | closed
@@ -19,6 +20,7 @@ horizon: "1-3 years"
 key_metrics: [datacom revenue growth, optical connector ASPs]
 disconfirming: [datacom revenue stalls 2 consecutive quarters, AI capex pause]
 related_research: [research/silicon-photonics.md]
+related_catalysts: []    # slugs from narrative/catalysts/
 ---
 ```
 

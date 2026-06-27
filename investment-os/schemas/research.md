@@ -15,6 +15,8 @@ topic_type: company      # company | theme | industry | technology | etf | strat
 slug: silicon-photonics
 related_symbols: [GLW, COHR, LITE]
 related_themes: [photonics, ai-datacenter]
+current_verdict: buy     # buy | wait | skip | n/a — reflects the most recent session
+related_catalysts: []    # slugs from narrative/catalysts/
 ---
 ```
 
@@ -35,6 +37,15 @@ related_themes: [photonics, ai-datacenter]
 **Findings:**
 - (bullets)
 
+**Five-Filter check:**
+- Catalyst: 🟢 / 🟡 / 🔴 — (one-line note)
+- Institutional flow: 🟢 / 🟡 / 🔴 — (one-line note)
+- Chart / accumulation: 🟢 / 🟡 / 🔴 — (one-line note)
+- Sector in favor: 🟢 / 🟡 / 🔴 — (one-line note)
+- Narrative fit: 🟢 / 🟡 / 🔴 — (one-line note)
+
+**Verdict:** buy | wait | skip
+
 **Follow-ups:**
 - (action items, optionally promoted to action-items.md)
 ```
@@ -42,5 +53,7 @@ related_themes: [photonics, ai-datacenter]
 ## Rules
 
 - Append a new `### YYYY-MM-DD — <session label>` under `## Sessions` for each research session.
-- Only `## Summary` may be rewritten; session entries are immutable history.
+- The Five-Filter check is **required** for any session that ends with a buy/wait/skip verdict.
+- After each session, update `current_verdict` in the frontmatter to reflect the latest view. Session entries themselves are immutable history.
+- Only `## Summary` may be rewritten; session entries are not.
 - If the topic splits (e.g., a theme becomes too broad), create new files and cross-link rather than rewriting.

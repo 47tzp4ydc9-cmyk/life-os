@@ -35,3 +35,5 @@ node_modules/
 
 # Local notes outside the schema
 scratch/
+**/temp.txt
+**/temp.md
