@@ -19,6 +19,16 @@ tags: [overnight, ai-infra, custom-silicon, contagion-buy]
 outcome: null
 lessons: null
 retracted_at: null
+five_filter:
+  score: null
+  verdict: null
+  catalyst: null
+  institutional_flow: null
+  chart: null
+  sector: null
+  narrative: null
+  notes: "Five-filter skipped — this is an overnight contagion mean-reversion trade, not a doctrine-driven new-idea entry. The underlying setup (MRVL closed +1.65% with bullish MACD crossover, AI-custom-silicon sector green, clean narrative) would pass; the trade rationale is the AH discount caused by adjacent-name news (AAPL/MSFT price hikes), not the five-filter framework. See body for full reasoning."
+  research_ref: null
 ---
 
 # Buy 50 MRVL @ $266.05 — overnight trade (Janisha margin)

@@ -77,7 +77,7 @@ Markets move on stories. If a stock's thesis requires the market to **start cari
 
 - **Research file** (`narrative/research/<slug>.md`): per-session full Five-Filter block with one-line notes per filter. Required for any session that ends with a buy/wait/skip verdict.
 - **Watchlist** (`narrative/watchlist.md`): shorthand `N/5` in the Five-Filter column (count of greens). Update when the score changes.
-- **Decision file** (`narrative/decisions/YYYY-MM-DD-<slug>.md`): reference the research file by name — do not re-score in the decision. The decision says "passed the 5-filter on <date>, see research/<slug>.md".
+- **Decision file** (`narrative/decisions/YYYY-MM-DD-<slug>.md`): for `action: buy` or `action: add`, fill the `five_filter` block in the frontmatter — this is the **point-in-time snapshot** of the framework state at the trigger moment. It is frozen after first commit, even if the research file's scores later change. Include a `research_ref` pointing to the research file the scores came from (if any).
 
 ## When to re-run
 
