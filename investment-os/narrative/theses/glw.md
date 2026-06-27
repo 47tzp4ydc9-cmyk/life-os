@@ -39,6 +39,12 @@ Corning is the large-cap, stable, dividend-paying anchor for the optical/photoni
 - Optical connector pricing trends — proxy for competitive intensity.
 - Entry status — wanted 200 shares around $210-215; stock ran to $223+ on Jun 25, may need to wait for pullback or sell a CSP at $210-215 strike.
 
+## Decisions log
+
+| Date | Action | Qty | Price | Account | Outcome | File |
+|------|--------|-----|-------|---------|---------|------|
+| _(none yet)_ | | | | | | |
+
 ## Revisions
 
 - 2026-06-27: initial — GLW trading $223+, no position currently, target 200 shares as anchor.

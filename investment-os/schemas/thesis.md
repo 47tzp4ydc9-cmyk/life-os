@@ -43,6 +43,12 @@ related_catalysts: []    # slugs from narrative/catalysts/
 
 (specific data points, earnings line items, news triggers)
 
+## Decisions log
+
+| Date | Action | Qty | Price | Account | Outcome | File |
+|------|--------|-----|-------|---------|---------|------|
+| 2026-06-25 | buy | 300 | $31.84 | ws_margin | (open) | [smci](../decisions/2026-06-25-smci.md) |
+
 ## Revisions
 
 - 2026-06-27: initial
@@ -51,5 +57,6 @@ related_catalysts: []    # slugs from narrative/catalysts/
 ## Rules
 
 - One thesis per symbol/theme. Don't fragment.
+- The `## Decisions log` table is the index into per-action decision files for this symbol. **Append** one row whenever a new decision file is committed for this symbol — the running story lives here; the immutable event lives in `narrative/decisions/`. Never delete rows from the log; mark `outcome` on close.
 - Add a dated line under `## Revisions` whenever the body materially changes.
 - When closing a position, set `status: closed` but do not delete — link to it from the closing decision.

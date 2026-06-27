@@ -41,6 +41,12 @@ Rocket Lab is the only credible Western pure-play small-launch + medium-launch p
 - Short-interest and options IV — when both spike, that's the premium-selling window.
 - All open short puts (Aug21 105P, Sep18 105P, Oct16 110P, Oct16 145P) — running positions in [narrative/options/](../options/).
 
+## Decisions log
+
+| Date | Action | Qty | Price | Account | Outcome | File |
+|------|--------|-----|-------|---------|---------|------|
+| 2026-06-25 | roll | 1 ct | +$575 credit | ibkr_margin | (open) | [rklb-roll](../decisions/2026-06-25-rklb-roll.md) |
+
 ## Revisions
 
 - 2026-06-27: initial — RKLB trading $81, four short puts all ITM, defending via rolls for credit only. Latest roll: Jul10 105P → Sep18 105P for +$575 credit.
