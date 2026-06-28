@@ -2,6 +2,10 @@
 
 This file is read by Claude, ChatGPT, and other AI tools accessing this repo. Follow these rules when reading or proposing changes.
 
+## How you write
+
+If you are running in **claude.ai** (web or mobile), use the **life-os** custom connector to write files — its `commit_file` tool is the only write path that works from there (the first-party GitHub connector is read-only). Worker source: [`tools/mcp-commit-worker/`](tools/mcp-commit-worker/). If you are running locally with file system access (Claude Desktop, VS Code, Claude Code), write files directly — the human commits.
+
 ## What you may write
 
 You may create or edit files **only** inside `*/narrative/` folders. Every narrative document must have YAML frontmatter matching the schema in `*/schemas/`.

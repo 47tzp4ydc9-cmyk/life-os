@@ -50,7 +50,15 @@ Shared references live one level up: [`../_shared/accounts.md`](../_shared/accou
 
 ## Working with Claude (claude.ai)
 
-Set up a **Project** in claude.ai called "Investment OS". Attach the GitHub custom connector scoped to this repo (Settings → Connectors → Add custom connector → `https://api.githubcopilot.com/mcp/`), plus your existing IBKR and Gmail connectors.
+Set up a **Project** in claude.ai called "Investment OS". Connectors to attach:
+
+| Connector | Purpose | Setup |
+|---|---|---|
+| `life-os` (custom Remote MCP) | Read + write repo files | Settings → Connectors → Add custom connector → `https://life-os-commit.9tmbv6t55v.workers.dev/mcp` with the `SHARED_SECRET` as the Bearer token. Source in [`tools/mcp-commit-worker/`](../tools/mcp-commit-worker/). |
+| Gmail | Wealthsimple confirmations, news | First-party |
+| IBKR | Positions, P&L, live quotes | First-party |
+
+The custom `life-os` connector exposes three tools: `commit_file`, `read_file`, `list_directory`. It's the only write path — Anthropic's first-party GitHub connector is read-only.
 
 ### Project system prompt
 
@@ -70,8 +78,8 @@ frameworks — if the five filters feel wrong, raise it as a question.
 
 When I describe a trade, decision, or observation in chat, draft the
 corresponding narrative file using the naming convention in AGENTS.md,
-show it to me, and on my confirm commit it via the GitHub connector
-with a one-line message like:
+show it to me, and on my confirm commit it via the life-os connector's
+commit_file tool with a one-line message like:
   decision: <symbol> <action> <date>
   thesis: <symbol> initial
   catalyst: <symbol> <event>
@@ -93,7 +101,7 @@ Trigger phrase: **"morning briefing"**.
 ```
 Generate today's morning briefing for investment-os.
 
-Step 1 — Read repo state via GitHub:
+Step 1 — Read repo state via the life-os connector:
 - investment-os/narrative/action-items.md (open items only)
 - every file in investment-os/narrative/options/ with status: open
 - every file in investment-os/narrative/catalysts/ with event_date
