@@ -29,6 +29,8 @@ investment-os/
 
 Shared references live one level up: [`../_shared/accounts.md`](../_shared/accounts.md) for canonical person + account slugs, [`../_shared/broker-notes.md`](../_shared/broker-notes.md) for broker operational quirks.
 
+> `data/` and `scripts/` are intentionally empty for now. The ledger files in `narrative/ledger/` are the source of truth for executions; `data/portfolio.db` will be built as a derived cache (with a populator script in `scripts/`) only when query performance, complex SQL aggregations, or live-snapshot needs (prices, Greeks, buying power) require it.
+
 ## What goes where
 
 | Question                                       | Read from               |
