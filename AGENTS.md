@@ -27,6 +27,7 @@ You may create or edit files **only** inside `*/narrative/` folders. Every narra
 - Catalysts: `narrative/catalysts/YYYY-MM-DD-<slug>.md`
 - Option positions: `narrative/options/<symbol>-<strike><p|c>-<original-expiry>.md` (filename stays the same after rolls)
 - Predictions: `narrative/predictions/YYYY-MM-DD-<slug>.md`
+- Ledger: `narrative/ledger/<account>.md` (one per account slug; partition to `<account>-YYYY.md` only when the file gets unwieldy)
 
 Slugs are lowercase, hyphen-separated, ASCII only.
 
@@ -54,14 +55,16 @@ Before evaluating any new stock idea (new buy, watchlist add, conviction change)
 
 ## When asked to analyze
 
-- Prefer reading the SQLite database (`*/data/*.db`) for quantitative questions (positions, executions, snapshots, P&L).
+- Prefer reading the SQLite database (`*/data/*.db`) for live quantitative questions (current positions, live P&L, snapshots) — it's the regenerated cache of broker state.
+- Prefer reading `narrative/ledger/<account>.md` for historical fills, realized P&L, and what-did-I-trade-and-when questions. The ledger is the source of truth; the DB is derived.
 - Prefer reading narrative markdown for qualitative questions (why, thesis, lessons).
-- Cross-reference both for "did my thesis play out" style questions.
+- Cross-reference all three for "did my thesis play out" style questions.
 
 ## Hard rules
 
 - Never write to `data/` — that's broker-imported, script-owned.
 - Never delete narrative files. To retract, append a `retracted_at` field to frontmatter.
+- Never edit or delete existing `executions[]` entries in a ledger file. If a sync wrote a row in error, append a reversing entry with `action: other` and a `related_id` pointing at the bad one. The ledger is append-only; git history is the audit trail.
 - Never store live prices, P&L, Greeks, or buying power in markdown. These belong in `data/` (regeneratable) or nowhere.
 - Never include API keys, account numbers, or broker credentials anywhere in this repo.
 - Never invent person or account slugs — use only those defined in [`_shared/accounts.md`](_shared/accounts.md).

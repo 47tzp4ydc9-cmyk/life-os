@@ -10,6 +10,7 @@ investment-os/
 │   ├── decisions/     # one file per significant action (buy/sell/roll/close)
 │   ├── theses/        # one file per active position or theme
 │   ├── options/       # one file per logical option position (extends across rolls)
+│   ├── ledger/        # one file per account; append-only log of every executed fill
 │   ├── research/      # one file per topic, append-only sessions with 5-filter checks
 │   ├── catalysts/     # dated events (earnings, regulatory, index inclusion)
 │   ├── predictions/   # dated falsifiable claims, verified later
@@ -17,10 +18,11 @@ investment-os/
 │   ├── briefings/     # generated morning / midday / evening summaries
 │   ├── watchlist.md   # ideas under consideration
 │   └── action-items.md
-├── data/              # SQLite — script authored
-│   ├── portfolio.db   # positions, executions, snapshots
+├── data/              # SQLite — script authored; derived from ledger + live broker data
+│   ├── portfolio.db   # positions, snapshots, computed P&L
 │   └── raw/           # broker dumps (gitignored)
 ├── strategies/        # investment doctrine — frameworks, rules, playbooks
+├── prompts/           # ready-to-paste claude.ai prompts (sync, briefings, etc.)
 ├── scripts/           # broker sync, reconciliation, snapshots
 └── schemas/           # YAML frontmatter spec per doc type
 ```
@@ -31,7 +33,8 @@ Shared references live one level up: [`../_shared/accounts.md`](../_shared/accou
 
 | Question                                       | Read from               |
 |------------------------------------------------|-------------------------|
-| What do I hold? What's my P&L?                 | `data/portfolio.db`     |
+| What do I hold right now? What's my live P&L?  | `data/portfolio.db`     |
+| What did I trade in X, and when?               | `narrative/ledger/<account>.md` |
 | What's the running state of an option I rolled?| `narrative/options/`    |
 | Why did I buy X?                               | `narrative/decisions/`  |
 | What's my thesis on X?                         | `narrative/theses/`     |
@@ -45,8 +48,9 @@ Shared references live one level up: [`../_shared/accounts.md`](../_shared/accou
 ## Write flow
 
 - Markdown is written by you or Claude (drafts in chat, committed locally or via MCP).
-- `data/portfolio.db` is written **only** by `scripts/` on a schedule or manual trigger.
-- The two never write to the same place.
+- `narrative/ledger/<account>.md` is appended to by the [sync-executions](prompts/sync-executions.md) prompt running in claude.ai, which pulls from the IBKR and Gmail connectors and dedupes against existing entries.
+- `data/portfolio.db` is written **only** by `scripts/` on a schedule or manual trigger. It is a derived cache of the ledger plus live broker state — always regeneratable.
+- The three never write to the same place.
 
 ## Working with Claude (claude.ai)
 
