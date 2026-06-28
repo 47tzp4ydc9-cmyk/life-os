@@ -32,18 +32,27 @@ npx wrangler secret put GITHUB_TOKEN            # paste your repo PAT
 npx wrangler deploy
 ```
 
-After deploy, Wrangler prints the URL — looks like:
-`https://life-os-commit.<your-cf-subdomain>.workers.dev`
+After deploy, Wrangler prints the URL. Current deployment:
+`https://life-os-commit.9tmbv6t55v.workers.dev`
 
 ## Add to claude.ai
 
 claude.ai → **Settings → Connectors → Add custom connector**:
 
 - **Name:** `life-os`
-- **Remote MCP server URL:** `https://life-os-commit.<your-cf-subdomain>.workers.dev/mcp`
+- **Remote MCP server URL:** `https://life-os-commit.9tmbv6t55v.workers.dev/mcp`
 - **Authentication:** Bearer token → paste the `SHARED_SECRET`
 
 Or, if the UI doesn't show a header field, append `?key=<SHARED_SECRET>` to the URL.
+
+## Dependency pinning (don't bump without reading this)
+
+Two non-obvious version constraints in `package.json`:
+
+- `@modelcontextprotocol/sdk` is pinned to **exactly `1.23.0`** (plus an `overrides` entry). The `agents` package bundles this version; if our top-level SDK drifts to a newer release, TypeScript sees two distinct `McpServer` types and the `server` property assignment fails to compile.
+- `ai` is pinned to `^5`. It's a peer dep of `agents` that gets dynamically imported in client code we don't use — but esbuild resolves it statically during the Worker build, so the package must be installable. v4 fails the peer-dep check (`agents` wants `>=5.0.0`).
+
+When bumping `agents`, check what SDK version it bundles (`cat node_modules/agents/package.json | grep modelcontextprotocol`) and update the pin + override to match in lockstep.
 
 ## Local dev
 

@@ -37,3 +37,4 @@ node_modules/
 scratch/
 **/temp.txt
 **/temp.md
+local-notes.md

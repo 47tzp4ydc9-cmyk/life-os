@@ -1,6 +1,6 @@
 # Life OS
 
-Personal knowledge repository optimized for read/write by AI assistants (Claude, ChatGPT) via their GitHub connectors.
+Personal knowledge repository optimized for read/write by AI assistants (Claude, ChatGPT). See [AGENTS.md](AGENTS.md) for how AI sessions write to this repo — the only supported write path is the [`life-os` MCP connector](tools/mcp-commit-worker/) since first-party GitHub connectors are read-only.
 
 ## Modules
 
