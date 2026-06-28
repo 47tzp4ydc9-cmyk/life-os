@@ -96,37 +96,64 @@ questions, read the narrative.
 
 ### Morning briefing prompt
 
-Trigger phrase: **"morning briefing"**.
+**Runs autonomously** as a claude.ai scheduled routine (6am ET pre-market). Same prompt works manually — trigger phrase: **"morning briefing"**. Both paths commit without confirmation.
 
 ```
-Generate today's morning briefing for investment-os.
+Generate today's pre-market briefing for investment-os. Autonomous run —
+do not ask for confirmation, commit when ready.
 
-Step 1 — Read repo state via the life-os connector:
+Step 1 — Read repo state via life-os MCP:
+- AGENTS.md
+- investment-os/schemas/briefing.md (THIS IS THE OUTPUT CONTRACT — follow exactly)
 - investment-os/narrative/action-items.md (open items only)
 - every file in investment-os/narrative/options/ with status: open
-- every file in investment-os/narrative/catalysts/ with event_date
-  within the next 14 days
+- every file in investment-os/narrative/catalysts/ with event_date in next 14d
 - investment-os/narrative/watchlist.md
 - the most recent file in investment-os/narrative/briefings/ for delta
 
-Step 2 — Pull live data:
-- IBKR account summary + positions + working orders
-- Gmail: Wealthsimple confirmations since the previous briefing
-  (mine and Janisha's forwarded ones)
+Step 2 — Define Tier 1 universe (the names that must be checked):
+- All open option positions
+- Top 10 equity positions by exposure (notional × |delta|)
+- All watchlist entries with target_entry set
+For each Tier 1 name, also load narrative/theses/<symbol>.md if it exists.
 
-Step 3 — Filter aggressively before composing:
-- Positions: only those that moved > $200 today, OR are options expiring
-  within 14 days, OR are flagged on the watchlist
-- Action items: only priority:high OR due within 3 days
-- Catalysts: only those firing today through end of week
+Step 3 — Pull live data:
+- IBKR: positions, working orders, NLV, leverage, cash, buying power
+- Gmail: Wealthsimple confirmations since prior briefing (mine + Janisha's forwarded)
 
-Step 4 — Compose per investment-os/schemas/briefing.md and commit to
-investment-os/narrative/briefings/YYYY-MM-DD-morning.md.
+Step 4 — Per Tier 1 name, fetch news (last 24h):
+- web_search: "<TICKER> news last 24 hours"
+- SEC EDGAR: any 8-K filed since prior briefing
+- Classify each material item on six dimensions per schemas/briefing.md:
+  type, direction, magnitude, technical impact, thesis impact, suggested action
+- Skip filler (press release rehashes, generic "stock moves on X" articles)
 
-Step 5 — If new action items emerge, append them to action-items.md
-with proper inline tags. If new catalysts surface, create the catalyst
-file. Reference items by slug — do not duplicate.
+Step 5 — Severity-rank into 🔴 action / 🟡 monitor / 🟢 quiet per schemas/briefing.md.
+
+Step 6 — Early-exit:
+If 🔴 = 0 AND 🟡 ≤ 1 AND no catalyst firing today AND SPY pre-market move < 1%,
+write the short-form briefing (frontmatter + Quick Read + one-line quiet status)
+and stop. Do not pad.
+
+Step 7 — Compose the briefing using the rich format in schemas/briefing.md
+(tables, tags, severity sections). Commit via life-os commit_file to
+investment-os/narrative/briefings/YYYY-MM-DD-morning.md with message
+"briefing: YYYY-MM-DD morning".
+
+Step 8 — For each 🔴 name, append exactly one action-item to action-items.md
+with priority:high and due:today. Then mirror those in the briefing's
+"Action items added" section.
+
+Hard rules:
+- Do not invent news. Empty web search result = 🟢.
+- Do not write outside narrative/. Do not modify schemas/, strategies/, or _shared/.
+- One briefing per session per day. Do not overwrite — corrections via the
+  ## Correction pattern documented in schemas/briefing.md.
+- If commit_file fails, retry once. If it still fails, output the briefing as
+  a chat message tagged "BRIEFING-FALLBACK" so I can paste it in manually.
 ```
+
+To schedule: claude.ai → **Settings → Tasks/Routines → Create** → paste the prompt above → set cron `0 6 * * 1-5` (6am ET, weekdays). Make sure the Project is "Investment OS" so the system prompt + connectors are loaded.
 
 ### Evening briefing prompt
 
