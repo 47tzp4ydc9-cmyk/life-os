@@ -1,0 +1,677 @@
+---
+type: ledger
+account: ws_tfsa
+person: jatan
+status: active
+opened: null
+last_synced_at: 2026-06-28T00:00:00Z
+sources_used: [wealthsimple]
+executions:
+  - id: "manual:239558c79e5f"
+    date: 2025-02-09
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 1000
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 1000
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: WS MoneyMovement EFT
+  - id: "manual:5944660aae8b"
+    date: 2025-02-10
+    action: buy
+    instrument: us_stock
+    symbol: PLTR
+    quantity: 1
+    price: 167.3334192
+    currency: CAD
+    fees: 0
+    net_cash: -167.33
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: Palantir Technologies Inc (Class A)
+  - id: "manual:d341fd3f0801"
+    date: 2025-03-10
+    action: buy
+    instrument: us_stock
+    symbol: HUT
+    quantity: 10
+    price: 16.69
+    currency: CAD
+    fees: 0
+    net_cash: -166.9
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: Hut 8 Corp
+  - id: "manual:99a562da3b98"
+    date: 2025-08-15
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:842e6f7663bb"
+    date: 2025-08-15
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:2d8bf85754ea"
+    date: 2025-09-15
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:ecf9b91904d6"
+    date: 2025-09-15
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:0abae43fecbd"
+    date: 2025-10-15
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:ed2bea5b84bd"
+    date: 2025-10-15
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:37474aae5e55"
+    date: 2025-11-14
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:d5a77c18b108"
+    date: 2025-11-14
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:5f298c1e7906"
+    date: 2025-12-12
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:e380e6d204f3"
+    date: 2025-12-12
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:03eddd2a1de9"
+    date: 2026-01-15
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:f711eafd889c"
+    date: 2026-01-15
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:6faf021bb85b"
+    date: 2026-02-13
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.02
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.02
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:23db2a53c669"
+    date: 2026-02-13
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:b4ab04cb1129"
+    date: 2026-03-13
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.02
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.02
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:d63a611e6285"
+    date: 2026-03-13
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:e095d56b7fde"
+    date: 2026-04-15
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:32c323e88cf0"
+    date: 2026-04-15
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:ea8ea9b43f5b"
+    date: 2026-05-14
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.02
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.02
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:61e4adda2fec"
+    date: 2026-05-14
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:2c2e81865ed5"
+    date: 2026-06-12
+    action: interest
+    instrument: cash
+    symbol: USD
+    quantity: 0.01
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:a96980836d7b"
+    date: 2026-06-12
+    action: interest
+    instrument: cash
+    symbol: CAD
+    quantity: 0.01
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 0.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: null
+  - id: "manual:03da249b063d"
+    date: 2026-06-25
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 148.94
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 148.94
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: WS MoneyMovement TRANSFER_TF
+  - id: "manual:98c58858781e"
+    date: 2026-06-25
+    action: other
+    instrument: cdr
+    symbol: AMD
+    quantity: 100
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 9436
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; Advanced Micro Devices CDR (CAD Hedged)
+  - id: "manual:4ec5fb6cd6b5"
+    date: 2026-06-25
+    action: sell
+    instrument: cdr
+    symbol: AMD
+    quantity: 100
+    price: 94.75
+    currency: CAD
+    fees: 0
+    net_cash: 9475
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: Advanced Micro Devices CDR (CAD Hedged)
+  - id: "manual:ef671d62e7f8"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: AVGO
+    quantity: 35
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 13261.85
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; Broadcom Inc.
+  - id: "manual:3e8084835a1a"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: EOSE
+    quantity: 300
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 1827
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; Eos Energy Enterprises Inc (Class A)
+  - id: "manual:c5ce2729e66b"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: IONQ
+    quantity: 200
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 10112
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; IonQ Inc
+  - id: "manual:408bc19331f9"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: JMIA
+    quantity: 100
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 625
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; Jumia Technologies Ag
+  - id: "manual:fa0b6d7e65e3"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: MVST
+    quantity: 400
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 450
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; Microvast Holdings Inc
+  - id: "manual:a19a454942d8"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: NU
+    quantity: 200
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 2492
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; NU HOLDINGS LTD
+  - id: "manual:dc3fbdcfc8f1"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: PATH
+    quantity: 150
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 1489.5
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; UiPath Inc (Class A)
+  - id: "manual:2017835d5843"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: QBTS
+    quantity: 300
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 6573
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; D-Wave Quantum Inc.
+  - id: "manual:6ab62c3f5450"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: RKLB
+    quantity: 100
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 8069
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; Rocket Lab Corp.
+  - id: "manual:89782bbb3c1c"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: SOFI
+    quantity: 300
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 5190
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; SoFi Technologies Inc.
+  - id: "manual:ba776991d2e0"
+    date: 2026-06-26
+    action: other
+    instrument: us_stock
+    symbol: TE
+    quantity: 200
+    price: null
+    currency: USD
+    fees: 0
+    net_cash: 1700
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-06-28T00:00:00Z"
+    notes: unmapped activity SecurityTransfer/-; T1 Energy Inc
+---
+
+# Ws Tfsa — execution ledger
+
+Append-only log of every activity in this account. Backfilled 2025-02-09 – 2026-06-26 from the Wealthsimple Activities CSV export (imported 2026-06-28). Going forward, syncs use [`investment-os/prompts/sync-executions.md`](../../prompts/sync-executions.md).

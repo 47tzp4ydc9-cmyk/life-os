@@ -8,6 +8,27 @@ Paste this into a claude.ai chat in the **Investment OS** project. Requires thes
 
 The same prompt covers three jobs: ongoing sync, single-account backfill, and single-symbol backfill (e.g. populating one ticker's full history from before this system existed). Tell Claude which one you want when you invoke it.
 
+## Invocations (cheat sheet)
+
+| Say this | What it does |
+|---|---|
+| `sync today` | Fast path. Pull only today's fills. Skip optional reads. Cheapest tokens. |
+| `sync since last sync` | Default. Each account's `last_synced_at` to now. Good for the daily job. |
+| `sync since YYYY-MM-DD` | Custom lower bound across all accounts. |
+| `sync account <slug>` | Only that one account, default date range. |
+| `backfill <symbol> in <account>` | All-time history for one symbol in one account. |
+| `backfill <symbol> everywhere` | All-time history for one symbol across all accounts. |
+| `dry run <any of the above>` | Show me the diff but DO NOT call `commit_file`. |
+
+**Fast-path rules for `sync today` and `sync since last sync`** (the common cases — minimize tokens):
+
+- Read only the existing ledger files for in-scope accounts. **Skip** reading the `decisions/` index unless a fetched execution carries a `broker_order_ref` you want to back-link — in that case read just that one decision file.
+- Skip the broker-notes file unless a row fails to parse cleanly.
+- Skip the schema reread if it's already in your project knowledge; otherwise read once.
+- Limit the connector date range to the requested window. Don't ask the connector for more than you need.
+
+For backfill modes the full reading list below applies.
+
 ---
 
 You are syncing my executed trades into per-account ledger files at `investment-os/narrative/ledger/<account>.md`.
@@ -22,10 +43,12 @@ Default scope: all accounts in [`_shared/accounts.md`](../../_shared/accounts.md
 
 I may override with one of:
 
+- **"sync today"** → fast path, today's fills only (see cheat sheet above for read-skipping rules).
 - **"sync since YYYY-MM-DD"** → use that date as the lower bound for all accounts.
 - **"sync account `<slug>`"** → only that one account.
 - **"backfill `<symbol>` in `<account>`"** → ignore date bounds; pull every fill for that symbol in that account, from the broker's earliest available history.
 - **"backfill `<symbol>` everywhere"** → same, across all accounts.
+- **"dry run"** → prefixable to any of the above. Show me the diff but do not commit.
 
 If you're not sure which mode I want, ask before fetching anything.
 
