@@ -13,34 +13,34 @@ executions:
     instrument: us_stock
     symbol: MU
     quantity: 5
-    price: 1311.02379
-    currency: CAD
+    price: 949.28
+    currency: USD
     fees: 0
-    net_cash: -6555.12
+    net_cash: -4746.40
     broker_order_ref: null
     fill_ref: null
     related_id: null
     decision_ref: null
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
-    notes: Micron Technology Inc.
+    notes: "Micron Technology Inc. — USD-stock bought from CAD margin; WS charged -6555.12 CAD (orig price 1311.02379 CAD/sh, implied FX ~1.381). USD price = Yahoo Finance close 2026-06-08."
   - id: "manual:29d91fcf070f"
     date: 2026-06-07
     action: buy
     instrument: us_stock
     symbol: WDC
     quantity: 20
-    price: 760.279405
-    currency: CAD
+    price: 526.93
+    currency: USD
     fees: 0
-    net_cash: -15205.59
+    net_cash: -10538.60
     broker_order_ref: null
     fill_ref: null
     related_id: null
     decision_ref: null
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
-    notes: Western Digital Corp.
+    notes: "Western Digital Corp. — USD-stock bought from CAD margin; WS charged -15205.59 CAD (orig price 760.279405 CAD/sh, implied FX ~1.443). USD price = Yahoo Finance close 2026-06-08."
   - id: "manual:1a4cf7df0175"
     date: 2026-06-08
     action: buy
@@ -81,17 +81,17 @@ executions:
     instrument: us_stock
     symbol: MU
     quantity: 5
-    price: 1370.1685119075
-    currency: CAD
+    price: 981.61
+    currency: USD
     fees: 0
-    net_cash: 6850.84
+    net_cash: 4908.05
     broker_order_ref: null
     fill_ref: null
     related_id: null
     decision_ref: null
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
-    notes: Micron Technology Inc.
+    notes: "Micron Technology Inc. — USD-stock sold from CAD margin; WS credited +6850.84 CAD (orig price 1370.1685119075 CAD/sh, implied FX ~1.396). USD price = Yahoo Finance close 2026-06-12."
   - id: "manual:45fc50f7a277"
     date: 2026-06-15
     action: sell

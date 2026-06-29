@@ -3,6 +3,7 @@
 	import type { OptionData } from '$lib/types';
 	import { fmtUsd, fmtPct, fmtDate, relTime, dteSeverity, prioritySeverity } from '$lib/format';
 	import DecisionsView from '$lib/components/DecisionsView.svelte';
+	import PositionHistoryView from '$lib/components/PositionHistoryView.svelte';
 
 	let { data }: { data: PageData } = $props();
 	const p = $derived(data.page);
@@ -293,6 +294,11 @@
 	<DecisionsView decisions={p.decisions} />
 {/if}
 
+<!-- ============ POSITION HISTORY (from ledger) ============ -->
+{#if p.position}
+	<PositionHistoryView position={p.position} />
+{/if}
+
 <!-- ============ WATCHLIST ============ -->
 {#if p.watchlist_entry}
 	<div class="section-head"><h2>watchlist</h2></div>
@@ -305,7 +311,7 @@
 	</div>
 {/if}
 
-{#if !p.thesis && p.decisions.length === 0 && p.options.length === 0 && p.catalysts.upcoming.length === 0 && p.catalysts.past.length === 0 && p.action_items.length === 0 && !p.watchlist_entry}
+{#if !p.thesis && p.decisions.length === 0 && p.options.length === 0 && p.catalysts.upcoming.length === 0 && p.catalysts.past.length === 0 && p.action_items.length === 0 && !p.watchlist_entry && !p.position}
 	<p class="muted">no narrative data found for <span class="mono">{p.symbol}</span>.</p>
 {/if}
 

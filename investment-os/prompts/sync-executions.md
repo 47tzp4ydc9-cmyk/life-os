@@ -98,6 +98,7 @@ For each fetched row:
    - Expirations → `expire_long` or `expire_short` based on the position side.
    - Assignments → `assign_long` or `assign_short`; pair the option exec and the resulting stock exec with `related_id`.
    - Dividends, interest, fees, transfers → use the corresponding action value.
+   - **Wealthsimple `SecurityTransfer` (any sub-type) → `transfer_in` if shares appeared in this account, `transfer_out` if they left.** Same for `InternalSecurityTransfer`. Set `price: null`; put market-value-at-transfer in `net_cash` (Wealthsimple's reported amount). Never map these to `action: other` — `other` is for genuinely ambiguous events, and the dashboard treats `other` as a buy which double-counts cost basis.
    - **If unsure** of the right action for a row, use `other`, fill in `notes` describing what the broker returned, and flag it in the summary so I can review.
 4. **Find a matching decision file.** For each candidate execution that has a `broker_order_ref`, search `narrative/decisions/*.md` for one whose frontmatter `broker_order_ref` field contains the same id. If found, set `decision_ref` to that file's repo-relative path. If multiple decisions reference the same order, pick the most recently created one and add a note.
 5. **Build the YAML execution entry** matching the schema exactly. Use `null` for unknown values; never invent a number you didn't see in the broker data.

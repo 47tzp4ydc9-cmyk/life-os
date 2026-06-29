@@ -14,7 +14,12 @@ export function fmtPct(v: number | null | undefined): string {
 
 export function fmtDate(iso: string | undefined | null): string {
 	if (!iso) return "—";
-	const d = new Date(iso);
+	// Parse YYYY-MM-DD as a local date so we don't shift a day when rendering
+	// in a timezone west of UTC. Fall back to Date(iso) for full timestamps.
+	const ymd = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+	const d = ymd
+		? new Date(Number(ymd[1]), Number(ymd[2]) - 1, Number(ymd[3]))
+		: new Date(iso);
 	if (Number.isNaN(d.getTime())) return iso;
 	return d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }

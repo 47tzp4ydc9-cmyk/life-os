@@ -74,6 +74,99 @@ export type ActionItem = {
 	completed?: string;
 };
 
+export type LedgerExecution = {
+	id: string;
+	date: string;             // ISO YYYY-MM-DD
+	action: string;
+	instrument: string;       // us_stock | cdr | etf | option | cash
+	symbol: string;
+	quantity: number | null;
+	price: number | null;
+	currency: string | null;
+	fees: number | null;
+	net_cash: number | null;
+	account: string;          // slug from ledger frontmatter
+	person: string;
+	option: { right: string; side: string; strike: number; expiry: string } | null;
+	source: string;
+	notes: string | null;
+	// Server-enriched. Signed running balance in this fill's (account, instrument-bucket)
+	// after this fill is applied — shares for stocks, signed contracts for options.
+	position_after?: number;
+};
+
+export type AccountPosition = {
+	account: string;
+	person: string;
+	status: string;           // active | closed
+	currency: string;
+	kind: "stock" | "option";
+	shares_held: number;      // signed: + long, - short. For options: signed contracts.
+	cost_basis: number;       // cash spent acquiring currently-held shares (positive for long)
+	avg_cost: number | null;
+	net_premium: number;      // options only: cumulative net cash on this contract bucket
+	fills: number;
+	last_fill: string | null;
+	transferred_in_shares: number;  // shares acquired via transfer_in (cost basis unknown)
+	realized: number;         // FIFO-matched realized P&L within this bucket (stock kind)
+	closed_lot_count: number; // closed lot count for this bucket
+	winning_lot_count: number;// closed lots with realized > 0
+};
+
+export type PositionSummary = {
+	realized_stock_by_currency:  Record<string, number>;
+	realized_option_by_currency: Record<string, number>;
+	realized_by_currency:        Record<string, number>;
+	unrealized_by_currency:      Record<string, number>;
+	total_return_by_currency:    Record<string, number>;
+	total_return_pct_by_currency: Record<string, number | null>;
+	total_buys_by_currency:      Record<string, number>;
+	total_sells_by_currency:     Record<string, number>;
+	closed_trades_count: number;
+	winning_trades_count: number;
+	win_rate: number | null;       // 0..1 or null if no closed trades
+	peak_long_shares: number;
+	current_long_shares: number;
+	turnover_pct: number | null;   // total close qty / peak long, or null if peak=0
+	avg_cost_by_currency:        Record<string, number>;
+	current_shares_by_currency:  Record<string, number>;
+	live_price: number | null;
+	live_currency: string | null;
+	live_unmatched_currencies: string[]; // buckets whose ccy != live ccy, so unrealized not computed
+};
+
+export type OptionTrade = {
+	account: string;
+	currency: string;
+	symbol: string;
+	right: string;            // C | P
+	side: string;             // long | short
+	strike: number;
+	expiry: string;
+	contracts_opened: number;
+	contracts_closed: number;
+	net_contracts: number;    // signed; 0 = fully closed
+	open_premium: number;     // sum of net_cash on opening legs (negative if long, positive if short)
+	close_premium: number;    // sum of net_cash on closing legs
+	realized: number;         // sum of net_cash across all legs; meaningful if net_contracts == 0
+	opened_date: string;      // first open leg
+	closed_date: string | null; // last closing leg if any
+	status: "open" | "closed" | "partial";
+	close_action: string | null; // primary action on the last close (sell, expire_long, etc.)
+	legs: LedgerExecution[];
+};
+
+export type PositionHistory = {
+	total_long_shares: number;
+	total_short_shares: number;
+	cost_basis_by_currency: Record<string, number>;
+	open_option_contracts: number;
+	by_account: AccountPosition[];
+	option_trades: OptionTrade[]; // grouped option legs; closed trades show realized P&L
+	fills: LedgerExecution[];   // all fills for this symbol, desc by date
+	summary: PositionSummary;
+};
+
 export type TickerPage = {
 	symbol: string;
 	as_of: string;
@@ -84,6 +177,7 @@ export type TickerPage = {
 	catalysts: { upcoming: CatalystData[]; past: CatalystData[] };
 	action_items: ActionItem[];
 	watchlist_entry: Record<string, string> | null;
+	position: PositionHistory | null;
 	computed: {
 		days_since_last_decision: number | null;
 		days_since_thesis_update: number | null;
