@@ -73,3 +73,40 @@ and sector rotation plays surfaced each morning alongside the existing position 
 **To fix:** Include a "Trade Ideas" section in the morning briefing prompt (see ISSUE-002).
 Structure: 1-3 high-conviction ideas with entry, target, stop, and catalyst. Distinguish between
 ideas that fit existing positions (adds/trims) vs new ideas.
+
+---
+
+## ISSUE-004 — Trade Ideas section lacks buy-the-rumor/sell-the-news check on catalysts
+
+**Discovered:** 2026-06-30  
+**Module:** investment-os  
+**File:** `investment-os/prompts/morning-briefing.md`  
+**Status:** open — prompt needs update  
+
+**Description:**  
+A Trade Ideas entry for NVO (pre-Medicare-Part-D-coverage add) cited "seniors largely unaware" of
+GLP-1 Medicare coverage as the informational edge driving the catalyst. On review, the news had
+already been covered in mainstream financial press (CNBC and others) for several days prior, and
+NVO's price action showed weakness/selling into the catalyst rather than a rumor-driven run-up —
+so the claimed informational asymmetry didn't hold up under a quick search check.
+
+**Root cause:** The Trade Ideas section generates catalyst-driven setups without checking (a) how
+long the catalyst has been public knowledge, or (b) whether price action already reflects
+anticipation of the catalyst (a run-up = likely priced in already).
+
+**To fix:** Update the Trade Ideas generation logic in `investment-os/prompts/morning-briefing.md`
+so any idea citing a specific catalyst includes a one-line staleness/price-action check:
+  1. Search how long the catalyst has been public (hours vs. days vs. weeks).
+  2. Note whether price has already run up toward the catalyst (rumor priced in) or stayed
+     flat/weak (edge may still exist, or market is skeptical for other reasons).
+  3. Explicitly state in the catalyst description whether the thesis relies on informational
+     asymmetry (fresh, not-yet-priced news) vs. a fundamental re-rating bet that happens to
+     coincide with a date.
+  4. If the catalyst is stale (covered >48h in mainstream financial press) and informational
+     asymmetry is the core thesis, downgrade conviction language or flag explicitly — e.g.
+     "catalyst is public knowledge as of [date]; thesis depends on follow-through data, not
+     informational edge."
+
+**Acceptance criteria:**
+- Trade ideas citing a catalyst include a one-line staleness/price-action check.
+- Language avoids implying informational asymmetry ("X is unaware of Y") unless verified fresh.
