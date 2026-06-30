@@ -12,12 +12,7 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 ## Open
 
 - [ ] **smci-evaluate-position** — Taiwan chip-smuggling raid Jun 29 breaks "governance cleared" thesis; check SMCI price in WS Margin; if < $28 trim 100-150 sh; hard stop $26; do not add `priority:high` `due:2026-06-30` `related:SMCI` `account:ws_margin`
-- [ ] cancel stale IBKR working order: BMNR Jan15'27 25P BTC limit @ $5 `priority:medium` `related:BMNR` `account:ibkr_margin`
-- [ ] cancel stale IBKR working order: NOW Jul24'26 96P BTC limit @ $3 `priority:medium` `related:NOW` `account:ibkr_margin`
-- [ ] cancel stale IBKR working order: ASTS Aug21'26 85P BTC limit @ $8 `priority:medium` `related:ASTS` `account:ibkr_margin`
-- [ ] decide INTC Sep18'26 65C — buy back at -$5,500 or let assign at $65 in Sep `priority:high` `due:2026-08-15` `related:INTC` `account:ibkr_margin`
 - [ ] roll ASTS Jul17'26 90P before expiry (17 DTE as of Jun 30 — crosses 14-day 🔴 threshold Thu Jul 3; roll before then) `priority:high` `due:2026-07-02` `related:ASTS` `account:ibkr_margin`
-- [ ] check WS margin available after recent buys; transfer cash if needed (transfer from IBKR completed Jun 29 — verify WS balance is now stable) `priority:high` `due:2026-06-30` `account:ws_margin`
 - [ ] AMD entry window: advance to Jul 14-18 (AMD Advancing AI event Jul 22-23 is a catalyst ahead of Aug 4 earnings) `priority:medium` `due:2026-07-14` `related:AMD`
 - [ ] stage META Jan27 $550C in RRSP when IBKR option chain stable `priority:medium` `related:META` `account:ibkr_margin`
 - [ ] revisit IREN entry per prediction (MACD turn + $50 reclaim) `priority:low` `due:2026-07-15` `related:IREN`
@@ -39,3 +34,8 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [x] buy 20 CIEN in WS Margin @ $486 (after hours) `completed:2026-06-25`
 - [x] buy 50 MRVL in WS Janisha Margin @ $266.05 (overnight) `completed:2026-06-25`
 - [x] sell 58 EOSU @ $24 to exit leveraged ETF before rights offering `completed:2026-06-25`
+- [x] cancel stale IBKR working order: BMNR Jan15'27 25P BTC limit @ $5 — absent from IBKR working orders as of Jun 30; treated as cancelled `completed:2026-06-30`
+- [x] cancel stale IBKR working order: NOW Jul24'26 96P BTC limit @ $3 — absent from IBKR working orders as of Jun 30; treated as cancelled `completed:2026-06-30`
+- [x] cancel stale IBKR working order: ASTS Aug21'26 85P BTC limit @ $8 — absent from IBKR working orders as of Jun 30; treated as cancelled `completed:2026-06-30`
+- [x] decide INTC Sep18'26 65C — bought back Jun 26 @ $65.34/contract (realized loss ~$5,426); all 300 INTC shares sold Jun 24–26 @ avg ~$129 (realized gain ~$25,400 on stock); INTC position fully closed. See Correction note in 2026-06-30-morning.md. `completed:2026-06-26`
+- [x] check WS margin available after recent buys; transfer cash if needed (IBKR→WS transfer completed Jun 29 per 2026-06-30-morning.md) `completed:2026-06-29`
