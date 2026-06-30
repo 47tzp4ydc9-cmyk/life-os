@@ -4,7 +4,7 @@ account: ws_rrsp
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-06-30T00:00:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:c8a5316463ec"
@@ -2026,6 +2026,23 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
     notes: Oklo Inc.
+  - id: "manual:766efb92ce56"
+    date: 2026-06-30
+    action: buy
+    instrument: us_stock
+    symbol: POET
+    quantity: 500
+    price: 9.959
+    currency: USD
+    fees: 0
+    net_cash: -4979.50
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: decisions/2026-06-30-poet.md
+    source: wealthsimple
+    imported_at: "2026-06-30T00:00:00Z"
+    notes: POET Technologies Inc
 ---
 
 # Ws Rrsp — execution ledger
