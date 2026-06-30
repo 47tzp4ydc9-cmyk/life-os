@@ -2043,6 +2043,40 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-30T00:00:00Z"
     notes: POET Technologies Inc
+  - id: "manual:a8663bb85238"
+    date: 2026-06-30
+    action: sell
+    instrument: us_stock
+    symbol: POET
+    quantity: 500
+    price: 10.155
+    currency: USD
+    fees: 0
+    net_cash: 5077.50
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: decisions/2026-06-30-poet.md
+    source: wealthsimple
+    imported_at: "2026-06-30T00:00:00Z"
+    notes: POET Technologies Inc — closed scalp, exited early vs 5-6% target
+  - id: "manual:7fd3b5cb7d82"
+    date: 2026-06-30
+    action: buy
+    instrument: etf
+    symbol: EOSU
+    quantity: 250
+    price: 22.09
+    currency: USD
+    fees: 0
+    net_cash: -5522.50
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: decisions/2026-06-30-eosu.md
+    source: wealthsimple
+    imported_at: "2026-06-30T00:00:00Z"
+    notes: T-Rex 2X Long EOSE Daily Target ETF — overnight scalp, target 5-8%
 ---
 
 # Ws Rrsp — execution ledger
