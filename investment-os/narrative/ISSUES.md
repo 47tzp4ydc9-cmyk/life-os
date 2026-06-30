@@ -110,3 +110,30 @@ so any idea citing a specific catalyst includes a one-line staleness/price-actio
 **Acceptance criteria:**
 - Trade ideas citing a catalyst include a one-line staleness/price-action check.
 - Language avoids implying informational asymmetry ("X is unaware of Y") unless verified fresh.
+
+---
+
+## ISSUE-005 — Unknown ledger: ws_jatan_corp.md exists but not in _shared/accounts.md
+
+**Discovered:** 2026-06-30  
+**Module:** investment-os  
+**File:** `investment-os/narrative/ledger/ws_jatan_corp.md`  
+**Status:** open — needs clarification  
+
+**Description:**  
+A ledger file `ws_jatan_corp.md` exists in the ledger directory but is not listed in
+`_shared/accounts.md` as an authorized account slug. When reconciling MRVL positions across all
+accounts, this ledger was found but excluded from the tally because the account slug is not
+recognized as valid per AGENTS.md rules ("Use only person and account slugs from
+_shared/accounts.md — never invent variants").
+
+**Questions:**
+1. Is `ws_jatan_corp` a legitimate account that should be added to `_shared/accounts.md`?
+2. If yes, is it a Wealthsimple account belonging to Jatan, and what is its full canonical slug?
+3. If no, should the ledger file be archived or deleted?
+
+**Impact:** Low (ledger exists but is not included in multi-account position tallies until slug
+is recognized). May grow in importance if this is an active account being funded.
+
+**To fix:** Either (a) add `ws_jatan_corp` to `_shared/accounts.md` with full metadata, or
+(b) move/delete the ledger file and document the decision in this issue.
