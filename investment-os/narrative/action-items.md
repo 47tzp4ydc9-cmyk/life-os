@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-06-27
+updated: 2026-06-30
 ---
 
 # Action items
@@ -11,16 +11,17 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 
 ## Open
 
+- [ ] **smci-evaluate-position** — Taiwan chip-smuggling raid Jun 29 breaks "governance cleared" thesis; check SMCI price in WS Margin; if < $28 trim 100-150 sh; hard stop $26; do not add `priority:high` `due:2026-06-30` `related:SMCI` `account:ws_margin`
 - [ ] cancel stale IBKR working order: BMNR Jan15'27 25P BTC limit @ $5 `priority:medium` `related:BMNR` `account:ibkr_margin`
 - [ ] cancel stale IBKR working order: NOW Jul24'26 96P BTC limit @ $3 `priority:medium` `related:NOW` `account:ibkr_margin`
 - [ ] cancel stale IBKR working order: ASTS Aug21'26 85P BTC limit @ $8 `priority:medium` `related:ASTS` `account:ibkr_margin`
 - [ ] decide INTC Sep18'26 65C — buy back at -$5,500 or let assign at $65 in Sep `priority:high` `due:2026-08-15` `related:INTC` `account:ibkr_margin`
-- [ ] roll ASTS Jul17'26 90P before expiry (currently ~$19 ITM, 21 days) `priority:high` `due:2026-07-10` `related:ASTS` `account:ibkr_margin`
-- [ ] check WS margin available after recent buys; transfer cash if needed `priority:high` `due:2026-06-29` `account:ws_margin`
-- [ ] AMD entry window: ~2 weeks before Aug 4 earnings `priority:medium` `due:2026-07-21` `related:AMD`
+- [ ] roll ASTS Jul17'26 90P before expiry (17 DTE as of Jun 30 — crosses 14-day 🔴 threshold Thu Jul 3; roll before then) `priority:high` `due:2026-07-02` `related:ASTS` `account:ibkr_margin`
+- [ ] check WS margin available after recent buys; transfer cash if needed (transfer from IBKR completed Jun 29 — verify WS balance is now stable) `priority:high` `due:2026-06-30` `account:ws_margin`
+- [ ] AMD entry window: advance to Jul 14-18 (AMD Advancing AI event Jul 22-23 is a catalyst ahead of Aug 4 earnings) `priority:medium` `due:2026-07-14` `related:AMD`
 - [ ] stage META Jan27 $550C in RRSP when IBKR option chain stable `priority:medium` `related:META` `account:ibkr_margin`
 - [ ] revisit IREN entry per prediction (MACD turn + $50 reclaim) `priority:low` `due:2026-07-15` `related:IREN`
-- [ ] revisit CRWV add at $97-100 floor + bounce confirmation `priority:low` `due:2026-07-10` `related:CRWV`
+- [ ] revisit CRWV add at $97-100 floor + bounce confirmation (currently $96.40, below floor — wait for close above $98 on volume) `priority:low` `due:2026-07-10` `related:CRWV`
 - [ ] revisit HOOD at $77-80 base + higher-low formation `priority:low` `due:2026-07-15` `related:HOOD`
 - [ ] check NVO move on/after 2026-07-01 Medicare Part D start `priority:medium` `due:2026-07-02` `related:NVO` `account:ws_margin`
 - [ ] track WDC next earnings reaction (Janisha account) `priority:medium` `related:WDC` `account:ws_janisha_margin`
