@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-06-30
+updated: 2026-07-01
 ---
 
 # Action items
@@ -12,14 +12,15 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 ## Open
 
 - [ ] **smci-evaluate-position** — Taiwan chip-smuggling raid Jun 29 breaks "governance cleared" thesis; check SMCI price in WS Margin; if < $28 trim 100-150 sh; hard stop $26; do not add `priority:high` `due:2026-06-30` `related:SMCI` `account:ws_margin`
+- [ ] **smci-reassess-position** — Taiwan smuggling probe widened Jun 29 (raided Taiwan office + 3 affiliates + 6 individuals' homes); no DOJ/SEC follow-up yet but thesis remains broken; stock ~$28-29, still above $26 hard stop; reassess trim/hold ahead of Aug 11 earnings `priority:high` `due:2026-07-01` `related:SMCI` `account:ws_margin`
 - [ ] roll ASTS Jul17'26 90P before expiry (17 DTE as of Jun 30 — crosses 14-day 🔴 threshold Thu Jul 3; roll before then) `priority:high` `due:2026-07-02` `related:ASTS` `account:ibkr_margin`
 - [ ] AMD entry window: advance to Jul 14-18 (AMD Advancing AI event Jul 22-23 is a catalyst ahead of Aug 4 earnings) `priority:medium` `due:2026-07-14` `related:AMD`
 - [ ] stage META Jan27 $550C in RRSP when IBKR option chain stable `priority:medium` `related:META` `account:ibkr_margin`
 - [ ] revisit IREN entry per prediction (MACD turn + $50 reclaim) `priority:low` `due:2026-07-15` `related:IREN`
-- [ ] revisit CRWV add at $97-100 floor + bounce confirmation (currently $96.40, below floor — wait for close above $98 on volume) `priority:low` `due:2026-07-10` `related:CRWV`
+- [ ] revisit CRWV add at $97-100 floor + bounce confirmation (currently $100, testing the floor — wait for close above $98 on volume) `priority:low` `due:2026-07-10` `related:CRWV`
 - [ ] revisit HOOD at $77-80 base + higher-low formation `priority:low` `due:2026-07-15` `related:HOOD`
-- [ ] check NVO move on/after 2026-07-01 Medicare Part D start `priority:medium` `due:2026-07-02` `related:NVO` `account:ws_margin`
 - [ ] track WDC next earnings reaction (Janisha account) `priority:medium` `related:WDC` `account:ws_janisha_margin`
+- [ ] reassess RKLB short put strikes/rolls given the Iridium acquisition re-rate (stock ~$102, all 4 short puts less ITM); watch deal-financing/dilution details `priority:medium` `due:2026-07-08` `related:RKLB` `account:ibkr_margin`
 
 ## Completed
 
