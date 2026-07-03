@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-01
+updated: 2026-07-03
 ---
 
 # Action items
@@ -11,6 +11,7 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 
 ## Open
 
+- [ ] **smci-stop-flip-review** — stopped out of the Jun25 300sh lot at $27.54 (Jul1, realized -$1,290) then re-bought 300sh @ $28.50 the next day (Jul2), one day before the Taiwan probe escalated to employee detentions; confirm the re-entry was deliberate and decide hold/trim/exit on the new lot ahead of Aug11 earnings `priority:high` `due:2026-07-03` `related:SMCI` `account:ws_margin`
 - [ ] **smci-evaluate-position** — Taiwan chip-smuggling raid Jun 29 breaks "governance cleared" thesis; check SMCI price in WS Margin; if < $28 trim 100-150 sh; hard stop $26; do not add `priority:high` `due:2026-06-30` `related:SMCI` `account:ws_margin`
 - [ ] **smci-reassess-position** — Taiwan smuggling probe widened Jun 29 (raided Taiwan office + 3 affiliates + 6 individuals' homes); no DOJ/SEC follow-up yet but thesis remains broken; stock ~$28-29, still above $26 hard stop; reassess trim/hold ahead of Aug 11 earnings `priority:high` `due:2026-07-01` `related:SMCI` `account:ws_margin`
 - [ ] roll ASTS Jul17'26 90P before expiry (17 DTE as of Jun 30 — crosses 14-day 🔴 threshold Thu Jul 3; roll before then) `priority:high` `due:2026-07-02` `related:ASTS` `account:ibkr_margin`
