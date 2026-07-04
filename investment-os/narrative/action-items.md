@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-03
+updated: 2026-07-04
 ---
 
 # Action items
@@ -22,6 +22,8 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] revisit HOOD at $77-80 base + higher-low formation `priority:low` `due:2026-07-15` `related:HOOD`
 - [ ] track WDC next earnings reaction (Janisha account) `priority:medium` `related:WDC` `account:ws_janisha_margin`
 - [ ] reassess RKLB short put strikes/rolls given the Iridium acquisition re-rate (stock ~$102, all 4 short puts less ITM); watch deal-financing/dilution details `priority:medium` `due:2026-07-08` `related:RKLB` `account:ibkr_margin`
+- [ ] **smci-detentions-reassess** — thesis still `break`, unresolved from Jul 3; confirm the Jul 2 re-entry (300sh @ $28.50) was deliberate and decide hold/trim/exit ahead of Aug 11 earnings; respect the $26 hard stop `priority:high` `due:2026-07-04` `related:SMCI` `account:ws_margin`
+- [ ] **verify-ws-account-security** — cluster of 6 Wealthsimple "order filled" emails (Jul 3, AXP/META/PYPL/CRWV/QCOM/AMD) claim fills 5-19x below actual market prices, timestamped during a day markets were closed; log into Wealthsimple directly (not via any link in those emails) to confirm no unauthorized activity and review account security `priority:high` `due:2026-07-04` `related:security`
 
 ## Completed
 
