@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-04
+updated: 2026-07-05
 ---
 
 # Action items
@@ -20,10 +20,12 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] revisit IREN entry per prediction (MACD turn + $50 reclaim) `priority:low` `due:2026-07-15` `related:IREN`
 - [ ] revisit CRWV add at $97-100 floor + bounce confirmation (currently $100, testing the floor — wait for close above $98 on volume) `priority:low` `due:2026-07-10` `related:CRWV`
 - [ ] revisit HOOD at $77-80 base + higher-low formation `priority:low` `due:2026-07-15` `related:HOOD`
-- [ ] track WDC next earnings reaction (Janisha account) `priority:medium` `related:WDC` `account:ws_janisha_margin`
+- [ ] track WDC next earnings reaction (Janisha account) — earnings call now confirmed Jul 29, formal report Aug 5 `priority:medium` `related:WDC` `account:ws_janisha_margin`
 - [ ] reassess RKLB short put strikes/rolls given the Iridium acquisition re-rate (stock ~$102, all 4 short puts less ITM); watch deal-financing/dilution details `priority:medium` `due:2026-07-08` `related:RKLB` `account:ibkr_margin`
 - [ ] **smci-detentions-reassess** — thesis still `break`, unresolved from Jul 3; confirm the Jul 2 re-entry (300sh @ $28.50) was deliberate and decide hold/trim/exit ahead of Aug 11 earnings; respect the $26 hard stop `priority:high` `due:2026-07-04` `related:SMCI` `account:ws_margin`
 - [ ] **verify-ws-account-security** — cluster of 6 Wealthsimple "order filled" emails (Jul 3, AXP/META/PYPL/CRWV/QCOM/AMD) claim fills 5-19x below actual market prices, timestamped during a day markets were closed; log into Wealthsimple directly (not via any link in those emails) to confirm no unauthorized activity and review account security `priority:high` `due:2026-07-04` `related:security`
+- [ ] **smci-taiwan-probe-reassess** — weekend research (Jul3 eve–Jul5) confirms no new developments in the Taiwan detention case; thesis remains `break`, unresolved for a full week; confirm the Jul2 re-entry (300sh @ $28.50) was deliberate and decide hold/trim/exit ahead of Aug11 earnings; respect the $26 hard stop `priority:high` `due:2026-07-05` `related:SMCI` `account:ws_margin`
+- [ ] reconcile RKLB option-position file vs live IBKR: `narrative/options/rklb-105p-2026-07-10.md` records the current leg as Sep18'26 105P, but live IBKR shows Aug21'26 105P instead (no Sep18'26 105P present) alongside Oct16'26 110P/145P — confirm whether an unrecorded roll happened, then update the file `priority:medium` `related:RKLB` `account:ibkr_margin`
 
 ## Completed
 
