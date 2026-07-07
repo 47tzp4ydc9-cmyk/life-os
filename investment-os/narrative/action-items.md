@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-05
+updated: 2026-07-07
 ---
 
 # Action items
@@ -26,6 +26,9 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **verify-ws-account-security** — cluster of 6 Wealthsimple "order filled" emails (Jul 3, AXP/META/PYPL/CRWV/QCOM/AMD) claim fills 5-19x below actual market prices, timestamped during a day markets were closed; log into Wealthsimple directly (not via any link in those emails) to confirm no unauthorized activity and review account security `priority:high` `due:2026-07-04` `related:security`
 - [ ] **smci-taiwan-probe-reassess** — weekend research (Jul3 eve–Jul5) confirms no new developments in the Taiwan detention case; thesis remains `break`, unresolved for a full week; confirm the Jul2 re-entry (300sh @ $28.50) was deliberate and decide hold/trim/exit ahead of Aug11 earnings; respect the $26 hard stop `priority:high` `due:2026-07-05` `related:SMCI` `account:ws_margin`
 - [ ] reconcile RKLB option-position file vs live IBKR: `narrative/options/rklb-105p-2026-07-10.md` records the current leg as Sep18'26 105P, but live IBKR shows Aug21'26 105P instead (no Sep18'26 105P present) alongside Oct16'26 110P/145P — confirm whether an unrecorded roll happened, then update the file `priority:medium` `related:RKLB` `account:ibkr_margin`
+- [ ] **smci-day8-decision-overdue** — 8 days since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50) with zero resolution recorded; no further DOJ/SEC development found as of Jul6. Stop deferring — decide hold/trim/exit now ahead of Aug11 earnings, respecting the $26 hard stop `priority:high` `due:2026-07-06` `related:SMCI` `account:ws_margin`
+- [ ] **ws-fake-fill-recurrence-verify** — second occurrence of suspicious Wealthsimple fill notifications: RRSP claims a 150.3938sh META sale @ $31.51 (real price $600.29, ~19x off) and Margin claims a NVDA buy @ $44.11 (real price $195.55, ~4.4x off) — same signature as the unresolved Jul3 cluster. Log into Wealthsimple directly (never via the email links), confirm whether these orders are real, review account/inbox security. Do not reconcile these prices into any position or P&L record. `priority:high` `due:2026-07-07` `related:security`
+- [ ] **smci-day9-decision-critical** — 9 days since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50) with zero resolution recorded; exhaustive search confirms there is no new DOJ/SEC development to wait for. Decide hold/trim/exit today, respect the $26 hard stop, ahead of Aug11 earnings `priority:high` `due:2026-07-07` `related:SMCI` `account:ws_margin`
 
 ## Completed
 
