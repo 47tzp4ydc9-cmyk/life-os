@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-07
+updated: 2026-07-08
 ---
 
 # Action items
@@ -29,6 +29,10 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **smci-day8-decision-overdue** — 8 days since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50) with zero resolution recorded; no further DOJ/SEC development found as of Jul6. Stop deferring — decide hold/trim/exit now ahead of Aug11 earnings, respecting the $26 hard stop `priority:high` `due:2026-07-06` `related:SMCI` `account:ws_margin`
 - [ ] **ws-fake-fill-recurrence-verify** — second occurrence of suspicious Wealthsimple fill notifications: RRSP claims a 150.3938sh META sale @ $31.51 (real price $600.29, ~19x off) and Margin claims a NVDA buy @ $44.11 (real price $195.55, ~4.4x off) — same signature as the unresolved Jul3 cluster. Log into Wealthsimple directly (never via the email links), confirm whether these orders are real, review account/inbox security. Do not reconcile these prices into any position or P&L record. `priority:high` `due:2026-07-07` `related:security`
 - [ ] **smci-day9-decision-critical** — 9 days since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50) with zero resolution recorded; exhaustive search confirms there is no new DOJ/SEC development to wait for. Decide hold/trim/exit today, respect the $26 hard stop, ahead of Aug11 earnings `priority:high` `due:2026-07-07` `related:SMCI` `account:ws_margin`
+- [ ] **ws-margin-call-risk-verify** — WS margin account (HQ850HX03CAD) alert Jul7: available margin down to $465.23 CAD, flagged at risk of a margin call. Log in directly (never via email links), confirm current available margin, and free up cash/trim deliberately today if still thin. `priority:high` `due:2026-07-08` `related:security` `account:ws_margin`
+- [ ] **smci-day10-force-decision** — 10 days since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50); 7th consecutive briefing carrying this exact undecided call; exhaustive search confirms zero new developments to wait for. Decide hold/trim/exit today, respect the $26 hard stop, ahead of Aug11 earnings. `priority:high` `due:2026-07-08` `related:SMCI` `account:ws_margin`
+- [ ] **intc-reconcile-100sh-position** — IBKR shows 100 INTC shares open (avg $109.13) despite action-items.md recording a full close (300sh + options buyback) completed 2026-06-26; no decision file or news explains a new entry. Pull IBKR trade history for this lot's actual open date/price and either log the missing decision file or correct the closure record. `priority:high` `due:2026-07-08` `related:INTC` `account:ibkr_margin`
+- [ ] **keel-reassess-after-execution-red-flags** — KEEL down to $4.44 (-8.3% Jul7) on reports of project delays/capex overruns at flagship sites (Panther Creek, Sharon, Moses Lake) despite a positive new-President hire (Jul6); position is only 3 days old. Do not average down; tighten the stop below recent lows and confirm the turnaround thesis still holds against real execution risk, not just sector beta. `priority:high` `due:2026-07-08` `related:KEEL`
 
 ## Completed
 
