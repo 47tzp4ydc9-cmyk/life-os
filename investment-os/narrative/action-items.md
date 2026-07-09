@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-08
+updated: 2026-07-09
 ---
 
 # Action items
@@ -33,6 +33,10 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **smci-day10-force-decision** — 10 days since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50); 7th consecutive briefing carrying this exact undecided call; exhaustive search confirms zero new developments to wait for. Decide hold/trim/exit today, respect the $26 hard stop, ahead of Aug11 earnings. `priority:high` `due:2026-07-08` `related:SMCI` `account:ws_margin`
 - [ ] **intc-reconcile-100sh-position** — IBKR shows 100 INTC shares open (avg $109.13) despite action-items.md recording a full close (300sh + options buyback) completed 2026-06-26; no decision file or news explains a new entry. Pull IBKR trade history for this lot's actual open date/price and either log the missing decision file or correct the closure record. `priority:high` `due:2026-07-08` `related:INTC` `account:ibkr_margin`
 - [ ] **keel-reassess-after-execution-red-flags** — KEEL down to $4.44 (-8.3% Jul7) on reports of project delays/capex overruns at flagship sites (Panther Creek, Sharon, Moses Lake) despite a positive new-President hire (Jul6); position is only 3 days old. Do not average down; tighten the stop below recent lows and confirm the turnaround thesis still holds against real execution risk, not just sector beta. `priority:high` `due:2026-07-08` `related:KEEL`
+- [ ] **ws-margin-call-active** — Margin account (HQ850HX03CAD) escalated from "risk of margin call" (Jul7) to an actual margin call, available margin below $0 as of Jul8 07:09 ET. Log in directly, confirm current available margin, free up cash/trim today. `priority:high` `due:2026-07-09` `related:security` `account:ws_margin`
+- [ ] **ws-unrecognized-trades-verify** — Three new Wealthsimple buys (SOXL $1,670 + NOK $4,699 in Margin, IONQ $4,560 in TFSA; ~$10,977 total) placed Jul8 09:33-09:38 ET, same morning as the margin call, match no tracked thesis/watchlist/five-filter research. Fill prices are realistic (not the known fake-fill signature). Log in directly and confirm whether these were authorized; treat as a possible compromise if not recognized. `priority:high` `due:2026-07-09` `related:security`
+- [ ] **rklb-reassess-after-lawsuit-dilution** — Securities class action filed Jul1 targets Neutron program disclosures directly; $3B ATM offering also priced; stock -10.4% Jul7; all 3 short puts (Aug21 105P, Oct16 110P, Oct16 145P) deeper ITM. Reassess roll/defend strategy and whether thesis conviction should drop from modify toward break. `priority:high` `due:2026-07-09` `related:RKLB` `account:ibkr_margin`
+- [ ] **smci-day11-force-decision** — 11th day / 8th consecutive briefing carrying this undecided call since the Jun29 Taiwan-detention news and Jul2 re-entry (300sh @ $28.50). Stock bounced +7.3% to $28.17 on unrelated news, comfortably above the $26 stop, but the Taiwan case remains fully unresolved. Decide hold/trim/exit today, ahead of Aug11 earnings. `priority:high` `due:2026-07-09` `related:SMCI` `account:ws_margin`
 
 ## Completed
 
