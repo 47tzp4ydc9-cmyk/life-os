@@ -4,7 +4,7 @@ account: ibkr_margin
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-07-07T00:00:00Z
 sources_used: [ibkr]
 executions:
   - id: "ibkr:exec:3055552215"
@@ -4652,6 +4652,342 @@ executions:
     source: ibkr
     imported_at: "2026-06-28T00:00:00Z"
     notes: flags=IA;P
+  - id: "ibkr:exec:00012dfa.6a4248fd.01.01"
+    date: 2026-06-29
+    action: buy
+    instrument: us_stock
+    symbol: COHR
+    quantity: 30
+    price: 375.61
+    currency: USD
+    fees: 1.00009
+    net_cash: -11269.30009
+    broker_order_ref: null
+    fill_ref: 00012dfa.6a4248fd.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "COHERENT CORP"
+  - id: "ibkr:exec:00010279.6a42c07d.01.01"
+    date: 2026-06-29
+    action: buy
+    instrument: us_stock
+    symbol: IREN
+    quantity: 100
+    price: 45.865
+    currency: USD
+    fees: 1.0003
+    net_cash: -4587.5003
+    broker_order_ref: null
+    fill_ref: 00010279.6a42c07d.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "IREN LTD"
+  - id: "ibkr:exec:0000f942.6a453859.01.01"
+    date: 2026-07-01
+    action: short_close
+    instrument: option
+    symbol: ASTS
+    quantity: 1
+    price: 7.34
+    currency: USD
+    fees: 1.04028
+    net_cash: -735.04028
+    broker_order_ref: null
+    fill_ref: 0000f942.6a453859.01.01
+    option:
+      right: put
+      side: short
+      strike: 90
+      expiry: 2026-07-17
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "ASTS 17JUL26 90 P"
+  - id: "ibkr:exec:0000f75a.6a455d3a.01.01"
+    date: 2026-07-01
+    action: buy
+    instrument: us_stock
+    symbol: GLW
+    quantity: 50
+    price: 221.84
+    currency: USD
+    fees: 1.00015
+    net_cash: -11093.00015
+    broker_order_ref: null
+    fill_ref: 0000f75a.6a455d3a.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CORNING INC"
+  - id: "ibkr:exec:0000da59.6a452727.01.01"
+    date: 2026-07-01
+    action: short_close
+    instrument: option
+    symbol: NOW
+    quantity: 1
+    price: 3.26
+    currency: USD
+    fees: 1.0473
+    net_cash: -327.0473
+    broker_order_ref: null
+    fill_ref: 0000da59.6a452727.01.01
+    option:
+      right: put
+      side: short
+      strike: 96
+      expiry: 2026-07-24
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "NOW 24JUL26 96 P"
+  - id: "ibkr:exec:0002920b.6a455570.01.01"
+    date: 2026-07-01
+    action: other
+    instrument: option
+    symbol: NOW
+    quantity: 1
+    price: 3.28
+    currency: USD
+    fees: 0.3333
+    net_cash: -328.3333
+    broker_order_ref: null
+    fill_ref: 0002920b.6a455570.01.01
+    option:
+      right: put
+      side: long
+      strike: 96
+      expiry: 2026-07-24
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "NOW 24JUL26 96 P — no ledger enum for long-option legs; recorded as other"
+  - id: "ibkr:exec:0000da59.6a4528e1.01.01"
+    date: 2026-07-01
+    action: other
+    instrument: option
+    symbol: NOW
+    quantity: 1
+    price: 3.35
+    currency: USD
+    fees: 1.057491
+    net_cash: 333.942509
+    broker_order_ref: null
+    fill_ref: 0000da59.6a4528e1.01.01
+    option:
+      right: put
+      side: long
+      strike: 96
+      expiry: 2026-07-24
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "NOW 24JUL26 96 P — no ledger enum for long-option legs; recorded as other"
+  - id: "ibkr:exec:00012e0e.6a4675be.01.01"
+    date: 2026-07-02
+    action: buy
+    instrument: us_stock
+    symbol: GLW
+    quantity: 50
+    price: 196.395
+    currency: USD
+    fees: 1.00015
+    net_cash: -9820.75015
+    broker_order_ref: null
+    fill_ref: 00012e0e.6a4675be.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CORNING INC"
+  - id: "ibkr:exec:00010129.6a46d961.01.01"
+    date: 2026-07-02
+    action: buy
+    instrument: us_stock
+    symbol: IREN
+    quantity: 100
+    price: 38.1
+    currency: USD
+    fees: 1.0003
+    net_cash: -3811.0003
+    broker_order_ref: null
+    fill_ref: 00010129.6a46d961.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "IREN LTD"
+  - id: "ibkr:exec:0000da59.6a467515.01.01"
+    date: 2026-07-02
+    action: short_close
+    instrument: option
+    symbol: NOW
+    quantity: 1
+    price: 12.99
+    currency: USD
+    fees: 1.0473
+    net_cash: -1300.0473
+    broker_order_ref: null
+    fill_ref: 0000da59.6a467515.01.01
+    option:
+      right: put
+      side: short
+      strike: 105
+      expiry: 2026-10-16
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "NOW 16OCT26 105 P"
+  - id: "ibkr:exec:0000fb2c.6a46bce9.01.01"
+    date: 2026-07-02
+    action: short_close
+    instrument: option
+    symbol: RKLB
+    quantity: 1
+    price: 20.53
+    currency: USD
+    fees: 1.04028
+    net_cash: -2054.04028
+    broker_order_ref: null
+    fill_ref: 0000fb2c.6a46bce9.01.01
+    option:
+      right: put
+      side: short
+      strike: 105
+      expiry: 2026-09-18
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "RKLB 18SEP26 105 P"
+  - id: "ibkr:exec:000100df.6a4b7196.01.01"
+    date: 2026-07-06
+    action: buy
+    instrument: us_stock
+    symbol: CRWV
+    quantity: 50
+    price: 82.87
+    currency: USD
+    fees: 1.00015
+    net_cash: -4144.50015
+    broker_order_ref: null
+    fill_ref: 000100df.6a4b7196.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "COREWEAVE INC-CL A"
+  - id: "ibkr:exec:00010168.6a4b77f0.01.01"
+    date: 2026-07-06
+    action: buy
+    instrument: us_stock
+    symbol: NBIS
+    quantity: 40
+    price: 216.03
+    currency: USD
+    fees: 1.00012
+    net_cash: -8642.20012
+    broker_order_ref: null
+    fill_ref: 00010168.6a4b77f0.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "NEBIUS GROUP NV"
+  - id: "ibkr:exec:0000febb.6a4d22a1.01.01"
+    date: 2026-07-07
+    action: sell
+    instrument: us_stock
+    symbol: ADBE
+    quantity: 30
+    price: 228.13
+    currency: USD
+    fees: 1.146924
+    net_cash: 6842.753076
+    broker_order_ref: null
+    fill_ref: 0000febb.6a4d22a1.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "ADOBE INC"
+  - id: "ibkr:exec:00018d31.6a4d0400.01.01"
+    date: 2026-07-07
+    action: buy
+    instrument: us_stock
+    symbol: GLW
+    quantity: 75
+    price: 183.22
+    currency: USD
+    fees: 1.000225
+    net_cash: -13742.500225
+    broker_order_ref: null
+    fill_ref: 00018d31.6a4d0400.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CORNING INC"
+  - id: "ibkr:exec:00030e5e.6dd3bb48.01.01"
+    date: 2026-07-07
+    action: buy
+    instrument: us_stock
+    symbol: INTC
+    quantity: 100
+    price: 109.1195
+    currency: USD
+    fees: 1.0003
+    net_cash: -10912.9503
+    broker_order_ref: null
+    fill_ref: 00030e5e.6dd3bb48.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "INTEL CORP"
+  - id: "ibkr:exec:0000d97f.6a4d33d7.01.01"
+    date: 2026-07-07
+    action: sell
+    instrument: us_stock
+    symbol: NOW
+    quantity: 100
+    price: 111.705
+    currency: USD
+    fees: 1.249912
+    net_cash: 11169.250088
+    broker_order_ref: null
+    fill_ref: 0000d97f.6a4d33d7.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "SERVICENOW INC"
+  - id: "ibkr:exec:00030e5e.6dd4b65c.01.01"
+    date: 2026-07-07
+    action: buy
+    instrument: us_stock
+    symbol: RKLB
+    quantity: 100
+    price: 84.8795
+    currency: USD
+    fees: 1.0003
+    net_cash: -8488.9503
+    broker_order_ref: null
+    fill_ref: 00030e5e.6dd4b65c.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "ROCKET LAB CORP"
 ---
 
 # Ibkr Margin — execution ledger
