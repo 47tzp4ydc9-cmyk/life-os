@@ -137,3 +137,83 @@ is recognized). May grow in importance if this is an active account being funded
 
 **To fix:** Either (a) add `ws_jatan_corp` to `_shared/accounts.md` with full metadata, or
 (b) move/delete the ledger file and document the decision in this issue.
+
+---
+
+## ISSUE-006 — Ledger position totals are incorrect; parser does not handle open/close state
+
+**Discovered:** 2026-07-10  
+**Module:** investment-os  
+**File:** `investment-os/narrative/ledger/*.md` (all accounts)  
+**Status:** open — blocking accurate position reporting  
+
+**Description:**  
+When Claude tallies positions (e.g., "how much META do I have?"), the script calculates gross
+shares or options by summing buys and subtracting sells. However, it does NOT track open vs. closed
+states for options. For example:
+
+- `short_open` 1 PUT on 2026-05-06 @ $55.55 (strike $590)
+- `short_close` 1 PUT on 2026-05-22 @ $54.05 (strike $590)
+
+The script treats these as **two separate contracts** (net -1 short) instead of recognizing them as
+a single contract opened and closed. When multiple opens/closes occur on the same position
+(same symbol, strike, expiry, side), the tally becomes wrong.
+
+**Example:** META was reported as having 4 open short puts in ibkr_margin, but all 4 were actually
+closed (2 pairs of open/close). Correct position: 0 open puts.
+
+**Root cause:** The parser only looks at action (`short_open`, `short_close`, `buy`, `sell`) and
+quantity, not the actual state machine (contract is open until it's closed).
+
+**Impact:** High — users see phantom positions when checking holdings. Makes risk assessment
+incorrect.
+
+**To fix:** Update the position tally logic to:
+1. Group options by (symbol, strike, expiry, side) key.
+2. For each key, iterate fills chronologically and track state:
+   - Start: quantity = 0, state = "closed"
+   - `short_open` → quantity -= N, state = "open"
+   - `short_close` → quantity += N, state = "closed"
+   - `buy` (for longs) → quantity += N, state = "open"
+   - `sell` (for longs) → quantity -= N, state = "closed"
+3. Only report positions where quantity ≠ 0 AND state = "open".
+
+Alternatively: add a `closed_at` field to the ledger schema for options, and only count entries
+where `closed_at` is null.
+
+---
+
+## ISSUE-007 — Fetching ledger positions requires manual Python script; should be automated
+
+**Discovered:** 2026-07-10  
+**Module:** investment-os  
+**File:** `investment-os/data/` (no cache) or new automation needed  
+**Status:** open — needs tooling  
+
+**Description:**  
+To answer "what's my total META position?", Claude currently must:
+1. Clone the repo (network I/O).
+2. Run a multi-account grep/regex script (parsing, state machine).
+3. Aggregate results manually.
+4. Report back.
+
+This is fragile because: (a) it's ad-hoc script, not reusable, (b) it conflicts with IBKR live
+data (which shows different numbers if ledger is stale), (c) running this every time is slow and
+uses unnecessary token budget.
+
+**Root cause:** No automated position cache exists. The AGENTS.md guidance says "prefer reading
+SQLite database for live quantitative questions" but no DB schema or build pipeline is documented.
+
+**To fix:** One or more of:
+1. Create a `investment-os/data/positions.db` (SQLite) that is built from ledger files on each
+   commit (or refreshed separately), indexed by (account, symbol, is_option).
+2. Create an `investment-os/data/positions.json` snapshot (regeneratable) that Claude can read
+   in <100ms (no parsing needed).
+3. Alternatively, add a `position_summary()` helper or prompt in `investment-os/prompts/` that
+   wraps the script and can be called via MCP.
+4. For live (intraday) questions, require IBKR fetch, not ledger — ledger is historical.
+
+**Acceptance criteria:**
+- Multi-account position queries return in <1s without running a regex script.
+- Results agree with ledger when ledger is current.
+- Results agree with IBKR when ledger is stale (IBKR is source of truth for live positions).
