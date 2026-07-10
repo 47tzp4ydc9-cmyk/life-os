@@ -4,7 +4,7 @@ account: ws_margin
 person: jatan
 status: active
 opened: 2026-04-24
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-07-09T21:36:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:841dd06fcb68"
@@ -1147,6 +1147,619 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
     notes: Super Micro Computer Inc
+  - id: "manual:0bf261274ead"
+    date: 2026-07-01
+    action: buy
+    instrument: us_stock
+    symbol: NKE
+    quantity: 100
+    price: 40.08
+    currency: USD
+    fees: 0
+    net_cash: -4008
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:dc4bc93402cc"
+    date: 2026-07-01
+    action: other
+    instrument: option
+    symbol: NVDA
+    quantity: 1
+    price: 27.25
+    currency: USD
+    fees: 0
+    net_cash: -2725
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 205
+      expiry: 2027-02-19
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:7ceee5cd989f"
+    date: 2026-07-02
+    action: other
+    instrument: option
+    symbol: META
+    quantity: 1
+    price: 88.9
+    currency: USD
+    fees: 0
+    net_cash: 8890
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 580
+      expiry: 2026-12-18
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:745999a5d96b"
+    date: 2026-07-02
+    action: buy
+    instrument: us_stock
+    symbol: NBIS
+    quantity: 50
+    price: 237.29
+    currency: USD
+    fees: 0
+    net_cash: -11864.5
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:f078d1e5edac"
+    date: 2026-07-02
+    action: buy
+    instrument: us_stock
+    symbol: NBIS
+    quantity: 40
+    price: 238.01
+    currency: USD
+    fees: 0
+    net_cash: -9520.4
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:1cde93cb7ed7"
+    date: 2026-07-02
+    action: sell
+    instrument: us_stock
+    symbol: NKE
+    quantity: 100
+    price: 42.29
+    currency: USD
+    fees: 0
+    net_cash: 4229
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:12729791e8a9"
+    date: 2026-07-02
+    action: sell
+    instrument: us_stock
+    symbol: SMCI
+    quantity: 300
+    price: 27.54
+    currency: USD
+    fees: 0
+    net_cash: 8262
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:4428e17bc87e"
+    date: 2026-07-02
+    action: buy
+    instrument: us_stock
+    symbol: SMR
+    quantity: 1000
+    price: 10.395
+    currency: USD
+    fees: 0
+    net_cash: -10395
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:de2974d1aa09"
+    date: 2026-07-03
+    action: buy
+    instrument: etf
+    symbol: XCLN
+    quantity: 0.3349
+    price: 46.5685
+    currency: CAD
+    fees: 0
+    net_cash: -15.6
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:4308657a879e"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: AMD
+    quantity: 200
+    price: 95.88
+    currency: CAD
+    fees: 0
+    net_cash: -19176
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:b0989a6bf115"
+    date: 2026-07-06
+    action: other
+    instrument: option
+    symbol: AMD
+    quantity: 1
+    price: 60.45
+    currency: USD
+    fees: 0
+    net_cash: -6045
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 530
+      expiry: 2026-08-21
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:d59e402b81d2"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: CRWV
+    quantity: 100
+    price: 16.19
+    currency: CAD
+    fees: 0
+    net_cash: -1619
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:53ce54e4e0f1"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: META
+    quantity: 0.966
+    price: 31.4056
+    currency: CAD
+    fees: 0
+    net_cash: -30.34
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:e01ec9d020d0"
+    date: 2026-07-06
+    action: other
+    instrument: option
+    symbol: NOW
+    quantity: 1
+    price: 25.57
+    currency: USD
+    fees: 0
+    net_cash: 2557
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 100
+      expiry: 2027-03-19
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:74f32688fa13"
+    date: 2026-07-06
+    action: sell
+    instrument: us_stock
+    symbol: NVO
+    quantity: 200
+    price: 50.295
+    currency: USD
+    fees: 0
+    net_cash: 10059
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:c875b9c2e1fd"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: QCOM
+    quantity: 200
+    price: 23.97
+    currency: CAD
+    fees: 0
+    net_cash: -4794
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:7c534571ede3"
+    date: 2026-07-06
+    action: buy
+    instrument: us_stock
+    symbol: SMCI
+    quantity: 300
+    price: 28.5
+    currency: USD
+    fees: 0
+    net_cash: -8550
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:ecbf538e2dcb"
+    date: 2026-07-07
+    action: other
+    instrument: option
+    symbol: AMD
+    quantity: 1
+    price: 86.62
+    currency: USD
+    fees: 0
+    net_cash: 8662
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 530
+      expiry: 2026-08-21
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:85710d9546e8"
+    date: 2026-07-07
+    action: buy
+    instrument: us_stock
+    symbol: KEEL
+    quantity: 650
+    price: 4.68
+    currency: USD
+    fees: 0
+    net_cash: -3042
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:a77426ae1f6d"
+    date: 2026-07-07
+    action: buy
+    instrument: us_stock
+    symbol: MU
+    quantity: 5
+    price: 1031.85
+    currency: USD
+    fees: 0
+    net_cash: -5159.25
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:d478d159989f"
+    date: 2026-07-07
+    action: buy
+    instrument: us_stock
+    symbol: VRT
+    quantity: 20
+    price: 304.18
+    currency: USD
+    fees: 0
+    net_cash: -6083.6
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:79538e7f2e7a"
+    date: 2026-07-08
+    action: other
+    instrument: option
+    symbol: AMD
+    quantity: 1
+    price: 60.53
+    currency: USD
+    fees: 0
+    net_cash: -6053
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 520
+      expiry: 2026-08-21
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:296afeba7d0f"
+    date: 2026-07-08
+    action: buy
+    instrument: etf
+    symbol: DRAM
+    quantity: 100
+    price: 61.1387
+    currency: USD
+    fees: 0
+    net_cash: -6113.87
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:ea90022f38fa"
+    date: 2026-07-08
+    action: other
+    instrument: option
+    symbol: GOOG
+    quantity: 1
+    price: 74.55
+    currency: USD
+    fees: 0
+    net_cash: 7455
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 350
+      expiry: 2027-09-17
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:d28317fc648c"
+    date: 2026-07-08
+    action: sell
+    instrument: cdr
+    symbol: META
+    quantity: 500
+    price: 32.2
+    currency: CAD
+    fees: 0
+    net_cash: 16100
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:4d1ac6a37065"
+    date: 2026-07-08
+    action: buy
+    instrument: us_stock
+    symbol: RKLB
+    quantity: 100
+    price: 90.92
+    currency: USD
+    fees: 0
+    net_cash: -9092
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:5d69a841a367"
+    date: 2026-07-09
+    action: buy
+    instrument: cdr
+    symbol: NKE
+    quantity: 0.1782
+    price: 7.63
+    currency: CAD
+    fees: 0
+    net_cash: -1.36
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:dbb80218e153"
+    date: 2026-07-09
+    action: buy
+    instrument: cdr
+    symbol: NKE
+    quantity: 2.3604
+    price: 7.63
+    currency: CAD
+    fees: 0
+    net_cash: -18.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:818e7ee0c7dc"
+    date: 2026-07-09
+    action: buy
+    instrument: us_stock
+    symbol: NOK
+    quantity: 400
+    price: 11.7485
+    currency: USD
+    fees: 0
+    net_cash: -4699.4
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:cc3c7346170f"
+    date: 2026-07-09
+    action: buy
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 20
+    price: 172.9699
+    currency: USD
+    fees: 0
+    net_cash: -3459.4
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:45415f8d8448"
+    date: 2026-07-09
+    action: buy
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 10
+    price: 175.455
+    currency: USD
+    fees: 0
+    net_cash: -1754.55
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:b17b4243998e"
+    date: 2026-07-09
+    action: buy
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 10
+    price: 167.0225
+    currency: USD
+    fees: 0
+    net_cash: -1670.23
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:271074216112"
+    date: 2026-07-09
+    action: sell
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 20
+    price: 173.855
+    currency: USD
+    fees: 0
+    net_cash: 3477.1
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:e6fb8a009bfb"
+    date: 2026-07-09
+    action: sell
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 20
+    price: 176.5658
+    currency: USD
+    fees: 0
+    net_cash: 3531.32
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
 ---
 
 # Ws Margin — execution ledger
