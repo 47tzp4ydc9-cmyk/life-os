@@ -4,7 +4,7 @@ account: ws_tfsa
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-07-09T21:36:00Z
 sources_used: [wealthsimple, ibkr]
 executions:
   - id: "manual:239558c79e5f"
@@ -991,6 +991,74 @@ executions:
     source: ibkr
     imported_at: "2026-06-28T00:00:00Z"
     notes: "originally booked in ibkr_tfsa (closed account); transferred to ws_tfsa 2026-06-25/26; IBKR FX conversion (SELL 0.00915282 USD.CAD @ FX rate 1)"
+  - id: "manual:71f424921bc0"
+    date: 2026-07-07
+    action: sell
+    instrument: us_stock
+    symbol: PLTR
+    quantity: 1
+    price: 133.4158
+    currency: USD
+    fees: 0
+    net_cash: 133.42
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:6f274c7922ad"
+    date: 2026-07-09
+    action: buy
+    instrument: us_stock
+    symbol: IONQ
+    quantity: 100
+    price: 45.6
+    currency: USD
+    fees: 0
+    net_cash: -4560
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:289ca2aff504"
+    date: 2026-07-09
+    action: sell
+    instrument: us_stock
+    symbol: JMIA
+    quantity: 100
+    price: 6.7301
+    currency: USD
+    fees: 0
+    net_cash: 673.01
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:9ed7074fe9d7"
+    date: 2026-07-09
+    action: sell
+    instrument: us_stock
+    symbol: MVST
+    quantity: 400
+    price: 1.0711
+    currency: USD
+    fees: 0
+    net_cash: 428.44
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
 ---
 
 # Ws Tfsa — execution ledger
