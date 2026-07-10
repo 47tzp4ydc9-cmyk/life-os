@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-10T00:00:00Z
+updated: 2026-07-10T06:45:00Z
 ---
 
 # Action items
@@ -39,6 +39,10 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **account-id-margin-vs-corp-mixup** — Two prior incidents (Jul7 NVDA fill, Jul7-8 margin-call alerts) misattributed account HQ850HX03CAD (`ws_jatan_corp`, Corporate Investing Margin) to `ws_margin` (personal, HQ98WL909CAD) — likely because both surface as just "Margin" in some notification text. Both root-caused and corrected via the Jul9 statement export. Worth double-checking `account_id` against `_shared/accounts.md` whenever a note just says "Margin" without qualifying which one. `priority:low` `related:security`
 - [ ] **ibkr-margin-jul8-9-gap** — the IBKR Sharesight export only covers through Jul 7; `ibkr_margin` ledger now synced to Jul 7, but Jul 8-9 activity (if any) is still unknown for this account. Need a fresh export or working IBKR MCP access to close the gap. `priority:medium` `related:ibkr_margin` `account:ibkr_margin`
 - [ ] **backfill-decisions-jul-reallocation-cluster** — no decision files exist for the ADBE/NOW→GLW/INTC/RKLB/NBIS/CRWV reallocation (Jul1-7, ibkr_margin) or the COHR/IREN adds (Jun29-Jul2) — 10 equity legs plus the ASTS/NOW/RKLB option closes, all undocumented. `priority:medium` `related:ibkr_margin` `account:ibkr_margin`
+- [ ] **ibkr-corp-transfer-verify** — Unrecognized request received Jul9 18:20 ET to transfer a "Corporate investing account" from Interactive Brokers Canada Inc. to Wealthsimple (destination: ws_jatan_corp, already mid-margin-call). No matching account in `_shared/accounts.md`, no decision file. Confirm today whether this was self-initiated; if not, contact WS support to halt and treat as account compromise. `priority:high` `due:2026-07-10` `related:security` `account:ws_jatan_corp`
+- [ ] **ws-jatan-corp-margin-call-jul10-due** — Second margin call notice (Jul9 07:09 ET), amount -$806.50 CAD, **due date Jul 10 (today)**. Confirm current status and resolve before broker force-liquidates. `priority:high` `due:2026-07-10` `related:security` `account:ws_jatan_corp`
+- [ ] **pipeline-resync-investigate** — No morning briefing generated today and daily-order-sync did not run for any account (all `last_synced_at` stale; `ibkr_margin.md` stuck at 2026-06-28, 12 days). Investigate scheduler/connector auth; `ibkr_margin` likely needs a manual, human-reviewed `sync account ibkr_margin` catch-up (too large for the same-day fast path). `priority:high` `due:2026-07-11` `related:schema`
+- [ ] **smci-day12-force-decision** — 12th day / 9th+ consecutive briefing carrying this undecided call since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50); no new development found in the Taiwan case this cycle either. Decide hold/trim/exit today, respect the $26 hard stop, ahead of Aug11 earnings. `priority:high` `due:2026-07-10` `related:SMCI` `account:ws_margin`
 
 ## Completed
 
