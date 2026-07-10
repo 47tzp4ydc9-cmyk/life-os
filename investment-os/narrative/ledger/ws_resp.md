@@ -4,7 +4,7 @@ account: ws_resp
 person: jatan
 status: active
 opened: 2025-07-25
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-07-09T21:36:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:df27e84bbdeb"
@@ -57,7 +57,7 @@ executions:
     decision_ref: null
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
-    notes: WS internal security transfer (shares in); Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF
+    notes: WS internal security transfer (shares in); Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF
   - id: "manual:23e9a91f2cc1"
     date: 2025-07-25
     action: transfer_in
@@ -628,7 +628,7 @@ executions:
     decision_ref: null
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
-    notes: Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF
+    notes: Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF
   - id: "manual:fae93acb403e"
     date: 2026-02-11
     action: other
@@ -1685,7 +1685,7 @@ executions:
     decision_ref: null
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
-    notes: "originally booked in ws_resp_closed (legacy WS RESP, WK-prefix); transferred to ws_resp 2025-07-25; WS internal security transfer (shares out); Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF"
+    notes: "originally booked in ws_resp_closed (legacy WS RESP, WK-prefix); transferred to ws_resp 2025-07-25; WS internal security transfer (shares out); Goldman Sachs ActiveBeta World Low Vol Plus Equity ETF"
   - id: "manual:f01f4dabafa3"
     date: 2025-07-25
     action: transfer_out
@@ -1873,6 +1873,176 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
     notes: "originally booked in ws_resp_closed (legacy WS RESP, WK-prefix); transferred to ws_resp 2025-07-25; WS administrative payment (MANAGEMENT_FEE_REFUND)"
+  - id: "manual:853305cad7a9"
+    date: 2026-06-30
+    action: buy
+    instrument: etf
+    symbol: QCN
+    quantity: 0.0422
+    price: 212.2223
+    currency: CAD
+    fees: 0
+    net_cash: -8.96
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:a0c3ecb66ce4"
+    date: 2026-07-03
+    action: sell
+    instrument: cdr
+    symbol: NKE
+    quantity: 150
+    price: 7.86
+    currency: CAD
+    fees: 0
+    net_cash: 1179
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:0754be75b4b6"
+    date: 2026-07-03
+    action: sell
+    instrument: etf
+    symbol: QCN
+    quantity: 8.2348
+    price: 212.36
+    currency: CAD
+    fees: 0
+    net_cash: 1748.74
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:e6e6d9d36d78"
+    date: 2026-07-06
+    action: sell
+    instrument: us_stock
+    symbol: META
+    quantity: 0.0032
+    price: 595.42
+    currency: USD
+    fees: 0
+    net_cash: 1.91
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:3d2594cc4dc8"
+    date: 2026-07-07
+    action: buy
+    instrument: etf
+    symbol: ZEA
+    quantity: 0.0193
+    price: 32.06
+    currency: CAD
+    fees: 0
+    net_cash: -0.62
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:b660e1629407"
+    date: 2026-07-07
+    action: buy
+    instrument: etf
+    symbol: ZEA
+    quantity: 0.49
+    price: 32.06
+    currency: CAD
+    fees: 0
+    net_cash: -15.71
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:cb295d82ceb5"
+    date: 2026-07-07
+    action: buy
+    instrument: etf
+    symbol: ZFL
+    quantity: 0.2643
+    price: 12.0666
+    currency: CAD
+    fees: 0
+    net_cash: -3.19
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:17aa167af248"
+    date: 2026-07-09
+    action: buy
+    instrument: cdr
+    symbol: NKE
+    quantity: 0.093
+    price: 7.63
+    currency: CAD
+    fees: 0
+    net_cash: -0.71
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:c6aebf1995c4"
+    date: 2026-07-09
+    action: buy
+    instrument: cdr
+    symbol: NKE
+    quantity: 1.1769
+    price: 7.63
+    currency: CAD
+    fees: 0
+    net_cash: -8.98
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:1b613c8d8b08"
+    date: 2026-07-09
+    action: sell
+    instrument: cdr
+    symbol: NKE
+    quantity: 1.2699
+    price: 7.71
+    currency: CAD
+    fees: 0
+    net_cash: 9.79
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
 ---
 
 # Ws Resp — execution ledger
