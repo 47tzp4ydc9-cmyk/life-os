@@ -4,7 +4,7 @@ account: ws_rrsp
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-06-30T00:00:00Z
+last_synced_at: 2026-07-09T21:36:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:c8a5316463ec"
@@ -2077,6 +2077,320 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-30T00:00:00Z"
     notes: T-Rex 2X Long EOSE Daily Target ETF — overnight scalp, target 5-8%
+  - id: "manual:6d54b67c8d99"
+    date: 2026-07-01
+    action: buy
+    instrument: etf
+    symbol: EOSU
+    quantity: 250
+    price: 22.0899
+    currency: USD
+    fees: 0
+    net_cash: -5522.48
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:018fb68791e7"
+    date: 2026-07-01
+    action: buy
+    instrument: us_stock
+    symbol: POET
+    quantity: 500
+    price: 9.959
+    currency: USD
+    fees: 0
+    net_cash: -4979.5
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:44d0055764d5"
+    date: 2026-07-01
+    action: sell
+    instrument: us_stock
+    symbol: POET
+    quantity: 500
+    price: 10.155
+    currency: USD
+    fees: 0
+    net_cash: 5077.5
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:7267d07a25b3"
+    date: 2026-07-06
+    action: other
+    instrument: option
+    symbol: AMD
+    quantity: 1
+    price: 54.43
+    currency: USD
+    fees: 0
+    net_cash: -5443
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 530
+      expiry: 2026-08-21
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:b3c045bf2b46"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: META
+    quantity: 0.0098
+    price: 31.4056
+    currency: CAD
+    fees: 0
+    net_cash: -0.31
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:f1956fd8eba8"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: META
+    quantity: 0.1257
+    price: 31.4056
+    currency: CAD
+    fees: 0
+    net_cash: -3.95
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:8067f1f08a33"
+    date: 2026-07-06
+    action: sell
+    instrument: us_stock
+    symbol: RIVN
+    quantity: 75
+    price: 18.5819
+    currency: USD
+    fees: 0
+    net_cash: 1393.64
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:6effe2998437"
+    date: 2026-07-07
+    action: other
+    instrument: option
+    symbol: AMD
+    quantity: 1
+    price: 86.01
+    currency: USD
+    fees: 0
+    net_cash: 8601
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 530
+      expiry: 2026-08-21
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:2b8699749cf4"
+    date: 2026-07-07
+    action: sell
+    instrument: us_stock
+    symbol: IREN
+    quantity: 100
+    price: 44.5227
+    currency: USD
+    fees: 0
+    net_cash: 4452.27
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:1284c308de6e"
+    date: 2026-07-07
+    action: sell
+    instrument: cdr
+    symbol: META
+    quantity: 150.3938
+    price: 31.51
+    currency: CAD
+    fees: 0
+    net_cash: 4738.91
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:86f58aaa98d7"
+    date: 2026-07-07
+    action: other
+    instrument: option
+    symbol: META
+    quantity: 1
+    price: 84.8
+    currency: USD
+    fees: 0
+    net_cash: -8480
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 600
+      expiry: 2027-03-19
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:1ef435acb18c"
+    date: 2026-07-08
+    action: buy
+    instrument: cdr
+    symbol: AMZN
+    quantity: 50
+    price: 27.85
+    currency: CAD
+    fees: 0
+    net_cash: -1392.5
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:5c9a92f04867"
+    date: 2026-07-08
+    action: sell
+    instrument: cdr
+    symbol: AMZN
+    quantity: 100
+    price: 27.88
+    currency: CAD
+    fees: 0
+    net_cash: 2788
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:0fd9e6b917c6"
+    date: 2026-07-08
+    action: buy
+    instrument: us_stock
+    symbol: CLS
+    quantity: 3
+    price: 493.91
+    currency: CAD
+    fees: 0
+    net_cash: -1481.73
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:09a4e846835a"
+    date: 2026-07-08
+    action: sell
+    instrument: us_stock
+    symbol: CLS
+    quantity: 6
+    price: 492.87
+    currency: CAD
+    fees: 0
+    net_cash: 2957.22
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Source: Wealthsimple activity export."
+  - id: "manual:88956d1c07cd"
+    date: 2026-07-09
+    action: other
+    instrument: option
+    symbol: GOOG
+    quantity: 1
+    price: 68.43
+    currency: USD
+    fees: 0
+    net_cash: -6843
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 350
+      expiry: 2027-09-17
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:fb5a14aee169"
+    date: 2026-07-09
+    action: other
+    instrument: option
+    symbol: GOOG
+    quantity: 1
+    price: 70
+    currency: USD
+    fees: 0
+    net_cash: 7000
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 350
+      expiry: 2027-09-17
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
 ---
 
 # Ws Rrsp — execution ledger
