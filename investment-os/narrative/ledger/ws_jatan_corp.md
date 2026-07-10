@@ -4,7 +4,7 @@ account: ws_jatan_corp
 person: jatan
 status: active
 opened: 2025-05-27
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-07-09T21:36:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:bc661fad0b49"
@@ -1078,6 +1078,125 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
     notes: Uber CDR (CAD Hedged)
+  - id: "manual:04217e3603b9"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: META
+    quantity: 0.0576
+    price: 31.4056
+    currency: CAD
+    fees: 0
+    net_cash: -1.81
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:fb97e0bce882"
+    date: 2026-07-06
+    action: buy
+    instrument: cdr
+    symbol: PYPL
+    quantity: 0.8023
+    price: 3.2655
+    currency: CAD
+    fees: 0
+    net_cash: -2.62
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:3549cb819dbc"
+    date: 2026-07-07
+    action: buy
+    instrument: cdr
+    symbol: NVDA
+    quantity: 0.0031
+    price: 44.1133
+    currency: CAD
+    fees: 0
+    net_cash: -0.14
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:61b0c01b4762"
+    date: 2026-07-07
+    action: buy
+    instrument: cdr
+    symbol: NVDA
+    quantity: 0.2176
+    price: 44.1133
+    currency: CAD
+    fees: 0
+    net_cash: -9.6
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:e8c2a90f60d9"
+    date: 2026-07-08
+    action: sell
+    instrument: cdr
+    symbol: PYPL
+    quantity: 0.8023
+    price: 3.25
+    currency: CAD
+    fees: 0
+    net_cash: 2.61
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:69eddd5cf491"
+    date: 2026-07-09
+    action: sell
+    instrument: cdr
+    symbol: NKE
+    quantity: 100
+    price: 7.71
+    currency: CAD
+    fees: 0
+    net_cash: 771
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:2627ff8dad49"
+    date: 2026-07-09
+    action: sell
+    instrument: cdr
+    symbol: NVDA
+    quantity: 0.2207
+    price: 45.25
+    currency: CAD
+    fees: 0
+    net_cash: 9.99
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-10T00:00:00Z"
+    notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
 ---
 
 # Ws Jatan Corp — execution ledger
