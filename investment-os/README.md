@@ -119,30 +119,61 @@ Step 1 — Read repo state via life-os MCP:
 
 Step 2 — Define Tier 1 universe (the names that must be checked):
 - All open option positions
-- Top 10 equity positions by exposure (notional × |delta|)
+- Top 30 equity positions by exposure (notional × |delta|)
 - All watchlist entries with target_entry set
+- All watchlist entries regardless of target_entry (ISSUE-002 fix — every
+  watchlist name gets a live price check, not just ones with a set target)
 For each Tier 1 name, also load narrative/theses/<symbol>.md if it exists.
 
 Step 3 — Pull live data:
 - IBKR: positions, working orders, NLV, leverage, cash, buying power
-- Gmail: Wealthsimple confirmations since prior briefing (mine + Janisha's forwarded)
+- Gmail: Wealthsimple confirmations since prior briefing (mine + Janisha's
+  forwarded). For each fill found, check if a matching opposite-side fill for
+  the same symbol/account exists in the same window (see Step 4.5).
 
-Step 4 — Per Tier 1 name, fetch news (last 24h):
-- web_search: "<TICKER> news last 24 hours"
+Step 4 — Per Tier 1 name, fetch news (last  72 h):
+- web_search: "<TICKER> news last 72 hours"
 - SEC EDGAR: any 8-K filed since prior briefing
 - Classify each material item on six dimensions per schemas/briefing.md:
   type, direction, magnitude, technical impact, thesis impact, suggested action
 - Skip filler (press release rehashes, generic "stock moves on X" articles)
 
+Step 4.5 — Same-day round-trip detection (ISSUE-003 fix):
+- From the Gmail fills pulled in Step 3, detect any symbol/account pair with
+  both a buy and a sell fill dated since the prior briefing where no existing
+  decision file's broker_order_ref covers both legs.
+- For each detected round-trip: compute realized P&L (sell proceeds - buy cost,
+  gross), holding duration, and draft a decision file per
+  investment-os/schemas/decision.md covering both legs as one entry (see
+  2026-06-29-wdc-intraday.md for the format/tone to match — thesis, chart
+  context, what-I'm-wrong-about, and an Outcome table with both legs).
+- List these as a "Day trades detected" subsection in the briefing showing the
+  draft decision filename and a one-line summary (symbol, qty, P&L, duration).
+- Do NOT auto-commit these decision files — they require explicit confirmation
+  even though the rest of this routine runs autonomously, since they assert a
+  retrospective thesis on the user's behalf. Mention in the briefing that
+  they're pending confirmation; commit only on a separate follow-up message.
+
 Step 5 — Severity-rank into 🔴 action / 🟡 monitor / 🟢 quiet per schemas/briefing.md.
+- Any watchlist name newly at or below its entry target ranks at least 🟡.
 
 Step 6 — Early-exit:
-If 🔴 = 0 AND 🟡 ≤ 1 AND no catalyst firing today AND SPY pre-market move < 1%,
+If 🔴 = 0 AND 🟡 ≤ 1 AND no catalyst firing today AND SPY pre-market move < 1%
+AND no day trades detected in Step 4.5,
 write the short-form briefing (frontmatter + Quick Read + one-line quiet status)
 and stop. Do not pad.
+(A detected day trade alone does not block early-exit on the rest of the
+briefing, but the "Day trades detected" subsection is never omitted if Step 4.5
+found one — append it even to the short-form briefing.)
 
 Step 7 — Compose the briefing using the rich format in schemas/briefing.md
-(tables, tags, severity sections). Commit via life-os commit_file to
+(tables, tags, severity sections), plus these two additions to the contract:
+- **Trade Ideas** section: 2–4 ideas drawn from Tier 1 names showing momentum,
+  dip-buy setups on confirmed theses, or options income/roll opportunities.
+  Each idea: entry, target, stop, catalyst, size guidance, and whether it adds
+  to an existing position or is new. No more than one purely speculative idea.
+- **Day trades detected** section per Step 4.5 (omit if none found).
+Commit via life-os commit_file to
 investment-os/narrative/briefings/YYYY-MM-DD-morning.md with message
 "briefing: YYYY-MM-DD morning".
 
@@ -155,6 +186,7 @@ Hard rules:
 - Do not write outside narrative/. Do not modify schemas/, strategies/, or _shared/.
 - One briefing per session per day. Do not overwrite — corrections via the
   ## Correction pattern documented in schemas/briefing.md.
+- Never auto-commit a day-trade decision file — surface it, wait for confirm.
 - If commit_file fails, retry once. If it still fails, output the briefing as
   a chat message tagged "BRIEFING-FALLBACK" so I can paste it in manually.
 ```
