@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-11T10:45:00Z
+updated: 2026-07-11T21:35:00Z
 ---
 
 # Action items
@@ -47,6 +47,8 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **ws-jatan-corp-margin-status-jul11** — ws_jatan_corp available margin alert Jul10 11:12 ET shows $337.49 CAD available (back to positive from the Jul9 -$806.50 active call, but still flagged "at risk of a margin call"); the Jul10-due margin call's resolution was never confirmed in this system. Log in directly and confirm current margin status is actually resolved, not just temporarily positive. `priority:high` `due:2026-07-11` `related:security` `account:ws_jatan_corp`
 - [ ] **ibkr-corp-transfer-securities-decision** — New Jul10 14:27 ET email confirms the Corporate-investing IBKR→Wealthsimple transfer IS in progress ("you recently initiated...") and requires a decision today on 6 ineligible securities (OPEN 20NOV26 13C/17C/9C, ACHR 17JUL26 7C, SOFI 17JUL26 20C, NIO INC-CLASS A): leave behind or liquidate. This still doesn't resolve whether the transfer itself was self-initiated (contradicts the "unrecognized" framing from Jul9) — confirm authorization AND make the leave-behind/liquidate call before the transfer stalls further. `priority:high` `due:2026-07-11` `related:security` `account:ws_jatan_corp`
 - [ ] **verify-jul10-mu-fill-email-unconfirmed** — Jul10 13:41 ET Wealthsimple "partially filled" email claims a Margin-account MU buy, 25 of 125 sh @ $42.47 — real MU trades ~$979-991, ~23x higher, matching the established spoofed-notification pattern (same signature as the Jul3/Jul9 fake-fill incidents). Not logged as a real trade. Log in directly (never via email links) and confirm no unauthorized MU order exists. `priority:high` `due:2026-07-11` `related:security` `account:ws_margin`
+- [ ] **smci-day14-force-decision** — 14th day / 11th+ consecutive briefing carrying this undecided call since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50); no new development found this evening either (Jul9 21:36 ET remains the last confirmed ledger sync, no fresh Taiwan-case news via web search). Decide hold/trim/exit at next opportunity, respect the $26 hard stop, ahead of Aug11 earnings. `priority:high` `due:2026-07-13` `related:SMCI` `account:ws_margin`
+- [ ] **pipeline-resync-escalate** — `daily-order-sync` failed to run for a second consecutive day (Jul10 and Jul11); every ledger `last_synced_at` is now 2+ days stale, `ibkr_margin.md` is 13 days stale, and the live price feed (`get_quote`/`get_candles`) has no print past Jul10 close as of Jul11 evening. This is no longer a one-off — investigate scheduler/connector auth directly rather than waiting for tomorrow's routine to self-heal. `priority:high` `due:2026-07-13` `related:schema`
 
 ## Completed
 
