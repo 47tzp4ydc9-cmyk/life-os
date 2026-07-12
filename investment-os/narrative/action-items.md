@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-11T21:35:00Z
+updated: 2026-07-12T07:15:00Z
 ---
 
 # Action items
@@ -49,6 +49,11 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **verify-jul10-mu-fill-email-unconfirmed** — Jul10 13:41 ET Wealthsimple "partially filled" email claims a Margin-account MU buy, 25 of 125 sh @ $42.47 — real MU trades ~$979-991, ~23x higher, matching the established spoofed-notification pattern (same signature as the Jul3/Jul9 fake-fill incidents). Not logged as a real trade. Log in directly (never via email links) and confirm no unauthorized MU order exists. `priority:high` `due:2026-07-11` `related:security` `account:ws_margin`
 - [ ] **smci-day14-force-decision** — 14th day / 11th+ consecutive briefing carrying this undecided call since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50); no new development found this evening either (Jul9 21:36 ET remains the last confirmed ledger sync, no fresh Taiwan-case news via web search). Decide hold/trim/exit at next opportunity, respect the $26 hard stop, ahead of Aug11 earnings. `priority:high` `due:2026-07-13` `related:SMCI` `account:ws_margin`
 - [ ] **pipeline-resync-escalate** — `daily-order-sync` failed to run for a second consecutive day (Jul10 and Jul11); every ledger `last_synced_at` is now 2+ days stale, `ibkr_margin.md` is 13 days stale, and the live price feed (`get_quote`/`get_candles`) has no print past Jul10 close as of Jul11 evening. This is no longer a one-off — investigate scheduler/connector auth directly rather than waiting for tomorrow's routine to self-heal. `priority:high` `due:2026-07-13` `related:schema`
+- [ ] **smci-day15-force-decision** — 15th day / 12th+ consecutive briefing carrying this undecided call since the Jun29 Taiwan-detention news and the Jul2 re-entry (300sh @ $28.50); dedicated fresh search this session confirms zero new developments in the Taiwan case. Decide hold/trim/exit, respect the $26 hard stop, ahead of Aug11 earnings. `priority:high` `due:2026-07-12` `related:SMCI` `account:ws_margin`
+- [ ] **ws-jatan-corp-margin-status-jul12** — no new Wealthsimple email since the Jul10 11:12 ET "at risk of a margin call" alert ($337.49 CAD available); resolution still never confirmed. Log in directly and confirm current status. `priority:high` `due:2026-07-12` `related:security` `account:ws_jatan_corp`
+- [ ] **ibkr-corp-transfer-decision-overdue** — the Jul10 14:27 ET transfer-in-progress email (6 ineligible securities needing leave-behind/liquidate) remains unactioned with no new information this session. Confirm authorization and make the call today. `priority:high` `due:2026-07-12` `related:security` `account:ws_jatan_corp`
+- [ ] **verify-mu-fill-email-jul12** — no recurrence of the spoofed MU fill email this session, but the underlying inbox/account security question remains unverified. Log in directly and confirm no unauthorized MU order exists. `priority:high` `due:2026-07-12` `related:security` `account:ws_margin`
+- [ ] **pipeline-feed-frozen-full-session-missed** — `get_quote`/`get_candles` confirmed still stuck at Jul10 (Thu) 20:00 UTC close across every symbol checked this session (SPY, SMCI, WDC, MRVL, ANET, CIEN, VRT, MU, CBRS, KEEL, AVGO) — Friday Jul 11's entire live trading session never landed in the feed. IBKR's own account snapshot (NLV/leverage/positions) is also byte-identical to Friday evening's figures across 30+ positions, which is itself worth independently verifying (either zero net drift, or the IBKR snapshot isn't refreshing either). This is now beyond the originally-scoped `pipeline-resync-escalate` (due Jul13) — needs direct scheduler/connector investigation, not another self-heal wait. `priority:high` `due:2026-07-13` `related:schema`
 
 ## Completed
 
