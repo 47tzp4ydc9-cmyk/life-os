@@ -4,7 +4,7 @@ account: ws_tfsa
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-09T21:36:00Z
+last_synced_at: 2026-07-13T20:30:00Z
 sources_used: [wealthsimple, ibkr]
 executions:
   - id: "manual:239558c79e5f"
@@ -1059,6 +1059,40 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-10T00:00:00Z"
     notes: "Source: Wealthsimple activity export."
+  - id: "manual:e9ee7e6efba4"
+    date: 2026-07-13
+    action: other
+    instrument: cash
+    symbol: USD.CAD
+    quantity: 2031.39
+    price: 1.443649
+    currency: CAD
+    fees: 0
+    net_cash: 0
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-13T20:30:00Z"
+    notes: "WS funds conversion in TFSA (******WK8CAD): submitted 2932.58 CAD, received 2031.39 USD (implied FX ~1.4436). Source: Wealthsimple activity export."
+  - id: "manual:00fa28b04db2"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: IONQ
+    quantity: 75
+    price: 41.84
+    currency: USD
+    fees: 0
+    net_cash: -3138.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-13T20:30:00Z"
+    notes: "IonQ Inc. Limit buy filled 00:12 EDT. Source: Wealthsimple activity export."
 ---
 
 # Ws Tfsa — execution ledger
