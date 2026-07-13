@@ -4,7 +4,7 @@ account: ws_margin
 person: jatan
 status: active
 opened: 2026-04-24
-last_synced_at: 2026-07-09T21:36:00Z
+last_synced_at: 2026-07-13T20:30:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:841dd06fcb68"
@@ -1760,6 +1760,40 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-10T00:00:00Z"
     notes: "Source: Wealthsimple activity export."
+  - id: "manual:9d903ae8a24f"
+    date: 2026-07-13
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 20000
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 20000
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-13T20:30:00Z"
+    notes: "WS transfer from Chequing (******X34CAD) to Non-registered margin (******909CAD). Source: Wealthsimple activity export."
+  - id: "manual:f9ecadfab438"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 20
+    price: 174.40
+    currency: USD
+    fees: 0
+    net_cash: -3488.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-13T20:30:00Z"
+    notes: "Direxion Daily Semiconductor Bull 3X Shares. Limit buy filled 00:07 EDT. Source: Wealthsimple activity export."
 ---
 
 # Ws Margin — execution ledger
