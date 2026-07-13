@@ -4,7 +4,7 @@ account: ws_janisha_margin
 person: janisha
 status: active
 opened: 2026-06-07
-last_synced_at: 2026-06-28T00:00:00Z
+last_synced_at: 2026-07-13T20:30:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:61c0efb24849"
