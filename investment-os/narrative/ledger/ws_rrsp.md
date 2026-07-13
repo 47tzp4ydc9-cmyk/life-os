@@ -4,7 +4,7 @@ account: ws_rrsp
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-09T21:36:00Z
+last_synced_at: 2026-07-13T20:30:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:c8a5316463ec"
@@ -2391,6 +2391,23 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-10T00:00:00Z"
     notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple activity export."
+  - id: "manual:88ab4d076850"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: BBAI
+    quantity: 2000
+    price: 3.2782
+    currency: USD
+    fees: 0
+    net_cash: -6556.40
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: wealthsimple
+    imported_at: "2026-07-13T20:30:00Z"
+    notes: "BigBear.ai Holdings Inc. Limit buy filled 00:09 EDT. Source: Wealthsimple activity export."
 ---
 
 # Ws Rrsp — execution ledger
