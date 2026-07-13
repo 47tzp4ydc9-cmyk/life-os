@@ -4988,6 +4988,125 @@ executions:
     source: ibkr
     imported_at: "2026-07-10T00:00:00Z"
     notes: "ROCKET LAB CORP"
+  - id: "ibkr:exec:0002264f.6a5579b4.01.01"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: INTC
+    quantity: 100
+    price: 102.175
+    currency: USD
+    fees: 1.0003
+    net_cash: -10218.5003
+    broker_order_ref: "ibkr:1525387639"
+    fill_ref: 0002264f.6a5579b4.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "Intel Corp. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00030e5e.6de5f802.01.01"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: ASTS
+    quantity: 20
+    price: 66.925
+    currency: USD
+    fees: 0.00006
+    net_cash: -1338.50006
+    broker_order_ref: "ibkr:1525387653"
+    fill_ref: 00030e5e.6de5f802.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "AST SpaceMobile Inc. Partial fill 1 of 3 for order 1525387653 (DARK venue). Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00030e5e.6de5f804.01.01"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: ASTS
+    quantity: 18
+    price: 66.925
+    currency: USD
+    fees: 0.000054
+    net_cash: -1204.650054
+    broker_order_ref: "ibkr:1525387653"
+    fill_ref: 00030e5e.6de5f804.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "AST SpaceMobile Inc. Partial fill 2 of 3 for order 1525387653 (DARK venue). Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00015e71.6a55c29f.01.01"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: ASTS
+    quantity: 62
+    price: 66.925
+    currency: USD
+    fees: 1.000186
+    net_cash: -4150.350186
+    broker_order_ref: "ibkr:1525387653"
+    fill_ref: 00015e71.6a55c29f.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "AST SpaceMobile Inc. Partial fill 3 of 3 for order 1525387653 (IBKRATS venue). Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00018d2c.6a5517ec.01.01"
+    date: 2026-07-13
+    action: sell
+    instrument: us_stock
+    symbol: ADBE
+    quantity: 20
+    price: 229.22
+    currency: USD
+    fees: 1.098399
+    net_cash: 4583.301601
+    broker_order_ref: "ibkr:1525387657"
+    fill_ref: 00018d2c.6a5517ec.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "Adobe Inc. Realized P&L reported by broker: 342.221501. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00010129.6a552cf5.01.01"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: IREN
+    quantity: 100
+    price: 38.91
+    currency: USD
+    fees: 1.0003
+    net_cash: -3892.0003
+    broker_order_ref: "ibkr:1525387663"
+    fill_ref: 00010129.6a552cf5.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "IREN Ltd. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00010193.6a55ec7e.01.01"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: RKLB
+    quantity: 100
+    price: 76.55
+    currency: USD
+    fees: 1.0003
+    net_cash: -7656.0003
+    broker_order_ref: "ibkr:1525387665"
+    fill_ref: 00010193.6a55ec7e.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-13T21:15:00Z"
+    notes: "Rocket Lab Corp. Fetched via IBKR trades connector."
 ---
 
 # Ibkr Margin — execution ledger
