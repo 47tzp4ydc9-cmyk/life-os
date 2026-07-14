@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-12T18:30:00Z
+updated: 2026-07-14T11:00:00Z
 ---
 
 # Action items
@@ -11,6 +11,8 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 
 ## Open
 
+- [ ] **ws-unauthorized-trades-jul14** — 2 more unattributed overnight fills in ws_margin (23:31-23:34 EDT Jul 13, markets closed): SPCX 25sh@$137.23 ($3,430.75) and NFLX 75sh@$74.00 ($5,550.00), ~$8,981 total. 4th consecutive night of this pattern; neither symbol matches any thesis/watchlist/decision file. Log in to Wealthsimple directly today, confirm self-initiated or not, check for API keys/connected apps/automated orders, escalate to WS support + reset credentials if not authorized. `priority:high` `due:2026-07-14` `related:security` `account:ws_margin`
+- [ ] **smci-day18-force-decision** — 18th day undecided since the Jun29 Taiwan-detention news; investigation status unchanged (9 persons under investigation, 2 still detained), Aug11 earnings binary approaching. Decide hold/trim/exit today, respect $26 hard stop. `priority:high` `due:2026-07-14` `related:SMCI` `account:ws_margin`
 - [ ] **smci-stop-flip-review** — stopped out of the Jun25 300sh lot at $27.54 (Jul1, realized -$1,290) then re-bought 300sh @ $28.50 the next day (Jul2), one day before the Taiwan probe escalated to employee detentions; confirm the re-entry was deliberate and decide hold/trim/exit on the new lot ahead of Aug11 earnings `priority:high` `due:2026-07-03` `related:SMCI` `account:ws_margin`
 - [ ] **smci-evaluate-position** — Taiwan chip-smuggling raid Jun 29 breaks "governance cleared" thesis; check SMCI price in WS Margin; if < $28 trim 100-150 sh; hard stop $26; do not add `priority:high` `due:2026-06-30` `related:SMCI` `account:ws_margin`
 - [ ] **smci-reassess-position** — Taiwan smuggling probe widened Jun 29 (raided Taiwan office + 3 affiliates + 6 individuals' homes); no DOJ/SEC follow-up yet but thesis remains broken; stock ~$28-29, still above $26 hard stop; reassess trim/hold ahead of Aug 11 earnings `priority:high` `due:2026-07-01` `related:SMCI` `account:ws_margin`
@@ -57,6 +59,7 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **ibkr-corp-transfer-decision-jul13** — the Jul10 14:27 ET transfer-in-progress email (6 ineligible securities needing leave-behind/liquidate) remains unactioned with no new information over the weekend. Confirm authorization and make the call Monday. `priority:high` `due:2026-07-13` `related:security` `account:ws_jatan_corp`
 - [ ] **verify-mu-fill-email-jul13** — no recurrence of the spoofed MU fill email this session (2nd consecutive quiet check), but the underlying inbox/account security question remains unverified. Log in directly Monday and confirm no unauthorized MU order exists. `priority:high` `due:2026-07-13` `related:security` `account:ws_margin`
 - [ ] **ledger-sync-friday-gap-verify** — `ws_margin.md` `last_synced_at` is still 2026-07-09T21:36:00Z (Thursday evening); Friday Jul10's 16:30 ET `daily-order-sync` does not appear to have updated it. Confirm Monday whether Friday's sync ran with zero new fills (benign) or didn't run at all (real gap) — check the other 7 account ledgers too. `priority:medium` `due:2026-07-13` `related:schema`
+- [ ] **ibkr-margin-glw-put-sync-gap** — the Jul13 19:39:10Z GLW Aug21'26 185P sell-to-open (1 contract @ $22.16, order 1525387642) appears live in IBKR positions/trades but is missing from `ledger/ibkr_margin.md` (last entries stop at the INTC/ASTS/ADBE/IREN/RKLB fills from the same session). Reconcile manually — the ledger file is now 5,000+ lines and too large to safely rewrite via the fast-path sync tool. `priority:medium` `due:2026-07-15` `related:ibkr_margin` `account:ibkr_margin`
 
 ## Completed
 
