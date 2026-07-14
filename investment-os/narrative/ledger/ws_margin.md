@@ -4,8 +4,8 @@ account: ws_margin
 person: jatan
 status: active
 opened: 2026-04-24
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple]
+last_synced_at: 2026-07-14T10:35:00Z
+sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:841dd06fcb68"
     date: 2026-04-24
@@ -1794,6 +1794,40 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-13T20:30:00Z"
     notes: "Direxion Daily Semiconductor Bull 3X Shares. Limit buy filled 00:07 EDT. Source: Wealthsimple activity export."
+  - id: "manual:c49aa124e749"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: SPCX
+    quantity: 25
+    price: 137.23
+    currency: USD
+    fees: 0
+    net_cash: -3430.75
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-14T10:35:00Z"
+    notes: "Limit buy filled 23:31 EDT Jul 13 (overnight, markets closed). Part of the ongoing pattern of unexplained overnight fills in this account — see action-items.md ws-unauthorized-trades-jul14. Source: Wealthsimple order-filled email."
+  - id: "manual:9697c69e4e66"
+    date: 2026-07-13
+    action: buy
+    instrument: us_stock
+    symbol: NFLX
+    quantity: 75
+    price: 74.00
+    currency: USD
+    fees: 0
+    net_cash: -5550.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-14T10:35:00Z"
+    notes: "Limit buy filled 23:34 EDT Jul 13 (overnight, markets closed). Part of the ongoing pattern of unexplained overnight fills in this account — see action-items.md ws-unauthorized-trades-jul14. Source: Wealthsimple order-filled email."
 ---
 
 # Ws Margin — execution ledger
