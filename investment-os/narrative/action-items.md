@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-14T15:30:00Z
+updated: 2026-07-14T19:22:00Z
 ---
 
 # Action items
@@ -16,6 +16,9 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] revisit IREN entry per prediction (MACD turn + $50 reclaim) `priority:low` `due:2026-07-15` `related:IREN`
 - [ ] revisit CRWV add at $97-100 floor + bounce confirmation (currently $100, testing the floor — wait for close above $98 on volume) `priority:low` `due:2026-07-10` `related:CRWV`
 - [ ] revisit HOOD at $77-80 base + higher-low formation `priority:low` `due:2026-07-15` `related:HOOD`
+- [ ] buy ADBE when price reaches $215 `priority:medium` `related:ADBE` `account:ibkr_margin`
+- [ ] buy HOOD when price reaches $105 `priority:medium` `related:HOOD`
+- [ ] buy NOW when price reaches $105 `priority:medium` `related:NOW` `account:ibkr_margin`
 - [ ] track WDC next earnings reaction (Janisha account) — earnings call now confirmed Jul 29, formal report Aug 5 `priority:medium` `related:WDC` `account:ws_janisha_margin`
 - [ ] reassess RKLB short put strikes/rolls given the Iridium acquisition re-rate (stock ~$102, all 4 short puts less ITM); watch deal-financing/dilution details `priority:medium` `due:2026-07-08` `related:RKLB` `account:ibkr_margin`
 - [ ] **ws-fake-fill-recurrence-verify** — second occurrence of suspicious Wealthsimple fill notifications: RRSP claims a 150.3938sh META sale @ $31.51 and Margin claims a NVDA buy @ $44.11. UPDATE 2026-07-09/10: confirmed via the actual statement — **both are real**, not fake. The META sale is correctly ws_rrsp (Jul 7, $31.51, matches exactly). The NVDA buy is real too but was **misattributed to ws_margin — it's actually two fills in ws_jatan_corp** (Corporate Investing Margin, 0.0031sh + 0.2176sh @ $44.1133, Jul 7). Both now logged in the correct accounts. Root cause: "Margin" in a fill email/note is ambiguous between ws_margin and ws_jatan_corp ("Corporate investing margin") — same mixup as the ws-margin-call items below. `priority:low` `related:security`
@@ -83,4 +86,3 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [x] **smci-day16-force-decision** — resolved 2026-07-13: user confirmed decision to keep. See `decisions/2026-06-25-smci.md`. `completed:2026-07-13`
 - [x] **smci-day18-force-decision** — resolved 2026-07-13 (decision predates this Jul14-added duplicate item): user confirmed decision to keep the 300sh lot through Aug 11 earnings. See `decisions/2026-06-25-smci.md`. `completed:2026-07-13`
 - [x] **ws-unauthorized-trades-jul14** — resolved 2026-07-14: user confirmed these fills (SPCX, NFLX) were authorized, not a security incident. `completed:2026-07-14`
-
