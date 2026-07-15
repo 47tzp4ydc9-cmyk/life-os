@@ -4,7 +4,7 @@ account: ws_jatan_corp
 person: jatan
 status: active
 opened: 2025-05-27
-last_synced_at: 2026-07-13T20:30:00Z
+last_synced_at: 2026-07-15T06:12:00Z
 sources_used: [wealthsimple]
 executions:
   - id: "manual:bc661fad0b49"
