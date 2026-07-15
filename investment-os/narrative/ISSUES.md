@@ -217,3 +217,48 @@ SQLite database for live quantitative questions" but no DB schema or build pipel
 - Multi-account position queries return in <1s without running a regex script.
 - Results agree with ledger when ledger is current.
 - Results agree with IBKR when ledger is stale (IBKR is source of truth for live positions).
+
+---
+
+## ISSUE-008 — Per-name briefing write-ups don't decompose sector/macro beta from idiosyncratic news
+
+**Discovered:** 2026-07-15  
+**Module:** investment-os  
+**File:** `investment-os/schemas/briefing.md`, evening/morning briefing routines  
+**Status:** open — schema/routine needs update  
+
+**Description:**  
+The 2026-07-15 evening briefing classified GLW as 🔴 with framing that called its -7.8% drop
+"idiosyncratic, not sector beta" (see [`narrative/briefings/2026-07-15-evening.md`](briefings/2026-07-15-evening.md)
+and its `## Correction` section). In fact the same session's own Macro/sector note recorded a
+broad semiconductor/high-multiple-name selloff that day (SMH -2.5%, MU -7%, SNDK -12.8%,
+INTC -5.3%). GLW's move was mostly dispersion within that sector-wide rotation — amplified by its
+stretched valuation (68x forward earnings) — not a distinct new headline. The pre-existing setup
+(Jul 11 Sell downgrade, prior-session put buying, proximity to Jul 28 earnings) was real and
+justified the 🔴 flag, but the write-up conflated "this name has a real setup worth flagging"
+with "this name moved for its own reason today," which the user caught and had to push back on.
+
+**Root cause:** The briefing schema's per-name classification (`## 🔴 Action today`) has no step
+that requires checking a name's move against the same session's own `## 📈 Macro / sector` data
+before describing the move as company-specific. The two sections are generated somewhat
+independently, so a name can get an "idiosyncratic" framing even when the day's macro/sector data
+(gathered for the same briefing) already explains most of the magnitude.
+
+**To fix:** Before writing "why this matters" language for a 🔴/🟡 name, cross-check its move
+against the day's sector ETF / peer-group move (already gathered for the Macro/sector section):
+1. If the name's move is within ~1-2x of the sector's move that day, default to attributing it to
+   sector beta and say so explicitly, even if the name also carries its own real catalyst/setup.
+2. Only use "idiosyncratic" / "not sector beta" language when the name's move meaningfully exceeds
+   sector peers AND there's a same-day (not multi-day-old) headline that plausibly explains the
+   gap.
+3. When a name has both a real standing setup (downgrade, options positioning, earnings proximity)
+   and a sector-driven day, separate the two explicitly in the write-up: "today's move is mostly
+   sector rotation; the reason this name is flagged 🔴 regardless is X" — rather than presenting
+   the setup as if it explains today's specific price action.
+
+**Acceptance criteria:**
+- Any 🔴/🟡 name whose write-up characterizes its move as company-specific/idiosyncratic includes
+  an explicit comparison to that day's sector/peer move.
+- Severity classification (🔴 vs 🟡) can still stand on a real standing setup even when the day's
+  price action is mostly sector beta — but the write-up must say so plainly instead of implying a
+  fresh idiosyncratic catalyst.
