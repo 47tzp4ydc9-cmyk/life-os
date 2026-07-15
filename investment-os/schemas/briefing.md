@@ -26,24 +26,61 @@ green_count: 4               # number of 🟢 QUIET names
 
 ## Body sections (in this order; omit empty sections except Quick Read)
 
+### `> 📌 TL;DR` (required unless quiet-day early exit)
+
+First block after the frontmatter — before Quick Read. A single blockquote, one imperative bullet per 🔴 item (or per 🟡 item if `red_count == 0`), max 3 lines. No prose, no context — just the action.
+
+```markdown
+> **Do today:**
+> 1. Verify WS margin-call status (ws_margin, HQ850HX03CAD).
+> 2. Confirm 3 unrecognized WS buys (~$10,977) — possible compromise.
+> 3. Decide SMCI hold/trim/exit (day 11).
+```
+
+If `red_count == 0` and `yellow_count > 0`, use `> **Watch today:**` and list top 3 🟡 items.
+
+### `> 🔗 Links` (required)
+
+Single blockquote line, immediately below TL;DR. Fixed structure:
+
+```markdown
+> **Links:** [repo](https://github.com/47tzp4ydc9-cmyk/life-os/blob/main/investment-os/narrative/briefings/YYYY-MM-DD-<session>.md) · [prior](./PRIOR-FILENAME.md) · [action items](../action-items.md) · [watchlist](../watchlist.md)
+```
+
+- `repo` = GitHub blob URL to this exact file (fill in today's date + session).
+- `prior` = filename of the immediately-preceding briefing on disk (walk back through the directory; may be a different session).
+
 ### `## ⚡ Quick read`
 
-Always present. Single table:
+Always present. Single table followed by a **required** bulleted `**What changed since prior:**` list (2-5 bullets, one discrete observation each — do not write a wall-of-text paragraph):
 
 ```markdown
 | Metric | Value | Δ vs prior session |
 |---|---|---|
-| NLV | $187,760 CAD | -$1,240 (-0.7%) |
+| NLV | $187,760 CAD | −$1,240 (−0.7%) |
 | Leverage | 2.08× | +0.03 |
 | Cash | $24,580 | unchanged |
 | Catalysts firing today | 2 | NVO 9am, AMD AMC |
+
+**What changed since prior:**
+- Chip/AI-infra bounced (NBIS +10.9%, ANET +8.8%, AVGO +4.8%) after Jul 7 Samsung-triggered reset — mechanical, not fundamental.
+- WS margin account escalated from "at risk" (Jul 7) to actual margin call (Jul 8 07:09 ET).
+- 3 unrecognized WS buys (SOXL/NOK/IONQ, ~$10,977) landed same morning as the margin call.
+- INTC 100sh mystery resolved: legitimate Jul 7 buy @ $109.12 (order 1223914127).
+- SMCI day 11 — Taiwan case still zero new developments.
 ```
+
+Use `−` (U+2212 minus) consistently for negative numbers — never `-` (hyphen-minus). Use `+` for positive.
 
 ### `## 🔴 Action today (N)`
 
 One sub-block per name. Each block must contain:
 
 - `### SYMBOL — <one-line suggested action>`
+- **Backlink line** (required, muted italics, immediately under the title). Include only the files that exist:
+  ```markdown
+  *[thesis](../theses/SYMBOL.md) · [decision](../decisions/YYYY-MM-DD-SYMBOL.md) · [catalyst](../catalysts/YYYY-MM-DD-SYMBOL-*.md)*
+  ```
 - One-line stat row: price, after-hours move, option leg + delta (if applicable), days to expiry
 - A classification table (always 5 columns):
 
@@ -56,6 +93,16 @@ One sub-block per name. Each block must contain:
 - 1-2 sentences: **why this matters** for *your* position (not generic commentary)
 - Explicit suggested action + links to thesis / option / catalyst files
 
+#### Stale-item compression rule
+
+If the same 🔴 item has been carried in ≥ 3 consecutive briefings without meaningful change, replace the "why this matters" paragraph with a single one-liner:
+
+```markdown
+> Same call as [prior briefing](./YYYY-MM-DD-<session>.md) — day N carrying. New today: <one line, or "nothing">.
+```
+
+Keep the title, backlink line, stat row, classification table, and suggested action. Drop the repeated context prose — the day-count is the signal, the repeated body is noise.
+
 ### `## 🟡 Monitor (N)`
 
 One table for the whole section:
@@ -67,6 +114,8 @@ One table for the whole section:
 | CIEN | `[sector]` | AI capex in MRVL transcript reinforces thesis. | hold |
 | NBIS | `[analyst]` | New buy rating @ $52 PT. | watchlist |
 ```
+
+**Grouping rule:** if `yellow_count > 10`, split the table by theme with `#### <theme>` sub-headers before each sub-table. Themes should reflect the day's actual clustering (e.g. `AI-infra chip cluster`, `Macro-driven`, `Single-name idiosyncratic`) — do not force categories that don't apply.
 
 ### `## 🟢 Quiet (N)`
 
@@ -100,6 +149,19 @@ Table sourced from `narrative/catalysts/`:
 |---|---|---|---|
 | Today 9am ET | NVO | CMS Part D negotiation list | [link](../catalysts/2026-07-01-novo-medicare-part-d.md) |
 | Tomorrow AMC | AMD | Q2 earnings | [link](../catalysts/2026-08-04-amd-q2-earnings.md) |
+```
+
+**Split rule:** anything landing within the next 5 trading days stays in the visible table. Everything further out goes inside a collapsed block:
+
+```markdown
+<details><summary>Later (N events)</summary>
+
+| When | Symbol | Event | File |
+|---|---|---|---|
+| Wed Jul 29 | WDC | Earnings call | — |
+| Mon Aug 11 | SMCI | Q4 earnings — binary | [link](../catalysts/2026-08-11-smci-q4-earnings.md) |
+
+</details>
 ```
 
 ### `## 📈 Macro / sector` *(conditional)*

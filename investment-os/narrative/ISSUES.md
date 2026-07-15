@@ -262,3 +262,91 @@ against the day's sector ETF / peer-group move (already gathered for the Macro/s
 - Severity classification (🔴 vs 🟡) can still stand on a real standing setup even when the day's
   price action is mostly sector beta — but the write-up must say so plainly instead of implying a
   fresh idiosyncratic catalyst.
+
+---
+
+## ISSUE-009 — Watchlist rots (converted-to-position rows not retired, stale targets not refreshed)
+
+**Discovered:** 2026-07-10  
+**Module:** investment-os  
+**File:** `investment-os/narrative/watchlist.md`  
+**Status:** resolved — 2026-07-10 (routine change + baseline reconciliation both landed; spun off as ISSUE-010 for missing decision files)  
+
+**Description:**  
+`watchlist.md` last showed `updated: 2026-06-27`. Four of its seven active rows (GLW, NBIS, CRWV,
+IREN) had since been opened as live positions per the Jul 3-9 briefings and were never moved to
+the Removed table. Separately, HOOD sat at ~$114 vs a $77-80 target with no refresh, and MU's
+"post-earnings dip" entry logic was superseded by the Jul 9 macro reset with no update to the row.
+
+The functional consequence is masked because the Tier 1 union in the morning briefing has four
+legs (open positions + option underlyings + watchlist + theses), and the open-positions leg was
+carrying names the watchlist should have surfaced. But the watchlist as a standalone artifact was
+no longer a reliable list of "things I'm considering that I don't own yet."
+
+**Root cause:** No enforcement rule in the briefing routine. The watchlist is written by hand and
+never audited.
+
+**Resolution (2026-07-10):**
+
+1. **Routine change:** [`investment-os/routines/morning-briefing.md`](../routines/morning-briefing.md)
+   now has a `Step 2.5 — watchlist hygiene` block. Each run: (a) auto-retires any active row whose
+   symbol is in the current open-position set, moving it to Removed with reason
+   `converted to position`; (b) surfaces stale-target rows (price > 25% past target with no
+   `updated:` within 30 days) in a `## 🧹 Watchlist hygiene` section for human review — no
+   auto-mutation.
+
+2. **Baseline reconciliation:** Watchlist rewritten. GLW / NBIS / CRWV / IREN moved to Removed
+   with reason `promoted → position`. HOOD moved to Removed with reason `target invalidated`
+   ($77-80 base target never touched; stock ran to $114). MU row refreshed — target changed from
+   "post-earnings dip" to "reassess post SK Hynix Nasdaq listing (Jul 10) & next macro print",
+   Why column updated to note the entry logic re-basing. CBRS unchanged. Watchlist now has 2
+   active rows (MU, CBRS) — Step 2.5 will run against a clean baseline starting Jul 13.
+
+**Spun-off follow-up:** See ISSUE-010 for the missing decision files (GLW / NBIS / CRWV / IREN
+Jul 6-7 adds have no `decisions/*.md` file — the Removed table entries currently backlink to the
+Jul 7 briefing as evidence, which is a placeholder, not a fix).
+
+---
+
+## ISSUE-010 — Adds on Jul 6-7 (GLW / NBIS / CRWV / IREN) have no decision files
+
+**Discovered:** 2026-07-10 (surfaced while resolving ISSUE-009)  
+**Module:** investment-os  
+**File:** `investment-os/narrative/decisions/` (missing)  
+**Status:** open  
+
+**Description:**  
+Four position changes were recorded across the Jul 6-9 morning briefings — GLW +125sh (running
+total 175sh), NBIS +40sh, CRWV +50sh, and an IREN open — but none of them have a corresponding
+file in `investment-os/narrative/decisions/`. The most recent decision file is dated 2026-06-30
+(EOSU / POET). The evening briefing routine
+([`investment-os/routines/evening-briefing.md`](../routines/evening-briefing.md)) is supposed to
+draft a decision file for every trade not yet captured; that step evidently didn't run or didn't
+capture these.
+
+**Impact:** Medium. Ledger fills still exist (source of truth), and the briefings narrate the
+reasoning, but the decisions/ folder is the canonical place to record thesis / trigger / plan / 
+outcome per trade. Without those files, later reviews (post-mortem, "why did I add here?", 
+lessons files) have to reconstruct intent from briefing prose, which is inefficient and 
+lossy. Also breaks the schema contract in
+[`investment-os/schemas/watchlist.md`](../schemas/watchlist.md) that says
+"when promoting a watchlist row to a position, link the resulting decision file in the reason
+(`promoted → decisions/2026-06-27-glw.md`)".
+
+**To fix:**  
+1. Backfill 4 decision files, dated per the actual add day (likely Jul 6 or Jul 7), sourcing
+   thesis + trigger from the briefings and fill data from ledger entries.
+2. Update the Removed table in `watchlist.md` to replace the briefing backlinks with proper
+   `decisions/*.md` links once the files exist.
+3. Check why the Jul 6 and Jul 7 evening briefings did not run Step 2 (draft-decision) of the
+   evening routine — either the routine didn't fire, or it fired but skipped. If the latter, the
+   routine's failure mode is silent, which is a separate defect.
+
+**Acceptance criteria:**
+- 4 decision files exist under `narrative/decisions/`, one per add, each with thesis / trigger /
+  plan / (outcome deferred).
+- `watchlist.md` Removed table backlinks point to the decision files, not the briefing.
+- Root cause of the evening-briefing miss is documented (either "routine didn't run on Jul 6/7"
+  or a fix to the routine's error handling).
+
+---

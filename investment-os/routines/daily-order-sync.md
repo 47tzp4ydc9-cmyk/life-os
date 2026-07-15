@@ -4,7 +4,9 @@
 
 ```
 schedule:   Mon–Fri 16:30 America/Toronto
-connectors: [ibkr, gmail, life-os]
+connectors: [ibkr, gmail, snaptrade, life-os]
+              # gmail    = primary for Wealthsimple order confirmations
+              # snaptrade = hosted MCP at https://mcp.snaptrade.com/mcp (fallback only — use when Gmail is ambiguous or a fill appears missing)
 writes:     investment-os/narrative/ledger/<account>.md   (append-only)
 depends_on: none
 blocks:     evening-briefing (which runs at 17:30 and expects today's fills to be in the ledger)
@@ -30,6 +32,10 @@ Which triggers the fast-path rules in that prompt:
 - Skip the broker-notes file unless a row fails to parse.
 - Skip re-reading the ledger schema if it's already in your project knowledge.
 
+**Source-of-truth per broker:**
+
+- **IBKR accounts** — IBKR direct connector (unchanged).
+- **Wealthsimple accounts** — **Gmail is primary.** Parse WS order-confirmation emails since the prior briefing; append fills to the ledger from those. **SnapTrade is a fallback**, used only when: (a) a Gmail confirmation is ambiguous or unparseable, (b) you have reason to believe a fill occurred but no matching email arrived (WS confirmation delay, spam filter, etc.), or (c) you need to cross-check a specific fill's price/quantity/timestamp against `AccountInformation_getUserAccountRecentOrdersV2`. Do NOT double-append when both sources show the same fill — trust the Gmail row and skip SnapTrade for that order. If SnapTrade and Gmail materially disagree on a fill, flag the row as ambiguous per the "Before you commit" section and let the human resolve it.
 ## Before you commit
 
 Follow the "Before you commit — show me the diff" section of `sync-executions.md`. Since this is a scheduled run with no human waiting on the chat, apply this policy:

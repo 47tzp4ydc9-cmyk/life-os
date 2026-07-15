@@ -61,10 +61,35 @@ Set up a **Project** in claude.ai called "Investment OS". Connectors to attach:
 | Connector | Purpose | Setup |
 |---|---|---|
 | `life-os` (custom Remote MCP) | Read + write repo files | Settings → Connectors → Add custom connector → `https://life-os-commit.9tmbv6t55v.workers.dev/mcp` with the `SHARED_SECRET` as the Bearer token. Source in [`tools/mcp-commit-worker/`](../tools/mcp-commit-worker/). |
-| Gmail | Wealthsimple confirmations, news | First-party |
+| `SnapTrade` (hosted MCP) | Structured fallback for Wealthsimple orders / positions when Gmail parsing is ambiguous or misses a fill | Settings → Connectors → Add custom connector → `https://mcp.snaptrade.com/mcp`. OAuth flow — log into your SnapTrade Personal account, approve read scope. See "SnapTrade (Wealthsimple fallback)" below. |
+| Gmail | Wealthsimple order confirmations (primary), plus news and catalyst emails | First-party |
 | IBKR | Positions, P&L, live quotes | First-party |
 
 The custom `life-os` connector exposes three tools: `commit_file`, `read_file`, `list_directory`. It's the only write path — Anthropic's first-party GitHub connector is read-only.
+
+### SnapTrade (Wealthsimple fallback)
+
+SnapTrade is a **structured fallback** for the Wealthsimple side. Gmail confirmation emails are the primary source — they arrive quickly and have proven reliable in practice. SnapTrade fills the gaps when Gmail is ambiguous, missing a fill, or when you need a positions/balances snapshot (which Gmail can't give you).
+
+**One-time setup (no code):**
+
+1. Sign up at [dashboard.snaptrade.com](https://dashboard.snaptrade.com/signup) and link Wealthsimple (and any other broker you want covered).
+2. In claude.ai → **Settings → Connectors → Add custom connector** → `https://mcp.snaptrade.com/mcp`. Complete the OAuth login to SnapTrade in the browser; approve read scope.
+3. Verify: ask Claude "list my SnapTrade connections" — it should show Wealthsimple + accounts.
+
+**What Claude gets** (18 read-only tools; the ones this repo uses as fallback):
+
+| Tool | Use when |
+|---|---|
+| `AccountInformation_getUserAccountRecentOrdersV2` | Gmail confirmation is ambiguous, missing, or you need to cross-check a fill |
+| `AccountInformation_getAccountActivities` | reconciling dividends / deposits / fees Gmail may have missed |
+| `AccountInformation_getAllAccountPositions` | snapshot of WS positions (Gmail can't provide this) |
+| `AccountInformation_getUserAccountBalance` | snapshot of WS cash + buying power |
+| `Connections_listBrokerageAuthorizations` | confirming the WS connection is still authorized |
+
+**No secrets in claude.ai.** The hosted MCP uses OAuth 2.0 + PKCE. Your SnapTrade `userId` / `userSecret` never leave SnapTrade; Claude only receives short-lived, read-scoped access tokens. Revoke any time at SnapTrade dashboard → Settings → Connected apps.
+
+**Programmatic / local script use (optional).** If you later want scripts under `scripts/` to hit the SnapTrade Partner API directly (e.g. to snapshot `data/portfolio.db`), fill the four `SNAPTRADE_*` vars in [`../.env.example`](../.env.example). Not needed for the Claude workflow above.
 
 ### Project system prompt
 
@@ -100,122 +125,22 @@ data, not narrative files. For "why did I do X" or "what's my thesis"
 questions, read the narrative.
 ```
 
-### Morning briefing prompt
+### Scheduled briefings
 
-**Runs autonomously** as a claude.ai scheduled routine (6am ET pre-market). Same prompt works manually — trigger phrase: **"morning briefing"**. Both paths commit without confirmation.
+The morning and evening briefing prompts are canonical files under [`routines/`](routines/), not inlined here. Edit them there — this README should never fork them.
 
-```
-Generate today's pre-market briefing for investment-os. Autonomous run —
-do not ask for confirmation, commit when ready.
+| Trigger | Canonical prompt | Schedule |
+|---|---|---|
+| `morning briefing` | [`routines/morning-briefing.md`](routines/morning-briefing.md) | Mon–Fri, 06:30 ET |
+| `evening wrap` | [`routines/evening-briefing.md`](routines/evening-briefing.md) | Mon–Fri, 17:30 ET |
 
-Step 1 — Read repo state via life-os MCP:
-- AGENTS.md
-- investment-os/schemas/briefing.md (THIS IS THE OUTPUT CONTRACT — follow exactly)
-- investment-os/narrative/action-items.md (open items only)
-- every file in investment-os/narrative/options/ with status: open
-- every file in investment-os/narrative/catalysts/ with event_date in next 14d
-- investment-os/narrative/watchlist.md
-- the most recent file in investment-os/narrative/briefings/ for delta
-
-Step 2 — Define Tier 1 universe (the names that must be checked):
-- All open option positions
-- Top 30 equity positions by exposure (notional × |delta|)
-- All watchlist entries with target_entry set
-- All watchlist entries regardless of target_entry (ISSUE-002 fix — every
-  watchlist name gets a live price check, not just ones with a set target)
-For each Tier 1 name, also load narrative/theses/<symbol>.md if it exists.
-
-Step 3 — Pull live data:
-- IBKR: positions, working orders, NLV, leverage, cash, buying power
-- Gmail: Wealthsimple confirmations since prior briefing (mine + Janisha's
-  forwarded). For each fill found, check if a matching opposite-side fill for
-  the same symbol/account exists in the same window (see Step 4.5).
-
-Step 4 — Per Tier 1 name, fetch news (last  72 h):
-- web_search: "<TICKER> news last 72 hours"
-- SEC EDGAR: any 8-K filed since prior briefing
-- Classify each material item on six dimensions per schemas/briefing.md:
-  type, direction, magnitude, technical impact, thesis impact, suggested action
-- Skip filler (press release rehashes, generic "stock moves on X" articles)
-
-Step 4.5 — Same-day round-trip detection (ISSUE-003 fix):
-- From the Gmail fills pulled in Step 3, detect any symbol/account pair with
-  both a buy and a sell fill dated since the prior briefing where no existing
-  decision file's broker_order_ref covers both legs.
-- For each detected round-trip: compute realized P&L (sell proceeds - buy cost,
-  gross), holding duration, and draft a decision file per
-  investment-os/schemas/decision.md covering both legs as one entry (see
-  2026-06-29-wdc-intraday.md for the format/tone to match — thesis, chart
-  context, what-I'm-wrong-about, and an Outcome table with both legs).
-- List these as a "Day trades detected" subsection in the briefing showing the
-  draft decision filename and a one-line summary (symbol, qty, P&L, duration).
-- Do NOT auto-commit these decision files — they require explicit confirmation
-  even though the rest of this routine runs autonomously, since they assert a
-  retrospective thesis on the user's behalf. Mention in the briefing that
-  they're pending confirmation; commit only on a separate follow-up message.
-
-Step 5 — Severity-rank into 🔴 action / 🟡 monitor / 🟢 quiet per schemas/briefing.md.
-- Any watchlist name newly at or below its entry target ranks at least 🟡.
-
-Step 6 — Early-exit:
-If 🔴 = 0 AND 🟡 ≤ 1 AND no catalyst firing today AND SPY pre-market move < 1%
-AND no day trades detected in Step 4.5,
-write the short-form briefing (frontmatter + Quick Read + one-line quiet status)
-and stop. Do not pad.
-(A detected day trade alone does not block early-exit on the rest of the
-briefing, but the "Day trades detected" subsection is never omitted if Step 4.5
-found one — append it even to the short-form briefing.)
-
-Step 7 — Compose the briefing using the rich format in schemas/briefing.md
-(tables, tags, severity sections), plus these two additions to the contract:
-- **Trade Ideas** section: 2–4 ideas drawn from Tier 1 names showing momentum,
-  dip-buy setups on confirmed theses, or options income/roll opportunities.
-  Each idea: entry, target, stop, catalyst, size guidance, and whether it adds
-  to an existing position or is new. No more than one purely speculative idea.
-- **Day trades detected** section per Step 4.5 (omit if none found).
-Commit via life-os commit_file to
-investment-os/narrative/briefings/YYYY-MM-DD-morning.md with message
-"briefing: YYYY-MM-DD morning".
-
-Step 8 — For each 🔴 name, append exactly one action-item to action-items.md
-with priority:high and due:today. Then mirror those in the briefing's
-"Action items added" section.
-
-Hard rules:
-- Do not invent news. Empty web search result = 🟢.
-- Do not write outside narrative/. Do not modify schemas/, strategies/, or _shared/.
-- One briefing per session per day. Do not overwrite — corrections via the
-  ## Correction pattern documented in schemas/briefing.md.
-- Never auto-commit a day-trade decision file — surface it, wait for confirm.
-- If commit_file fails, retry once. If it still fails, output the briefing as
-  a chat message tagged "BRIEFING-FALLBACK" so I can paste it in manually.
-```
-
-To schedule: claude.ai → **Settings → Tasks/Routines → Create** → paste the prompt above → set cron `0 6 * * 1-5` (6am ET, weekdays). Make sure the Project is "Investment OS" so the system prompt + connectors are loaded.
-
-### Evening briefing prompt
-
-Trigger phrase: **"evening wrap"**.
+To schedule: claude.ai → **Settings → Tasks/Routines → Create** → set the trigger and paste the session prompt below (do **not** paste the routine body — the file is read fresh each run so edits take effect immediately).
 
 ```
-Generate today's evening briefing for investment-os.
-
-Same read pattern as morning. Additional work:
-
-- Compute today's realized P&L from today's Wealthsimple and IBKR fills.
-- For each decision I made today that does not yet have a file in
-  investment-os/narrative/decisions/, draft one matching the schema,
-  show me, and commit on confirm. Use date in filename = trade date.
-- For any option position closed today, update its file in
-  investment-os/narrative/options/ (status, closed, realized_pnl_total)
-  and fill the outcome block on the linked decision file.
-- For any prediction in investment-os/narrative/predictions/ whose
-  verify_on is today or earlier, fill its outcome and set verified: true.
-- Surface anything notable for tomorrow (catalysts firing, expirations,
-  watchlist names that hit target entry).
-
-Commit briefing to investment-os/narrative/briefings/YYYY-MM-DD-evening.md.
+Read investment-os/routines/morning-briefing.md via the life-os connector and follow it exactly. Autonomous run — commit when ready.
 ```
+
+(Substitute `evening-briefing.md` for the evening job.) Make sure the Project is "Investment OS" so the system prompt + connectors are loaded.
 
 ### Decision-capture prompt (mid-day, ad-hoc)
 

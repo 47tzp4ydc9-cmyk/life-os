@@ -4,7 +4,9 @@
 
 ```
 schedule:   Mon–Fri 06:30 America/Toronto  (~3h before US open)
-connectors: [ibkr, gmail, life-os, web_search]
+connectors: [ibkr, gmail, snaptrade, life-os, web_search]
+              # gmail    = primary for Wealthsimple order confirmations + news
+              # snaptrade = hosted MCP at https://mcp.snaptrade.com/mcp (fallback + positions/balances snapshot for WS)
               # sec_edgar optional; use if available for 8-K sweeps
 writes:     investment-os/narrative/briefings/YYYY-MM-DD-morning.md
             investment-os/narrative/action-items.md    (append)
@@ -28,14 +30,21 @@ Before generating the briefing, sync any orders that filled overnight or before 
 
 If the sync flags ambiguous rows, note them in the briefing's `## 🔴 Action today` section as a "reconcile these fills with me" item — do not block the briefing generation.
 
-## Step 1 — pull portfolio state (IBKR)
+## Step 1 — pull portfolio state
+
+**IBKR** (direct connector):
 
 - NLV, leverage, cash by currency, buying power, excess liquidity.
 - Open positions (equities + options).
 - Open orders (working / GTC).
 - Realized + unrealized P&L for the trailing session, if IBKR exposes it.
 
-Wealthsimple accounts have no live connector — pull last-known state from the most recent ledger entries and note "no live feed" for those positions.
+**Wealthsimple** (Gmail primary, SnapTrade fallback):
+
+- **Gmail (primary):** Wealthsimple order-confirmation emails since the prior briefing's `generated_at`. These are the source of truth for fills.
+- **SnapTrade MCP (fallback + snapshot):** call `AccountInformation_getUserAccountBalance` and `AccountInformation_getAllAccountPositions` per WS account for a positions/cash snapshot (Gmail can't give you this). Also call `AccountInformation_getUserAccountRecentOrdersV2` **only if** Gmail returned an ambiguous confirmation or you have reason to believe a fill was missed — use it to cross-check, not to duplicate.
+- If SnapTrade is unavailable (`disabled` connection, timeout, empty response), proceed with Gmail + last-known ledger state and note "SnapTrade unavailable; WS positions/balances may be stale" — do not silently drop WS from the briefing.
+- On conflicts between Gmail and SnapTrade for the same order, prefer Gmail's fill (it's the primary) and flag the discrepancy in the coverage note.
 
 ## Step 2 — build the Tier 1 universe (names you must sweep)
 
@@ -48,6 +57,14 @@ Union of:
 - Any symbol referenced in an unresolved 🔴 or 🟡 item from the prior briefing.
 
 Any Tier 1 name is guaranteed a classification — do not silently skip.
+
+## Step 2.5 — watchlist hygiene (ISSUE-009 fix)
+
+The watchlist rots when entries become positions or their entry logic goes stale. Enforce two rules each run:
+
+1. **Auto-retire converted entries.** For each row in [`../narrative/watchlist.md`](../narrative/watchlist.md) with `status: active`, if the symbol appears in the current open-position set from Step 1, move the row to the Removed table with `reason: converted to position` and `removed_on: <today>`. Do not fetch news for it as a watchlist item — it's already covered via the open-positions leg of Tier 1. Bump the file's `updated:` to today only if at least one row moved. Commit the watchlist edit in the same commit as the briefing; extend the commit message to `briefing: morning YYYY-MM-DD (…) + watchlist hygiene`.
+
+2. **Surface stale targets, do not mutate.** For each remaining active row, if the current price is more than 25% past `target_entry` in the wrong direction (i.e. for a buy setup, price has run far above target with no `updated:` refresh in ≥ 30 days), append a line to a `## 🧹 Watchlist hygiene` section of the briefing naming the row and proposing one of: refresh target, move to Removed with reason `target invalidated`, or convert to thesis. **Do not auto-edit the row** — this requires human judgment. Omit the section if nothing qualifies.
 
 ## Step 3 — news sweep
 
@@ -102,6 +119,17 @@ Commit via the `life-os` MCP's `commit_file`:
 - **Frontmatter:** all fields from `../schemas/briefing.md`. `session: morning`, `trigger: routine`, `generated_by: claude`, `generated_at: <ISO with -04:00 or -05:00 offset>`, `sources: [...]` populated with what you actually used.
 - **Body:** sections in the order specified by the schema. Omit empty sections except `## ⚡ Quick read`.
 - **Commit message:** `briefing: morning YYYY-MM-DD (<red>R/<yellow>Y/<green>G, status:<action|monitor|quiet>)`
+
+### Readability requirements (from the schema — enforce every run)
+
+- `> 📌 TL;DR` block immediately after frontmatter (unless quiet-day early exit). Max 3 imperative lines, one per 🔴 item — or top 3 🟡 items if `red_count == 0`.
+- `> 🔗 Links` blockquote immediately below TL;DR: `repo` (GitHub blob URL to this exact file) · `prior` (previous briefing filename on disk) · `action items` · `watchlist`.
+- Quick Read table is followed by a **required** `**What changed since prior:**` bullet list (2-5 discrete observations). Do not write a wall-of-text intro paragraph.
+- Every 🔴 sub-block has a muted-italics backlink line under its title: `*[thesis](...) · [decision](...) · [catalyst](...)*` — include only files that actually exist.
+- If a 🔴 item has been carried in ≥ 3 consecutive briefings without a meaningful change, apply the schema's stale-item compression: replace the "why this matters" paragraph with the one-liner `> Same call as [prior briefing](./YYYY-MM-DD-<session>.md) — day N carrying. New today: <one line or "nothing">.`
+- If `yellow_count > 10`, split the 🟡 table by theme with `#### <theme>` sub-headers.
+- Catalysts landing within the next 5 trading days stay visible; everything further out goes inside `<details><summary>Later (N events)</summary>`.
+- Use `−` (U+2212) for negative numbers, `+` for positive. Never plain `-` for numeric signs.
 
 If the file already exists, **stop and report** — the routine already ran. Do not overwrite; use the schema's `## Correction` pattern via a manual session if needed.
 

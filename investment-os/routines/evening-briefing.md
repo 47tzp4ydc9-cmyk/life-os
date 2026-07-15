@@ -4,7 +4,9 @@
 
 ```
 schedule:   Mon–Fri 17:30 America/Toronto  (~90 min after US close, after AH settles)
-connectors: [ibkr, gmail, life-os, web_search]
+connectors: [ibkr, gmail, snaptrade, life-os, web_search]
+              # gmail    = primary for Wealthsimple order confirmations + news
+              # snaptrade = hosted MCP at https://mcp.snaptrade.com/mcp (fallback + EOD positions/balances snapshot for WS)
               # sec_edgar optional
 writes:     investment-os/narrative/briefings/YYYY-MM-DD-evening.md
             investment-os/narrative/action-items.md    (append)
@@ -26,7 +28,9 @@ Produce the end-of-day briefing. Same schema as morning ([`../schemas/briefing.m
 
 The [`daily-order-sync.md`](./daily-order-sync.md) routine should have run at 16:30. Confirm each account's ledger `last_synced_at` is from today. If any account is stale, re-run the sync for that account before proceeding (invoke [`../prompts/sync-executions.md`](../prompts/sync-executions.md) with `sync account <slug>`). If the sync flags ambiguous rows, note them and continue — the briefing must still be written.
 
-## Step 1 — pull end-of-day portfolio state (IBKR)
+## Step 1 — pull end-of-day portfolio state
+
+**IBKR** (direct connector):
 
 - Closing NLV, leverage, cash by currency.
 - **Today's realized P&L** (per-symbol if IBKR exposes it, else total).
@@ -34,7 +38,11 @@ The [`daily-order-sync.md`](./daily-order-sync.md) routine should have run at 16
 - Any open orders that did **not** fill (working / cancelled / expired).
 - Assignments or expirations that hit today.
 
-Wealthsimple accounts: use ledger positions + last available quote. Note "close-of-day quote is stale for WS positions" when relevant.
+**Wealthsimple** (Gmail primary, SnapTrade fallback):
+
+- **Gmail (primary):** today's WS order-confirmation emails (cross-check against what the 16:30 daily-order-sync appended to the ledger; flag discrepancies but do NOT re-append — the ledger is append-only).
+- **SnapTrade MCP (fallback + snapshot):** `AccountInformation_getUserAccountBalance` and `AccountInformation_getAllAccountPositions` per account for EOD positions/cash snapshot. `AccountInformation_getAccountActivities` for dividends / fees / cash movements Gmail may have missed. Use `AccountInformation_getUserAccountRecentOrdersV2` only if a Gmail confirmation was ambiguous or you suspect a missed fill.
+- If SnapTrade is unavailable, fall back to ledger + last-known quote and note "SnapTrade unavailable; WS EOD snapshot is stale."
 
 ## Step 2 — build the Tier 1 universe
 
@@ -84,6 +92,14 @@ Commit via `life-os` MCP's `commit_file`:
 - **Quick Read table:** deltas are vs this **morning's** briefing (not vs yesterday).
 - **Body:** same section order as morning. Additionally, if any morning 🔴 items resolved during the day, note the resolution inline (e.g. "morning 🔴 for RKLB — decided to hold, will roll Monday").
 - **Commit message:** `briefing: evening YYYY-MM-DD (<red>R/<yellow>Y/<green>G, status:<...>, dayPnL:<±$X>)`
+
+### Readability requirements (from the schema — enforce every run)
+
+Same as morning-briefing Step 7, plus:
+
+- The `> 📌 TL;DR` block lists **tomorrow's** decisions, not today's (mirror the tomorrow-item action items).
+- The Quick Read `**What changed since prior:**` bullets frame today's session: fills, resolutions of morning items, deltas that moved the book.
+- `prior` link in the `> 🔗 Links` strip points to today's **morning** briefing.
 
 If the file already exists, **stop and report**. Do not overwrite.
 
