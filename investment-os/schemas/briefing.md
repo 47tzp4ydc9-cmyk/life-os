@@ -76,6 +76,21 @@ One line: backticked tickers + the standard sentence.
 `GLW` `CRWV` `IREN` `HOOD` — no material news in last 24h.
 ```
 
+### `## 🛡️ Security & margin` *(conditional; hard-capped)*
+
+All security-alert, margin-call, and account-integrity content lives here. **Two lines maximum, combined, across all such items.** One bullet per open item:
+
+```markdown
+- **ws-margin-status** — monitoring, no fresh alert since Jul 10 · confirm on next WS login
+- **ws-overnight-fills** — user-authorized per Jul 14 Correction · no action
+```
+
+Rules:
+- No tables. No "why this matters" prose. No repeated background.
+- No dramatic emojis (⚠️ 🚨) in the bullets themselves — the section header carries the flag.
+- An item may only appear in `## 🔴 Action today` instead of here if BOTH: (a) a new broker alert / lock / auth event triggered this cycle, AND (b) the item has not been marked authorized / resolved / not-an-incident by a prior `## Correction` or a completed action-item. Otherwise it lives here.
+- Pattern-repetition ("Nth consecutive night") is not a fresh trigger. See `routines/morning-briefing.md` Step 5.5.
+
 ### `## 🎯 Catalysts firing today / tomorrow`
 
 Table sourced from `narrative/catalysts/`:
@@ -149,3 +164,5 @@ If 🔴 = 0 AND 🟡 ≤ 1 AND no catalyst firing today AND SPY pre-market move 
 - Do not invent news. If web search returns nothing material on a Tier 1 name, mark it 🟢.
 - If a fact was wrong (typo, bad parse), add a `## Correction` section at the bottom rather than editing the body.
 - One briefing file per session per day — overwrite is not allowed except via the `## Correction` pattern.
+- **Corrections are binding forward.** Once a prior briefing's `## Correction` marks an item resolved / authorized / decided / false-positive, subsequent briefings MUST NOT restate that item at 🔴 severity. Downgrade to 🟡 / 🛡️ or omit. See `routines/morning-briefing.md` Step 5.6.
+- **Security & margin items are hard-capped at 2 lines** in the dedicated 🛡️ section. They may not appear in 🔴 unless a fresh, unacknowledged broker alert triggered this cycle.

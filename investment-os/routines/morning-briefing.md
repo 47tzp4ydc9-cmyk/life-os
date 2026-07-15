@@ -72,6 +72,20 @@ Read `narrative/catalysts/`. Any catalyst with `event_date` = today or tomorrow 
 
 Apply the severity rules from `../schemas/briefing.md` (🔴 ACTION / 🟡 MONITOR / 🟢 QUIET) exactly as written. Do not invent new severity criteria.
 
+## Step 5.5 — security & margin-call items: two-line cap
+
+Security-alert and margin-call items are chronic. They recurred at 🔴 for four consecutive sessions in early July on false-positive premises, dominating briefings that were meant to be about trade decisions. Apply these caps every run:
+
+1. **Single `## 🛡️ Security & margin` section, ≤ 2 lines total.** Placed after 🟢 Quiet and before Catalysts. One bullet per open item, of the form: `- **<slug>** — <status> · <one-line next action>`. No tables, no "why this matters" prose, no repeated background, no dramatic emojis (⚠️ 🚨 etc.) beyond the section header.
+
+2. **Only 🔴 on a fresh, unacknowledged trigger.** A security / margin / account-integrity item may appear in the 🔴 section ONLY if BOTH hold: (a) a new broker alert email, actual account lock, forced-liquidation notice, or unattributed auth event landed *this cycle*, AND (b) it has not been marked as authorized / resolved / not-an-incident in any prior briefing's `## Correction` block or in `action-items.md` as completed. Otherwise the item belongs in the compressed 🛡️ section.
+
+3. **Repetition is not evidence.** Phrases like "Nth consecutive night", "4th time this week", or "pattern continues" are observations, not a fresh trigger. They do not qualify under rule 2. New evidence means an incoming alert or event with its own timestamp — not the mere continuation of activity the user has already acknowledged.
+
+## Step 5.6 — prior Corrections are binding
+
+Before drafting any 🔴 sub-block, scan the last 5 briefings for `## Correction` blocks referencing the item or symbol. If the user has marked something as resolved, authorized, decided, or a false positive, that ruling is **binding forward**: do not re-litigate it. Downgrade severity to whatever the correction implied (🟡 monitor if the item is still live but no longer requires action; omit entirely if the correction said "resolved / closed"). This applies to SMCI-style "day N still undecided" carry-forwards just as much as to security items. If unsure whether a correction still applies (e.g. new material development), state that uncertainty in one line and default to the lower severity — never restate a resolved item as if the correction never happened.
+
 ## Step 6 — apply the early-exit rule
 
 Per `../schemas/briefing.md`:
