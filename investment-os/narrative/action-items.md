@@ -1,6 +1,6 @@
 ---
 type: action-items
-updated: 2026-07-14T19:22:00Z
+updated: 2026-07-15T11:00:00Z
 ---
 
 # Action items
@@ -45,6 +45,10 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [ ] **verify-mu-fill-email-jul13** — no recurrence of the spoofed MU fill email this session (2nd consecutive quiet check), but the underlying inbox/account security question remains unverified. Log in directly Monday and confirm no unauthorized MU order exists. `priority:high` `due:2026-07-13` `related:security` `account:ws_margin`
 - [ ] **ledger-sync-friday-gap-verify** — `ws_margin.md` `last_synced_at` is still 2026-07-09T21:36:00Z (Thursday evening); Friday Jul10's 16:30 ET `daily-order-sync` does not appear to have updated it. Confirm Monday whether Friday's sync ran with zero new fills (benign) or didn't run at all (real gap) — check the other 7 account ledgers too. `priority:medium` `due:2026-07-13` `related:schema`
 - [ ] **ibkr-margin-glw-put-sync-gap** — the Jul13 19:39:10Z GLW Aug21'26 185P sell-to-open (1 contract @ $22.16, order 1525387642) appears live in IBKR positions/trades but is missing from `ledger/ibkr_margin.md` (last entries stop at the INTC/ASTS/ADBE/IREN/RKLB fills from the same session). Reconcile manually — the ledger file is now 5,000+ lines and too large to safely rewrite via the fast-path sync tool. `priority:medium` `due:2026-07-15` `related:ibkr_margin` `account:ibkr_margin`
+- [ ] **ws-margin-call-active-jul15** — new Wealthsimple email Jul 14 07:08 ET: "Your margin account is in a margin call as your available margin balance has fallen below $0." Account not specified in email body — confirm which one (likely `ws_jatan_corp` per the established mixup pattern, unconfirmed); this reads as an escalation from the Jul10 "at risk" alert to an active call. `priority:high` `due:2026-07-15` `related:security` `account:ws_jatan_corp`
+- [ ] **verify-mu-fill-email-jul15** — 5th+ occurrence of the spoofed MU "order filled" email (Jul14 09:55 ET, Margin account, 125sh sell @ $42.95 vs real MU ~$983, ~23x off, same signature as the Jul3/Jul9/Jul10 fakes). Confirm no unauthorized order; given the repeat pattern, also check the email's headers for sender spoofing. `priority:high` `due:2026-07-15` `related:security` `account:ws_margin`
+- [ ] **smci-dilution-review** — Supermicro announced proposed financings of up to $7.0B (incl. $5.0B underwritten offerings + up to $2.0B ATM program) to fund ~$39B of AI server orders — new dilution risk layered on the already-broken Taiwan-investigation thesis. The 2026-07-13 hold-through-Aug11-earnings decision didn't have this information; reassess with dilution factored in. `priority:high` `due:2026-07-15` `related:SMCI` `account:ws_margin`
+- [ ] **ibkr-margin-crwd-oscr-sync-gap** — Jul14 IBKR fills not yet in `ledger/ibkr_margin.md`: CRWD same-day round trip (bought 100sh ~$210.60, sold ~157sh ~$211.10ish, netting a 0.4296sh stub + ~$4.9k realized gain across legs) and OSCR full exit (200sh @ $30.70, realized gain $2,494.83). Bundle with the existing `ibkr-margin-glw-put-sync-gap` for one manual reconciliation pass — `ibkr_margin.md` remains too large for a blind fast-path rewrite. `priority:medium` `due:2026-07-16` `related:ibkr_margin` `account:ibkr_margin`
 
 ## Completed
 
@@ -86,3 +90,4 @@ Each task is a single-line checkbox with inline `key:value` tags. See `schemas/a
 - [x] **smci-day16-force-decision** — resolved 2026-07-13: user confirmed decision to keep. See `decisions/2026-06-25-smci.md`. `completed:2026-07-13`
 - [x] **smci-day18-force-decision** — resolved 2026-07-13 (decision predates this Jul14-added duplicate item): user confirmed decision to keep the 300sh lot through Aug 11 earnings. See `decisions/2026-06-25-smci.md`. `completed:2026-07-13`
 - [x] **ws-unauthorized-trades-jul14** — resolved 2026-07-14: user confirmed these fills (SPCX, NFLX) were authorized, not a security incident. `completed:2026-07-14`
+
