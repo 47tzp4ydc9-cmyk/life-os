@@ -2,6 +2,10 @@
 
 Personal knowledge repository optimized for read/write by AI assistants (Claude, ChatGPT). See [AGENTS.md](AGENTS.md) for how AI sessions write to this repo — the only supported write path is the [`life-os` MCP connector](tools/mcp-commit-worker/) since first-party GitHub connectors are read-only.
 
+
+## Favorites / Bookmarks 
+- [Morning / Evening -  Briefings](investment-os/narrative/briefings/)
+
 ## Modules
 
 - [`investment-os/`](investment-os/) — investment decisions, theses, research, broker data
