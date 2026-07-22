@@ -4,8 +4,8 @@ account: ws_tfsa
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple, ibkr]
+last_synced_at: 2026-07-22T06:17:00Z
+sources_used: [wealthsimple, ibkr, gmail]
 executions:
   - id: "manual:239558c79e5f"
     date: 2025-02-09
@@ -1093,6 +1093,23 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-13T20:30:00Z"
     notes: "IonQ Inc. Limit buy filled 00:12 EDT. Source: Wealthsimple activity export."
+  - id: "manual:e2b67245abad"
+    date: 2026-07-16
+    action: buy
+    instrument: us_stock
+    symbol: RKLB
+    quantity: 10
+    price: 67.2099
+    currency: USD
+    fees: 0
+    net_cash: -672.10
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Rocket Lab Corp. Market buy filled 15:24 EDT Jul 16. Source: Wealthsimple order-filled email."
 ---
 
 # Ws Tfsa — execution ledger
