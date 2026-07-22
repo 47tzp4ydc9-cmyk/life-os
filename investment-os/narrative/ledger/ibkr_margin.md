@@ -4,7 +4,7 @@ account: ibkr_margin
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-13T20:30:00Z
+last_synced_at: 2026-07-22T06:17:00Z
 sources_used: [ibkr]
 executions:
   - id: "ibkr:exec:3055552215"
@@ -5107,6 +5107,261 @@ executions:
     source: ibkr
     imported_at: "2026-07-13T21:15:00Z"
     notes: "Rocket Lab Corp. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b17.01.01"
+    date: 2026-07-14
+    action: buy
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 5
+    price: 210.59
+    currency: USD
+    fees: 1.000015
+    net_cash: -1053.950015
+    broker_order_ref: "ibkr:399446217"
+    fill_ref: 000100df.6a565b17.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b1c.01.01"
+    date: 2026-07-14
+    action: buy
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 95
+    price: 210.6
+    currency: USD
+    fees: 0.000285
+    net_cash: -20007.000285
+    broker_order_ref: "ibkr:399446217"
+    fill_ref: 000100df.6a565b1c.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b49.01.01"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 5
+    price: 211.15
+    currency: USD
+    fees: 0.02273845
+    net_cash: 1055.72726155
+    broker_order_ref: "ibkr:399446378"
+    fill_ref: 000100df.6a565b49.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Realized P&L reported by broker: 2.727247. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b4a.01.01"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 30
+    price: 211.13
+    currency: USD
+    fees: 1.13641834
+    net_cash: 6332.76358166
+    broker_order_ref: "ibkr:399446378"
+    fill_ref: 000100df.6a565b4a.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Realized P&L reported by broker: 2883.264657. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b4b.01.01"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 100
+    price: 211.11
+    currency: USD
+    fees: 0.4546866
+    net_cash: 21110.5453134
+    broker_order_ref: "ibkr:399446378"
+    fill_ref: 000100df.6a565b4b.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Realized P&L reported by broker: 1117.534992. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b4c.01.01"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 13
+    price: 211.1
+    currency: USD
+    fees: 0.05910658
+    net_cash: 2744.24089342
+    broker_order_ref: "ibkr:399446378"
+    fill_ref: 000100df.6a565b4c.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Realized P&L reported by broker: 6.440854. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:000100df.6a565b4d.01.01"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 9
+    price: 211.09
+    currency: USD
+    fees: 0.04091809
+    net_cash: 1899.76908191
+    broker_order_ref: "ibkr:399446378"
+    fill_ref: 000100df.6a565b4d.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc. Realized P&L reported by broker: 4.369055. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00010168.6a568e9f.01.01"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: OSCR
+    quantity: 200
+    price: 30.7
+    currency: USD
+    fees: 1.166084
+    net_cash: 6138.833916
+    broker_order_ref: "ibkr:399448530"
+    fill_ref: 00010168.6a568e9f.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Oscar Health Inc. Realized P&L reported by broker: 2362.833616. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:0000d5d6.6a57dcd5.01.01"
+    date: 2026-07-15
+    action: sell
+    instrument: us_stock
+    symbol: NU
+    quantity: 26
+    price: 14.032
+    currency: USD
+    fees: 1.01266354
+    net_cash: 363.81933646
+    broker_order_ref: "ibkr:399639826"
+    fill_ref: 0000d5d6.6a57dcd5.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Nu Holdings Ltd. Realized P&L reported by broker: 59.749258. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00030e5e.6ded1402.01.01"
+    date: 2026-07-15
+    action: sell
+    instrument: us_stock
+    symbol: NU
+    quantity: 74
+    price: 14.0326
+    currency: USD
+    fees: 0.0360433
+    net_cash: 1038.3763567
+    broker_order_ref: "ibkr:399639826"
+    fill_ref: 00030e5e.6ded1402.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Nu Holdings Ltd. Realized P&L reported by broker: 172.946135. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00010129.6a57d777.01.01"
+    date: 2026-07-15
+    action: sell
+    instrument: us_stock
+    symbol: GOOGL
+    quantity: 20
+    price: 372.97
+    currency: USD
+    fees: 1.15762364
+    net_cash: 7458.24237636
+    broker_order_ref: "ibkr:399640065"
+    fill_ref: 00010129.6a57d777.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Alphabet Inc. Realized P&L reported by broker: 61.442316. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00012968.6a57fff0.01.01"
+    date: 2026-07-15
+    action: sell
+    instrument: us_stock
+    symbol: CRWD
+    quantity: 0.4296
+    price: 207.7
+    currency: USD
+    fees: 0.89420236
+    net_cash: 88.33371764
+    broker_order_ref: "ibkr:399640147"
+    fill_ref: 00012968.6a57fff0.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "CrowdStrike Holdings Inc, fractional. Realized P&L reported by broker: -2.140043. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00016247.6a578e6b.01.01"
+    date: 2026-07-15
+    action: sell
+    instrument: us_stock
+    symbol: RIVN
+    quantity: 100
+    price: 18.03
+    currency: USD
+    fees: 1.0569418
+    net_cash: 1801.9430582
+    broker_order_ref: "ibkr:399640554"
+    fill_ref: 00016247.6a578e6b.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Rivian Automotive Inc. Realized P&L reported by broker: -187.056942. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:00012e19.6a5a136d.01.01"
+    date: 2026-07-17
+    action: sell
+    instrument: us_stock
+    symbol: UBER
+    quantity: 40
+    price: 72.55
+    currency: USD
+    fees: 1.067701
+    net_cash: 2900.932299
+    broker_order_ref: "ibkr:1075242744"
+    fill_ref: 00012e19.6a5a136d.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Uber Technologies Inc. Realized P&L reported by broker: -602.667701. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:0000d97f.6a5a3ec9.01.01"
+    date: 2026-07-17
+    action: sell
+    instrument: us_stock
+    symbol: NOW
+    quantity: 40
+    price: 103.92
+    currency: USD
+    fees: 1.09355
+    net_cash: 4155.70645
+    broker_order_ref: "ibkr:1075242746"
+    fill_ref: 0000d97f.6a5a3ec9.01.01
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "ServiceNow Inc. Realized P&L reported by broker: -344.82495. Fetched via IBKR trades connector."
 ---
 
 # Ibkr Margin — execution ledger
