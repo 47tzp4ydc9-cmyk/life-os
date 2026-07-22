@@ -4,7 +4,7 @@ account: ws_margin
 person: jatan
 status: active
 opened: 2026-04-24
-last_synced_at: 2026-07-14T10:35:00Z
+last_synced_at: 2026-07-22T06:17:00Z
 sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:841dd06fcb68"
@@ -1828,6 +1828,339 @@ executions:
     source: gmail
     imported_at: "2026-07-14T10:35:00Z"
     notes: "Limit buy filled 23:34 EDT Jul 13 (overnight, markets closed). Part of the ongoing pattern of unexplained overnight fills in this account — see action-items.md ws-unauthorized-trades-jul14. Source: Wealthsimple order-filled email."
+  - id: "manual:b439cad9a455"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 10
+    price: 188.85
+    currency: USD
+    fees: 0
+    net_cash: 1888.50
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Direxion Daily Semiconductor Bull 3X Shares. Limit sell filled 08:33 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:823c049a3abf"
+    date: 2026-07-14
+    action: sell
+    instrument: cdr
+    symbol: MU
+    quantity: 125
+    price: 42.95
+    currency: CAD
+    fees: 0
+    net_cash: 5368.75
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Micron CDR (CAD Hedged). Closes the 125-unit remainder from the 2026-06-09 buy / 2026-06-12 partial sell. Limit sell filled 09:55 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:bc59bb0088a9"
+    date: 2026-07-14
+    action: sell
+    instrument: us_stock
+    symbol: SOXL
+    quantity: 10
+    price: 179.7604
+    currency: USD
+    fees: 0
+    net_cash: 1797.60
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Direxion Daily Semiconductor Bull 3X Shares. Limit sell filled 13:04 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:a1a564e6f541"
+    date: 2026-07-15
+    action: buy
+    instrument: us_stock
+    symbol: WDC
+    quantity: 50
+    price: 519.18
+    currency: USD
+    fees: 0
+    net_cash: -25959.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Western Digital Corp. Limit buy filled 10:46 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:465e9a7f9596"
+    date: 2026-07-15
+    action: sell
+    instrument: cdr
+    symbol: AVGO
+    quantity: 200
+    price: 14.90
+    currency: CAD
+    fees: 0
+    net_cash: 2980.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Broadcom CDR (CAD Hedged), partial close of the 400-unit 2026-06-08 buy. Limit sell filled 10:48 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:fdffe33417f4"
+    date: 2026-07-15
+    action: sell
+    instrument: cdr
+    symbol: PLTR
+    quantity: 700
+    price: 10.1307
+    currency: CAD
+    fees: 0
+    net_cash: 7091.49
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Palantir CDR (CAD Hedged), partial close of the 900-unit cdr position built up 2026-06-05..06-09. Limit sell filled 10:49 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:224ba400c9d1"
+    date: 2026-07-15
+    action: other
+    instrument: option
+    symbol: GOOG
+    quantity: 1
+    price: 77.70
+    currency: USD
+    fees: 0
+    net_cash: 7770.00
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 350
+      expiry: 2027-09-17
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other, matching prior GOOG/AMD close entries. Filled 12:25 EDT. Note: this contract's only prior ledger entry is a 2026-07-08 sell-to-close on the same strike/expiry with no visible intervening buy-to-open — possible gap in an earlier sync, flagged for review, not resolved here. Source: Wealthsimple order-filled email."
+  - id: "manual:a58093af727d"
+    date: 2026-07-16
+    action: buy
+    instrument: etf
+    symbol: DRAM
+    quantity: 100
+    price: 53.44
+    currency: USD
+    fees: 0
+    net_cash: -5344.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Roundhill ETF Trust – Memory ETF. Limit buy filled 08:58 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:7621edddbb67"
+    date: 2026-07-16
+    action: sell
+    instrument: us_stock
+    symbol: NFLX
+    quantity: 75
+    price: 74.2697
+    currency: USD
+    fees: 0
+    net_cash: 5570.23
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Limit sell filled 08:59 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:4b23d6b2cad7"
+    date: 2026-07-16
+    action: sell
+    instrument: cdr
+    symbol: NKE
+    quantity: 302.5386
+    price: 7.76
+    currency: CAD
+    fees: 0
+    net_cash: 2347.70
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "NIKE CDR (CAD Hedged), fractional sell. Filled 09:32 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:b64078a0752b"
+    date: 2026-07-16
+    action: buy
+    instrument: cdr
+    symbol: PLTR
+    quantity: 200
+    price: 10.13
+    currency: CAD
+    fees: 0
+    net_cash: -2026.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Palantir CDR (CAD Hedged). Market buy filled 15:32 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:a26b96335e5d"
+    date: 2026-07-17
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 5000
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 5000.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "EFT from external Chequing account. Source: Wealthsimple transfer email."
+  - id: "manual:ce55d1b70498"
+    date: 2026-07-17
+    action: buy
+    instrument: cdr
+    symbol: AMD
+    quantity: 100
+    price: 91.17
+    currency: CAD
+    fees: 0
+    net_cash: -9117.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "AMD CDR (CAD Hedged). Market buy filled 12:15 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:d1345cb52d60"
+    date: 2026-07-17
+    action: sell
+    instrument: cdr
+    symbol: AMD
+    quantity: 100
+    price: 90.83
+    currency: CAD
+    fees: 0
+    net_cash: 9083.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "AMD CDR (CAD Hedged), stop-limit sell filled 12:21 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:876e79a496ea"
+    date: 2026-07-17
+    action: buy
+    instrument: us_stock
+    symbol: RKLB
+    quantity: 50
+    price: 69.1621
+    currency: USD
+    fees: 0
+    net_cash: -3458.11
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Rocket Lab Corp, market buy filled 14:11 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:92748fb010bc"
+    date: 2026-07-21
+    action: sell
+    instrument: cdr
+    symbol: AMD
+    quantity: 100
+    price: 95.91
+    currency: CAD
+    fees: 0
+    net_cash: 9591.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "AMD CDR (CAD Hedged), market sell filled 10:48 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:6ff1fe7502b8"
+    date: 2026-07-21
+    action: sell
+    instrument: us_stock
+    symbol: WDC
+    quantity: 25
+    price: 542.9001
+    currency: USD
+    fees: 0
+    net_cash: 13572.50
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Western Digital Corp, market sell filled 10:54 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:633911df4402"
+    date: 2026-07-21
+    action: short_open
+    instrument: option
+    symbol: DRAM
+    quantity: 1
+    price: 5.11
+    currency: USD
+    fees: 0
+    net_cash: 511.00
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: short
+      strike: 60
+      expiry: 2026-08-07
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Sell to open — writing a new short call on Roundhill ETF Trust – Memory ETF. Filled 14:18 EDT. Source: Wealthsimple order-filled email."
+  - id: "manual:b7f7a0521629"
+    date: 2026-07-21
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 5000
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 5000.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "EFT from external Corporate chequing account. Source: Wealthsimple transfer email."
 ---
 
 # Ws Margin — execution ledger
