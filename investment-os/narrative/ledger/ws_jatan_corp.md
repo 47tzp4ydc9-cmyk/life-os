@@ -4,8 +4,8 @@ account: ws_jatan_corp
 person: jatan
 status: active
 opened: 2025-05-27
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple]
+last_synced_at: 2026-07-22T06:17:00Z
+sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:bc661fad0b49"
     date: 2025-05-27
@@ -1197,6 +1197,23 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-10T00:00:00Z"
     notes: "CDR (CAD-hedged fractional receipt), distinct from the US-listed shares. Source: Wealthsimple activity export."
+  - id: "manual:b81eaeca4371"
+    date: 2026-07-21
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 2000
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 2000
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "EFT from external Corporate chequing account. Source: Wealthsimple transfer email."
 ---
 
 # Ws Jatan Corp — execution ledger
