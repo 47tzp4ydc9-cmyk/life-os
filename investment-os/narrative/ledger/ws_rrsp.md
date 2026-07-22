@@ -4,8 +4,8 @@ account: ws_rrsp
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple]
+last_synced_at: 2026-07-22T06:17:00Z
+sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:c8a5316463ec"
     date: 2025-02-10
@@ -2408,6 +2408,67 @@ executions:
     source: wealthsimple
     imported_at: "2026-07-13T20:30:00Z"
     notes: "BigBear.ai Holdings Inc. Limit buy filled 00:09 EDT. Source: Wealthsimple activity export."
+  - id: "manual:6a6fd89dac20"
+    date: 2026-07-21
+    action: other
+    instrument: option
+    symbol: AMD
+    quantity: 1
+    price: 83.50
+    currency: USD
+    fees: 0
+    net_cash: 8350.00
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 500
+      expiry: 2026-09-18
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Sell to close — no ledger action enum for long-option closes (schema gap); recorded as other. Source: Wealthsimple order-filled email."
+  - id: "manual:34cde7916ff6"
+    date: 2026-07-21
+    action: other
+    instrument: option
+    symbol: GOOG
+    quantity: 1
+    price: 44.30
+    currency: USD
+    fees: 0
+    net_cash: -4430.00
+    broker_order_ref: null
+    fill_ref: null
+    option:
+      right: call
+      side: long
+      strike: 350
+      expiry: 2027-03-19
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Buy to open — no ledger action enum for long-option opens (schema gap); recorded as other. Source: Wealthsimple order-filled email."
+  - id: "manual:3880a9d34f5e"
+    date: 2026-07-16
+    action: transfer_in
+    instrument: cash
+    symbol: CAD
+    quantity: 2000
+    price: null
+    currency: CAD
+    fees: 0
+    net_cash: 2000
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "EFT from external Chequing account. Source: Wealthsimple transfer email."
 ---
 
 # Ws Rrsp — execution ledger
