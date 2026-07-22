@@ -4,8 +4,8 @@ account: ws_janisha_margin
 person: janisha
 status: active
 opened: 2026-06-07
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple]
+last_synced_at: 2026-07-22T06:17:00Z
+sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:61c0efb24849"
     date: 2026-06-07
@@ -262,6 +262,23 @@ executions:
     source: wealthsimple
     imported_at: "2026-06-28T00:00:00Z"
     notes: Marvell Technology Inc.
+  - id: "manual:75c92f4087ad"
+    date: 2026-07-15
+    action: sell
+    instrument: us_stock
+    symbol: AMZN
+    quantity: 250
+    price: 29.16
+    currency: CAD
+    fees: 0
+    net_cash: 7290.00
+    broker_order_ref: null
+    fill_ref: null
+    related_id: null
+    decision_ref: null
+    source: gmail
+    imported_at: "2026-07-22T06:17:00Z"
+    notes: "Amazon.com Inc. Limit sell filled 11:10 EDT Jul 15 (order also generated an earlier partial-fill notification for 50 shares — the 250-share total below supersedes it). Source: Wealthsimple order-filled email."
 ---
 
 # Ws Janisha Margin — execution ledger
