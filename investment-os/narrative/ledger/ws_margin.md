@@ -4,7 +4,7 @@ account: ws_margin
 person: jatan
 status: active
 opened: 2026-04-24
-last_synced_at: 2026-07-14T10:35:00Z
+last_synced_at: 2026-07-24T06:11:43Z
 sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:841dd06fcb68"
