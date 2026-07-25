@@ -4,8 +4,8 @@ account: ws_janisha_tfsa
 person: janisha
 status: active
 opened: null
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple]
+last_synced_at: 2026-07-25T20:30:00Z
+sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:2dc304c488dd"
     date: 2025-03-24
