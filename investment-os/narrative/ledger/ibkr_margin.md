@@ -4,7 +4,7 @@ account: ibkr_margin
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-13T20:30:00Z
+last_synced_at: 2026-07-29T11:00:00Z
 sources_used: [ibkr]
 executions:
   - id: "ibkr:exec:3055552215"
@@ -5107,6 +5107,176 @@ executions:
     source: ibkr
     imported_at: "2026-07-13T21:15:00Z"
     notes: "Rocket Lab Corp. Fetched via IBKR trades connector."
+  - id: "ibkr:exec:0000febb.6a689147.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: AMD
+    quantity: 10
+    price: 455.21
+    currency: USD
+    fees: 1.095753
+    net_cash: 4551.004247
+    broker_order_ref: "ibkr:904380827"
+    fill_ref: "0000febb.6a689147.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Advanced Micro Devices. Realized P&L reported by broker: 2504.204247. Trimmed 10 of 40sh; 30sh remain. Filled 2026-07-28 09:51 ET, same morning IBKR excess liquidity turned positive again after the Jul 28 margin-deficiency alert. Whether this was a self-directed trim or IBKR-initiated liquidation is unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00018d2a.6a68a494.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: BABA
+    quantity: 70
+    price: 113.965
+    currency: USD
+    fees: 1.178198
+    net_cash: 7976.371802
+    broker_order_ref: "ibkr:904380804"
+    fill_ref: "00018d2a.6a68a494.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Alibaba Group Holding SP ADR. Realized P&L reported by broker: -1372.528398. Full-position exit (BABA no longer in IBKR positions as of 2026-07-29). Filled 2026-07-28 09:50 ET, same morning as the Jul 28 margin-deficiency alert. Intent (forced vs self-directed) unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:0002264f.6a68cf7b.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: PATH
+    quantity: 300
+    price: 11.525
+    currency: USD
+    fees: 1.630625
+    net_cash: 3455.869375
+    broker_order_ref: "ibkr:904380782"
+    fill_ref: "0002264f.6a68cf7b.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "UiPath Inc Class A. Realized P&L reported by broker: -1608.130625. Full-position exit (300sh, matching the tracked position) — resolves the overdue `path-openai-competitive-threat-review` action item by mooting it. Filled 2026-07-28 09:49 ET, same morning as the Jul 28 margin-deficiency alert. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00012978.6a69023c.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: RBRK
+    quantity: 0.5373
+    price: 70.19
+    currency: USD
+    fees: 0.378014
+    net_cash: 37.335073
+    broker_order_ref: "ibkr:904380778"
+    fill_ref: "00012978.6a69023c.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Rubrik Inc-A, market order, odd-lot remainder. Realized P&L reported by broker: 13.725058. Part of a full-position exit alongside the 3 same-day GTC fills below (order 904379213). Filled 2026-07-28 09:49 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00022db2.6a6888b7.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: cdr
+    symbol: AMZN
+    quantity: 75
+    price: 26.25
+    currency: CAD
+    fees: 1
+    net_cash: 1967.75
+    broker_order_ref: "ibkr:904380772"
+    fill_ref: "00022db2.6a6888b7.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Amazon.com Inc CDR, market order. Realized P&L reported by broker: -175.75. Full-position exit alongside the other same-day AMZN CDR fill below (375sh total). Filled 2026-07-28 09:47 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00018257.6a6899d9.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: cdr
+    symbol: AMZN
+    quantity: 300
+    price: 26.51
+    currency: CAD
+    fees: 3
+    net_cash: 7950
+    broker_order_ref: "ibkr:904379859"
+    fill_ref: "00018257.6a6899d9.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Amazon.com Inc CDR, market order. Realized P&L reported by broker: -624. Full-position exit alongside the other same-day AMZN CDR fill above (375sh total). Filled 2026-07-28 09:36 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:0000f7ce.6a68a44e.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: HSAI
+    quantity: 100
+    price: 15.77
+    currency: USD
+    fees: 1.052286
+    net_cash: 1575.947714
+    broker_order_ref: "ibkr:904379848"
+    fill_ref: "0000f7ce.6a68a44e.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Hesai Group. Realized P&L reported by broker: -1185.052286. Full-position exit (HSAI no longer in IBKR positions as of 2026-07-29). Filled 2026-07-28 09:35 ET, same morning as the Jul 28 margin-deficiency alert. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00012e18.6a688858.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: RBRK
+    quantity: 24
+    price: 74
+    currency: USD
+    fees: 0.041338
+    net_cash: 1775.958662
+    broker_order_ref: "ibkr:904379213"
+    fill_ref: "00012e18.6a688858.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Rubrik Inc-A, GTC limit @74, partial fill 1 of 3 (order 904379213; 45.5373sh total exited across this order + the market-order remainder above). Realized P&L reported by broker: 721.35163. Filled 2026-07-28 09:30 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00012e18.6a688801.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: RBRK
+    quantity: 14
+    price: 74
+    currency: USD
+    fees: 0.024114
+    net_cash: 1035.975886
+    broker_order_ref: "ibkr:904379213"
+    fill_ref: "00012e18.6a688801.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Rubrik Inc-A, GTC limit @74, partial fill 2 of 3 (order 904379213). Realized P&L reported by broker: 420.788451. Filled 2026-07-28 09:30 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00012e18.6a6884d9.01.01"
+    date: 2026-07-28
+    action: sell
+    instrument: us_stock
+    symbol: RBRK
+    quantity: 7
+    price: 74
+    currency: USD
+    fees: 1.012057
+    net_cash: 516.987943
+    broker_order_ref: "ibkr:904379213"
+    fill_ref: "00012e18.6a6884d9.01.01"
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-07-29T11:00:00Z"
+    notes: "Rubrik Inc-A, GTC limit @74, partial fill 3 of 3 (order 904379213). Realized P&L reported by broker: 209.394226. Filled 2026-07-28 09:30 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
 ---
 
 # Ibkr Margin — execution ledger
