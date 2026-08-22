@@ -4,7 +4,7 @@ account: ibkr_margin
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-29T11:00:00Z
+last_synced_at: 2026-08-22T06:12:39Z
 sources_used: [ibkr]
 executions:
   - id: "ibkr:exec:3055552215"
@@ -5277,6 +5277,28 @@ executions:
     source: ibkr
     imported_at: "2026-07-29T11:00:00Z"
     notes: "Rubrik Inc-A, GTC limit @74, partial fill 3 of 3 (order 904379213). Realized P&L reported by broker: 209.394226. Filled 2026-07-28 09:30 ET. Intent unconfirmed — see 2026-07-29 morning briefing."
+  - id: "ibkr:exec:00027553.6a88c858.01.01"
+    date: 2026-08-21
+    action: expire_long
+    instrument: option
+    symbol: BMNR
+    quantity: 3
+    price: 0
+    currency: USD
+    fees: 0
+    net_cash: 0
+    broker_order_ref: "ibkr:7323399"
+    fill_ref: "00027553.6a88c858.01.01"
+    option:
+      right: call
+      side: long
+      strike: 24
+      expiry: 2026-08-21
+    related_id: null
+    decision_ref: null
+    source: ibkr
+    imported_at: "2026-08-22T06:12:39Z"
+    notes: "Long 3x BMNR 24C 2026-08-21 expired worthless (matches buy entries ibkr:exec:0002920b.6980c6bd.01.01 + ibkr:exec:0002920b.6980c6be.01.01, qty 2+1). Reported by IBKR trade blotter as SELL 3 @ 0."
 ---
 
 # Ibkr Margin — execution ledger
