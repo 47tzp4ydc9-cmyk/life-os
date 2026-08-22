@@ -4,8 +4,8 @@ account: ws_rrsp
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-13T20:30:00Z
-sources_used: [wealthsimple]
+last_synced_at: 2026-08-22T06:12:39Z
+sources_used: [wealthsimple, gmail]
 executions:
   - id: "manual:c8a5316463ec"
     date: 2025-02-10
