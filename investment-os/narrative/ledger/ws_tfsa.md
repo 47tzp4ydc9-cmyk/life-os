@@ -4,7 +4,7 @@ account: ws_tfsa
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-08-15T20:30:00Z
+last_synced_at: 2026-08-24T20:30:00Z
 sources_used: [wealthsimple, ibkr, gmail]
 executions:
   - id: "manual:239558c79e5f"
