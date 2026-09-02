@@ -4,7 +4,7 @@ account: ibkr_margin
 person: jatan
 status: active
 opened: null
-last_synced_at: 2026-07-29T11:00:00Z
+last_synced_at: 2026-09-02T06:12:58Z
 sources_used: [ibkr]
 executions:
   - id: "ibkr:exec:3055552215"
